@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('expirings', function (Blueprint $table) {
+        Schema::create('photos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('transaction_id')->references('id')->on('transactions')->onDelete('cascade')->constrained();
-            $table->boolean('is_read');
-            $table->boolean('is_checked');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('expirings');
+        Schema::dropIfExists('photos');
     }
 };

@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('types', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->integer('size');
             $table->decimal('price', 10, 2);
+            $table->longText('description');
             $table->timestamps();
         });
     }

@@ -10,7 +10,7 @@ class Transaction extends Model
     use HasFactory;
 
     protected $table = 'transactions';
-    protected $fillable = ['room_id', 'name', 'start_time', 'end_time'];
+    protected $fillable = ['room_id', 'name', 'start_time', 'end_time', 'check_out_time'];
 
     public function room()
     {

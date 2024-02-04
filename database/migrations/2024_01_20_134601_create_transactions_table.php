@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->dateTime('start_time');
             $table->dateTime('end_time');
+            $table->dateTime('check_out_time')->nullable();
             $table->timestamps();
         });
     }

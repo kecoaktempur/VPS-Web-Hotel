@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('expirings', function (Blueprint $table) {
+        Schema::create('type_photo', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('transaction_id')->references('id')->on('transactions')->onDelete('cascade')->constrained();
-            $table->boolean('is_read');
-            $table->boolean('is_checked');
+            $table->foreignId('type_id')->references('id')->on('types')->onDelete('cascade')->constrained();
+            $table->foreignId('photo_id')->references('id')->on('photos')->onDelete('cascade')->constrained();
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('expirings');
+        Schema::dropIfExists('type_photo');
     }
 };
