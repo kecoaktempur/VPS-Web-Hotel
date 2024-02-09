@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('expirings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('transaction_id')->references('id')->on('transactions')->onDelete('cascade')->constrained();
+            $table->foreignId('transaction_id')->references('id')->on('current_transactions')->onDelete('cascade')->constrained();
             $table->boolean('is_read');
             $table->boolean('is_checked');
             $table->timestamps();

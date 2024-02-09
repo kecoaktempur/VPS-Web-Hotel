@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Transaction extends Model
+class CurrentTransaction extends Model
 {
     use HasFactory;
 
-    protected $table = 'transactions';
-    protected $fillable = ['room_id', 'name', 'start_time', 'end_time', 'check_out_time'];
+    protected $table = 'current_transactions';
+    protected $fillable = ['room_id', 'name', 'start_time', 'end_time', 'check_out_time', 'notes'];
 
     public function room()
     {
