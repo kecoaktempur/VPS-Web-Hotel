@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TypeController;
@@ -23,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 // user
 Route::get('/', function () {return view('home');});
 Route::get('/home', [PageController::class, 'home'])->name('home');
+Route::post('/home', [ReviewController::class, 'store'])->name('review.store');
 Route::get('/type', [TypeController::class, 'indexUser'])->name('type.index.user');
 Route::post('/type', [TypeController::class, 'available'])->name('type.available');
 Route::get('/type/{id}', [TypeController::class, 'showUser'])->name('type.show.user');
@@ -65,3 +67,6 @@ Route::get('/admin/photo', [PhotoController::class, 'index'])->name('photo');
 Route::get('/admin/photo/create', [PhotoController::class, 'create'])->name('photo.create');
 Route::post('/admin/photo/store', [PhotoController::class, 'store'])->name('photo.store');
 Route::delete('/admin/photo/delete/{id}', [PhotoController::class, 'destroy'])->name('photo.destroy');
+
+Route::get('/admin/review', [ReviewController::class, 'index'])->name('review');
+Route::delete('/admin/review/delete/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
