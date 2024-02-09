@@ -12,9 +12,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('auto-checkout')->dailyAt('10:50');
-        $schedule->command('check-expiring-transactions')->dailyAt('10:50');
-        $schedule->command('move-past-transactions')->weekly()->fridays()->at('10:52');
+        $schedule->command('auto-checkout')->dailyAt('00:00');
+        $schedule->command('check-expiring-transactions')->dailyAt('00:00');
+        $schedule->command('move-past-transactions')->weekly()->mondays()->at('00:10');
     }
 
     /**
