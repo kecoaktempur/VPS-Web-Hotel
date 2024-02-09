@@ -17,8 +17,13 @@ class Room extends Model
         return $this->belongsTo(Type::class);
     }
 
-    public function transactions()
+    public function current_transactions()
     {
-        return $this->hasMany(Transaction::class);
+        return $this->hasMany(CurrentTransaction::class);
+    }
+
+    public function past_transactions()
+    {
+        return $this->hasMany(PastTransaction::class);
     }
 }

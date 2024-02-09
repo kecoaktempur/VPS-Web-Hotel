@@ -10,5 +10,5 @@ class TypePhoto extends Model
     use HasFactory;
 
     protected $table = 'type_photo';
-    protected $fillable = ['name'];
+    protected $fillable = ['type_id', 'photo_id'];
 }

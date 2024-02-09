@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('room_id')->references('id')->on('rooms')->onDelete('cascade')->constrained();
             $table->string('name');
-            $table->dateTime('start_time');
-            $table->dateTime('end_time');
-            $table->dateTime('check_out_time')->nullable();
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->date('check_out_date')->nullable();
             $table->longText('notes');
             $table->timestamps();
         });

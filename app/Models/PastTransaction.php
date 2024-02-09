@@ -10,7 +10,7 @@ class PastTransaction extends Model
     use HasFactory;
 
     protected $table = 'past_transactions';
-    protected $fillable = ['room_id', 'name', 'start_time', 'end_time', 'check_out_time', 'notes'];
+    protected $fillable = ['room_id', 'name', 'start_date', 'end_date', 'check_out_date', 'notes'];
 
     public function room()
     {

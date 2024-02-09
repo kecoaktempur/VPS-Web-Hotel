@@ -10,10 +10,10 @@ class Expiring extends Model
     use HasFactory;
 
     protected $table = 'expirings';
-    protected $fillable = ['is_read', 'is_checked'];
+    protected $fillable = ['transaction_id', 'is_read'];
 
     public function transaction()
     {
-        return $this->hasOne(Transaction::class);
+        return $this->hasOne(CurrentTransaction::class);
     }
 }
