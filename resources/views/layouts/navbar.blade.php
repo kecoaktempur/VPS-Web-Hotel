@@ -16,7 +16,7 @@
         <ul id="collapseMenu" class='lg:!flex lg:space-x-10 max-lg:space-y-3 max-lg:hidden max-lg:w-full max-lg:my-4 my-auto'>
             <li class='max-lg:border-b max-lg:py-2'><a href='{{ route('home') }}' class='hover:text-[#007bff] font-semibold block text-[15px] lg:border-b-2 lg:border-[#000000]'>Home</a>
             </li>
-            <li class='max-lg:border-b max-lg:py-2'><a href='#' class='hover:text-[#007bff] text-gray-600 font-reguler text-[15px]'>Rooms</a></li>
+            <li class='max-lg:border-b max-lg:py-2'><a href='{{ route('type.index.user')}}' class='hover:text-[#007bff] text-gray-600 font-reguler text-[15px]'>Rooms</a></li>
             <li class='max-lg:border-b max-lg:py-2'><a href='#' class='hover:text-[#007bff] text-gray-600 font-reguler text-[15px]'>Gallery</a></li>
             <li class='max-lg:border-b max-lg:py-2'><a href='#' class='hover:text-[#007bff] text-gray-600 font-reguler text-[15px]'>Contact Us</a></li>
         </ul>

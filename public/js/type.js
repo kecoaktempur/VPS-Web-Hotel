@@ -45,10 +45,10 @@ function handleClick() {
 toggleBtn.addEventListener('click', handleClick);
 
 // TRANSACTION
-function addItem() {
-    const namaKamar = document.getElementById('namakamar1').innerText;
-    const hargaKamar = document.getElementById('hargakamar1').innerText;
-    const jumlah = document.getElementById('jumlah').value;
+function addItem(i) {
+    const namaKamar = document.getElementById('namakamar' + i).innerText;
+    const hargaKamar = document.getElementById('hargakamar' + i).innerText;
+    const jumlah = document.getElementById('jumlah' + i).value;
 
     for (let i = 0; i < jumlah; i++) {
         const cartItemId = `cart-item-${i}`;
@@ -90,8 +90,8 @@ function removeItem(element) {
     const CartItem = element.parentElement.parentElement.parentElement;
     const cartType = CartItem.dataset.cart; // Get the value of data-cart attribute
 
-    console.log("Main Cart Item:", CartItem);
-    console.log("Cart Type:", cartType);
+    // console.log("Main Cart Item:", CartItem);
+    // console.log("Cart Type:", cartType);
 
     // Remove the main cart item
     CartItem.remove();
@@ -100,21 +100,21 @@ function removeItem(element) {
         // Remove the corresponding item from the navbar cart
         const navbarItemId = CartItem.dataset.id;
         const navbarCartItem = document.querySelector(`#cart-items-navbar [data-id="${navbarItemId}"]`);
-        console.log("Navbar Cart Item:", navbarCartItem);
+        // console.log("Navbar Cart Item:", navbarCartItem);
         if (navbarCartItem) {
             navbarCartItem.remove();
         } else {
-            console.log("Corresponding Navbar Cart Item not found!");
+            // console.log("Corresponding Navbar Cart Item not found!");
         }
     } else if (cartType === 'navbar') {
         // Remove the corresponding item from the main cart
         const mainItemId = CartItem.dataset.id;
         mainCartItem = document.querySelector(`#cart-items [data-id="${mainItemId}"]`); // Remove 'const'
-        console.log("Main Cart Item:", mainCartItem);
+        // console.log("Main Cart Item:", mainCartItem);
         if (mainCartItem) {
             mainCartItem.remove();
         } else {
-            console.log("Corresponding Main Cart Item not found!");
+            // console.log("Corresponding Main Cart Item not found!");
         }
     }
 
@@ -168,4 +168,65 @@ function pesanSekarang() {
         const url = `https://wa.me/+6285655567005?text=Nama%20Kepala:%20${namaKepala}%0D%0ARuangan:%20${pesanan}%0D%0ACheck%20In:%20${checkIn}%0D%0ACheck%20Out:%20${checkOut}%0D%0ATotal:%20Rp%20${total}`;
         window.open(url, '_blank');
     }
+}
+
+function formatDate(value) {
+    return value.replace('T', ' ');
+}
+
+function checkAvailability() {
+    updateValues();
+
+    var checkinValue = formatDate(document.getElementById("checkin").value);
+    var checkoutValue = formatDate(document.getElementById("checkout").value);
+
+    // console.log('route ' + availabilityUrl);
+
+    var formData = {
+        _token: $('meta[name="csrf-token"]').attr('content'),
+        start_date: checkinValue,
+        end_date: checkoutValue
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: availabilityUrl,
+        data: formData,
+        success: function (response) {
+            if (response && response.availabletypes) {
+                // console.log(response);
+                var availableTypes = Object.values(response.availabletypes);
+
+                $('[id^="type"]').show();
+
+                $('[id^="type"]').each(function () {
+                    var typeId = parseInt($(this).attr('id').replace('type', ''), 10);
+                    if (availableTypes.indexOf(typeId) === -1) {
+                        $(this).hide();
+                    }
+                });
+
+                var roomPerTypes = response.roompertypes;
+                // console.log("roomPerTypes:", response.roompertypes);
+                $('[id^="jumlah"]').each(function () {
+                    var typeId = parseInt($(this).attr('id').replace('jumlah', ''), 10);
+                    // console.log("Type ID:", typeId);
+                    var roomCount = roomPerTypes[typeId];
+                    // console.log("Room Count:", roomCount);
+
+                    $(this).empty();
+                    for (var i = 1; i <= roomCount; i++) {
+                        $(this).append('<option value="' + i + '">' + i + '</option>');
+                    }
+                });
+            }
+            else {
+                $('[id^="type"]').hide();
+            }
+        },
+        error: function (error) {
+            console.log(error);
+            $('[id^="type"]').hide();
+        }
+    });
 }

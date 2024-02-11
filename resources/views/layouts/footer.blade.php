@@ -2,8 +2,8 @@
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="grid grid-cols-3">
             <div class="mb-6 md:mb-0">
-                <a href="https://flowbite.com/" class="flex items-center">
-                    <img src="logo.svg" class="h-16 mb-5 filter invert" alt="Vanesa Park" />
+                <a href="{{ route('home') }}" class="flex items-center">
+                    <img src="{{ asset('img/logo_light.svg') }}" class="h-16 mb-5" alt="Vanesa Park" />
                 </a>
                 <div class="flex items-center self-center text-md font-semibold w-full text-white">
                     497 Evergreen Rd. Roseville, CA 95673 <br>
