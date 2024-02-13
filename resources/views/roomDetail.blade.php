@@ -49,7 +49,7 @@
                 </div>
             </div>
         </div>
-        <!-- picture -->
+        <!-- picture end -->
 
         <div class="py-4 lg:flex mx-auto justify-center lg:w-4/5">
             <!-- main info start -->
