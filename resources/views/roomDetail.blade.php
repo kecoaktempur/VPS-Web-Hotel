@@ -15,32 +15,32 @@
             <div class="flex flex-wrap lg:space-x-4 justify-center lg:col-2">
                 <!-- Start left -->
                 <div class="flex-shrink max-w-full w-full lg:w-3/5 pb-1">
-                    <div class="relative hover-img max-h-64 lg:max-h-96 overflow-hidden lg:rounded-md">
+                    <div class="relative hover-img max-h-[256px] lg:max-h-[512px] overflow-hidden lg:rounded-md">
                         <a href="#">
-                            <img class="max-w-full w-full object-center mx-auto h-auto hover:scale-110 transition-all duration-300"
+                            <img class="object-cover hover:scale-110 transition-all duration-300"
                                 src="\public\img\standard (6).jpg" alt="Image description">
                         </a>
                     </div>
                 </div>
 
                 <!-- Start right (mobile layout: pictures in a single row) -->
-                <div class="flex lg:flex-col lg:space-y-6 max-w-full w-full lg:w-1/5">
+                <div class="flex lg:flex-col lg:place-content-between lg:max-h-[512px] max-w-full w-full lg:w-1/5">
                     <div class="flex-shrink w-1/3 max-w-full lg:w-full">
-                        <div class="relative h-full max-h-24 lg:max-h-28 overflow-hidden lg:rounded-md">
+                        <div class="h-full max-h-24 lg:max-h-[160px] overflow-hidden lg:rounded-md">
                             <a href="#">
                                 <img class="object-cover w-full h-full mx-auto" src="\public\img\standard (2).jpg" alt="Image description">
                             </a>
                         </div>
                     </div>
                     <div class="flex-shrink w-1/3 max-w-full lg:w-full">
-                        <div class="relative h-full max-h-24 lg:max-h-28 overflow-hidden lg:rounded-md">
+                        <div class="relative h-full max-h-24 lg:max-h-[160px] overflow-hidden lg:rounded-md">
                             <a href="#">
                                 <img class="object-cover w-full h-full mx-auto" src="\public\img\standard (3).jpg" alt="Image description">
                             </a>
                         </div>
                     </div>
                     <div class="flex-shrink w-1/3 max-w-full lg:w-full">
-                        <div class="relative h-full max-h-24 lg:max-h-28 overflow-hidden lg:rounded-md">
+                        <div class="relative h-full max-h-24 lg:max-h-[160px] overflow-hidden lg:rounded-md">
                             <a href="#">
                                 <img class="object-cover w-full h-full mx-auto" src="\public\img\standard (4).jpg" alt="Image description">
                             </a>
@@ -68,43 +68,31 @@
                 <div class="flex flex-wrap py-4 lg:gap-4 gap-2 lg:w-2/3">
                     <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
                         <div class="p-2">
-                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <img class="mx-auto" src="\public\icon\bed.svg" alt="icon">
                             <p class="pt-2 text-center text-xs ">2 single bed</p>
                         </div>
                     </div>
                     <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
                         <div class="p-2">
-                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <img class="mx-auto" src="\public\icon\ac.svg" alt="icon">
                             <p class="pt-2 text-center text-xs">ac</p>
                         </div>
                     </div>
                     <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
                         <div class="p-2">
-                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <img class="mx-auto" src="\public\icon\tv.svg" alt="icon">
                             <p class="pt-2 text-center text-xs">tv</p>
                         </div>
                     </div>
                     <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
                         <div class="p-2">
-                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <img class="mx-auto" src="\public\icon\coffee.svg" alt="icon">
                             <p class="pt-2 text-center text-xs">coffe/tea</p>
                         </div>
                     </div>
                     <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
                         <div class="p-2">
-                            <img class="mx-auto" src="bed.svg" alt="icon">
-                            <p class="pt-2 text-center text-xs">dispenser</p>
-                        </div>
-                    </div>
-                    <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
-                        <div class="p-2">
-                            <img class="mx-auto" src="bed.svg" alt="icon">
-                            <p class="pt-2 text-center text-xs">refrigerator</p>
-                        </div>
-                    </div>
-                    <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
-                        <div class="p-2">
-                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <img class="mx-auto" src="\public\icon\table.svg" alt="icon">
                             <p class="pt-2 text-center text-xs">meja makan</p>
                         </div>
                     </div>
@@ -114,20 +102,26 @@
                 <div class="flex flex-wrap py-4 lg:gap-4 gap-2 lg:w-2/3">
                     <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
                         <div class="p-2">
-                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <img class="mx-auto" src="\public\icon\shower.svg" alt="icon">
                             <p class="pt-2 text-center text-xs">shower</p>
                         </div>
                     </div>
                     <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
                         <div class="p-2">
-                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <img class="mx-auto" src="\public\icon\water_heater.svg" alt="icon">
                             <p class="pt-2 text-center text-xs">water heater</p>
                         </div>
                     </div>
                     <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
                         <div class="p-2">
-                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <img class="mx-auto" src="\public\icon\toilet.svg" alt="icon">
                             <p class="pt-2 text-center text-xs">closet</p>
+                        </div>
+                    </div>
+                    <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
+                        <div class="p-2">
+                            <img class="mx-auto" src="\public\icon\bathtub.svg" alt="icon">
+                            <p class="pt-2 text-center text-xs">bathtub</p>
                         </div>
                     </div>
                 </div>
@@ -136,8 +130,14 @@
                 <div class="flex flex-wrap py-4 lg:gap-4 gap-2 lg:w-2/3">
                     <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
                         <div class="p-2">
-                            <img class="mx-auto" src="bed.svg" alt="icon">
-                            <p class="pt-2 text-center text-xs">shower</p>
+                            <img class="mx-auto" src="\public\icon\dispenser.svg" alt="icon">
+                            <p class="pt-2 text-center text-xs">dispenser</p>
+                        </div>
+                    </div>
+                    <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
+                        <div class="p-2">
+                            <img class="mx-auto" src="\public\icon\refrigerator.svg" alt="icon">
+                            <p class="pt-2 text-center text-xs">refrigerator</p>
                         </div>
                     </div>
                 </div>
@@ -148,13 +148,7 @@
                 <div class="py-4">
                     <div class="w-max h-[90px] rounded-[8px] flex items-center justify-center">
                         <div class="p-2 flex items-center">
-                            <img class="mx-auto" src="bed.svg" alt="icon">
-                            <p class="text-center pl-3">15 m</p>
-                        </div>
-                    </div>
-                    <div class="w-max h-[90px] rounded-[8px] flex items-center justify-center">
-                        <div class="p-2 flex items-center">
-                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <img class="mx-auto" src="\public\icon\people.svg" alt="icon">
                             <p class="text-center pl-3">4 orang</p>
                         </div>
                     </div>
