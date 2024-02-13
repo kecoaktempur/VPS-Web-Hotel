@@ -17,8 +17,8 @@
                 <div class="flex-shrink max-w-full w-full lg:w-3/5 pb-1">
                     <div class="relative hover-img max-h-64 lg:max-h-96 overflow-hidden lg:rounded-md">
                         <a href="#">
-                            <img class="max-w-full w-full mx-auto h-auto hover:scale-110 transition-all duration-300"
-                                src="image.jpg" alt="Image description">
+                            <img class="max-w-full w-full object-center mx-auto h-auto hover:scale-110 transition-all duration-300"
+                                src="\public\img\standard (6).jpg" alt="Image description">
                         </a>
                     </div>
                 </div>
@@ -28,21 +28,21 @@
                     <div class="flex-shrink w-1/3 max-w-full lg:w-full">
                         <div class="relative h-full max-h-24 lg:max-h-28 overflow-hidden lg:rounded-md">
                             <a href="#">
-                                <img class="object-cover w-full h-full mx-auto" src="image_2.jpg" alt="Image description">
+                                <img class="object-cover w-full h-full mx-auto" src="\public\img\standard (2).jpg" alt="Image description">
                             </a>
                         </div>
                     </div>
                     <div class="flex-shrink w-1/3 max-w-full lg:w-full">
                         <div class="relative h-full max-h-24 lg:max-h-28 overflow-hidden lg:rounded-md">
                             <a href="#">
-                                <img class="object-cover w-full h-full mx-auto" src="image.jpg" alt="Image description">
+                                <img class="object-cover w-full h-full mx-auto" src="\public\img\standard (3).jpg" alt="Image description">
                             </a>
                         </div>
                     </div>
                     <div class="flex-shrink w-1/3 max-w-full lg:w-full">
                         <div class="relative h-full max-h-24 lg:max-h-28 overflow-hidden lg:rounded-md">
                             <a href="#">
-                                <img class="object-cover w-full h-full mx-auto" src="image.jpg" alt="Image description">
+                                <img class="object-cover w-full h-full mx-auto" src="\public\img\standard (4).jpg" alt="Image description">
                             </a>
                         </div>
                     </div>
