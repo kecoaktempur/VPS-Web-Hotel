@@ -5,14 +5,57 @@ function formatDate(dateString) {
     return date.toLocaleDateString('id-ID', options);
 }
 
+function enableAmbilButton() {
+    // Check if both check-in and check-out dates are selected
+    var checkin = document.getElementById("checkin").value;
+    var checkout = document.getElementById("checkout").value;
+
+    if (checkin && checkout) {
+        document.getElementById("ambilButton").disabled = false;
+    } else {
+        document.getElementById("ambilButton").disabled = true;
+    }
+}
+
 function updateValues() {
     var checkinValue = formatDate(document.getElementById("checkin").value);
     var checkoutValue = formatDate(document.getElementById("checkout").value);
+
+    // Check if check-in date is after check-out date
+    if (checkinValue > checkoutValue) {
+        alert("Check-in date cannot be after check-out date.");
+        return;
+    }
+
+    // Check if check-out date is the same or before check-in date
+    if (checkoutValue <= checkinValue) {
+        alert("Check-out date must be after check-in date.");
+        return;
+    }
+
+    // Remove all cart items
+    removeAllCartItems();
 
     document.getElementById("haricheckin").textContent = checkinValue;
     document.getElementById("haricheckout").textContent = checkoutValue;
     document.getElementById("haricheckinnavbar").textContent = checkinValue;
     document.getElementById("haricheckoutnavbar").textContent = checkoutValue;
+
+    // Enable the "Ambil" button
+    enableAmbilButton();
+}
+
+function removeAllCartItems() {
+    // Remove all cart items from the main cart
+    const mainCartItems = document.querySelectorAll('#cart-items > div');
+    mainCartItems.forEach(item => item.remove());
+
+    // Remove all cart items from the navbar cart
+    const navbarCartItems = document.querySelectorAll('#cart-items-navbar > div');
+    navbarCartItems.forEach(item => item.remove());
+
+    // Update total after removing all cart items
+    updateTotal();
 }
 
 // Get current date
@@ -49,6 +92,14 @@ function addItem(i) {
     const namaKamar = document.getElementById('namakamar' + i).innerText;
     const hargaKamar = document.getElementById('hargakamar' + i).innerText;
     const jumlah = document.getElementById('jumlah' + i).value;
+
+    const checkin = document.getElementById("checkin").value;
+    const checkout = document.getElementById("checkout").value;
+
+    if (!checkin || !checkout) {
+        alert("Please select both check-in and check-out dates.");
+        return;
+    }
 
     for (let i = 0; i < jumlah; i++) {
         const cartItemId = `cart-item-${i}`;
@@ -123,24 +174,27 @@ function removeItem(element) {
 }
 
 function updateTotal() {
-    const itemsMainCart = document.querySelectorAll('#cart-items #hargapesankamar');
-    const itemsNavbarCart = document.querySelectorAll('#cart-items-navbar #hargapesankamar');
+    const checkinValue = new Date(document.getElementById("checkin").value);
+    const checkoutValue = new Date(document.getElementById("checkout").value);
 
-    let totalMainCart = calculateTotal(itemsMainCart);
-    let totalNavbarCart = calculateTotal(itemsNavbarCart);
+    const itemsMainCart = document.querySelectorAll('#cart-items [id^="hargapesankamar"]');
+    const itemsNavbarCart = document.querySelectorAll('#cart-items-navbar [id^="hargapesankamar"]');
+
+    let totalMainCart = calculateTotal(itemsMainCart, checkinValue, checkoutValue);
+    let totalNavbarCart = calculateTotal(itemsNavbarCart, checkinValue, checkoutValue);
 
     document.getElementById('total').innerText = 'Rp ' + totalMainCart.toLocaleString();
     document.getElementById('totalnavbar').innerText = 'Rp ' + totalNavbarCart.toLocaleString();
 }
 
-function calculateTotal(items) {
+function calculateTotal(items, checkin, checkout) {
     let total = 0;
+    const durationInDays = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24)); // Calculate duration in days
     items.forEach(item => {
-        total += parseInt(item.innerText.replace(/[^\d]/g, ''));
+        total += parseInt(item.innerText.replace(/[^\d]/g, '')) * durationInDays; // Multiply item price by duration
     });
     return total;
 }
-
 
 function pesanSekarang() {
     const namaKepala = document.getElementById('namakepala').value;

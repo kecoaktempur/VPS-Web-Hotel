@@ -1,4 +1,4 @@
-<nav class='fixed inset-x-0 top-0 mx-auto w-full max-w-screen-md border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-xl lg:max-w-screen-lg 2xl:max-w-screen-2xl xl:max-w-screen-xl font-[Montserrat] z-50'>
+<nav class='fixed inset-x-0 top-0 mx-auto w-full border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-xl md:w-5/6 font-[Montserrat] z-50'>
     <div class='flex flex-wrap justify-between px-10 py-3'>
         <div class="flex-shrink-0 ml-2">
             <a aria-current="page" class="flex items-center" href="/">

@@ -7,9 +7,8 @@
     </div>
 </div>
 
-<div class="container mx-auto -mt-16 grid place-items-center relative md:w-3/4 shadow-xl rounded-xl mb-10 font-[Montserrat]">
-    <form class="mx-auto bg-white w-full grid lg:grid-cols-3 rounded-xl p-8">
-        @csrf
+<div class="container mx-auto -mt-16 grid place-items-center relative md:w-4/6 shadow-xl rounded-xl mb-10 font-[Montserrat]">
+    <form class="mx-auto bg-white w-full grid lg:grid-cols-3 rounded-xl p-5">
         <div class="flex flex-col px-3 py-4  lg:border-r-2 lg:border-[#000000]">
             <h1 class="mb-2 font-bold">Check In</h1>
             <input type="date" id="checkin" name="checkin" placeholder="Add Date" class="p-2 w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-xl border-2 border-[#000000]">
@@ -18,14 +17,14 @@
             <h1 class="mb-2 font-bold">Check Out</h1>
             <input type="date" id="checkout" name="checkout" placeholder="Add Date" class="p-2 w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-xl border-2 border-[#000000]">
         </div>
-        <button type="button" onclick="checkAvailability()" class="font-semibold bg-[#3E9CC0] lg:w-3/4 lg:mx-auto lg:h-1/2 lg:my-auto max-lg:h-full max-lg:min-h-[52px] text-white flex items-center justify-center transition duration-300 ease-in-out hover:bg-[#1680A8] rounded-xl">Check
+        <button type="button" onclick="updateValues()" class="font-semibold bg-[#3E9CC0] lg:w-3/4 lg:mx-auto lg:h-1/2 lg:my-auto max-lg:h-full max-lg:min-h-[52px] text-white flex items-center justify-center transition duration-300 ease-in-out hover:bg-[#1680A8] rounded-xl">Check
             Availability</button>
     </form>
 </div>
 
-<div class="container mx-auto font-bold text-6xl mb-2 font-[Aleo] text-center">Room Type</div>
-<div class="container mx-auto bg-white md:grid md:grid-cols-[2fr,.75fr] md:grid-flow-col rounded-xl font-[Montserrat] ">
-    <div class="flex flex-col mr-5 px-3 py-4 grid-cols-2">
+<div class="container mx-auto font-bold text-6xl mb-2 font-[Aleo] text-center pb-10">Room Type</div>
+<div class="container mx-auto bg-white md:grid md:grid-cols-[2fr,.75fr] md:grid-flow-col rounded-xl font-[Montserrat] w-5/6">
+    <div class="flex flex-col mr-5grid-cols-2">
         @foreach ($types as $type)
         <div id="type{{ $type->id}}" class="bg-white border-2 border-[#24305A] rounded-xl shadow mb-10">
             <div id="indicators-carousel" class="relative w-full" data-carousel="static">
@@ -95,7 +94,7 @@
                     <select id="jumlah{{ $type->id }}" name="jumlah{{ $type->id }}" autocomplete="jumlah{{ $type->id }}" required class="rounded-xl px-3 py-1.5 mx-2 max-md:mx-1 font-semibold leading-6 border-2 border-[#24305A] placeholder:text-gray-400 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-800">
                         <option value="1" selected>1</option>
                     </select>
-                    <button onclick="addItem(<?php echo $type->id; ?>)" type="button" class="rounded-xl px-3 py-2 mx-2 text-xl max-md:text-sm max-md:mx-0 bg-[#3E9CC0] font-semibold leading-6 text-white">
+                    <button onclick="addItem(<?php echo $type->id; ?>)" type="button" class="rounded-xl px-3 py-2 mx-2 text-xl max-md:text-sm max-md:mx-0 bg-[#3E9CC0] font-semibold leading-6 text-white" id="ambil">
                         Ambil
                     </button>
                 </form>
@@ -184,6 +183,8 @@
 @include('layouts.footer')
 
 <div class="md:hidden h-20 bg-[#24305A]"></div>
-<script> var availabilityUrl = "{{ route('type.available') }}"; </script>
+<script>
+    var availabilityUrl = "{{ route('type.available') }}";
+</script>
 <script src="{{ asset('js/type.js') }}"></script>
 @endsection
