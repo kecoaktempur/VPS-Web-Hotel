@@ -49,7 +49,7 @@
                 </div>
             </div>
         </div>
-        <!-- picture end -->
+        <!-- picture -->
 
         <div class="py-4 lg:flex mx-auto justify-center lg:w-4/5">
             <!-- main info start -->
@@ -65,32 +65,83 @@
                     Fasilitas
                 </h2>
                 <!-- icon fasilitas start -->
-                <div class="flex flex-wrap lg:flex-nowrap py-4 lg:gap-4 gap-2">
+                <div class="flex flex-wrap py-4 lg:gap-4 gap-2 lg:w-2/3">
                     <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
                         <div class="p-2">
                             <img class="mx-auto" src="bed.svg" alt="icon">
-                            <p class="text-center">bed</p>
+                            <p class="pt-2 text-center text-xs ">2 single bed</p>
                         </div>
                     </div>
                     <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
                         <div class="p-2">
                             <img class="mx-auto" src="bed.svg" alt="icon">
-                            <p class="text-center">bathroom</p>
+                            <p class="pt-2 text-center text-xs">ac</p>
                         </div>
                     </div>
                     <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
                         <div class="p-2">
                             <img class="mx-auto" src="bed.svg" alt="icon">
-                            <p class="text-center">tv</p>
+                            <p class="pt-2 text-center text-xs">tv</p>
                         </div>
                     </div>
                     <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
                         <div class="p-2">
                             <img class="mx-auto" src="bed.svg" alt="icon">
-                            <p class="text-center">coffe/tea</p>
+                            <p class="pt-2 text-center text-xs">coffe/tea</p>
+                        </div>
+                    </div>
+                    <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
+                        <div class="p-2">
+                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <p class="pt-2 text-center text-xs">dispenser</p>
+                        </div>
+                    </div>
+                    <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
+                        <div class="p-2">
+                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <p class="pt-2 text-center text-xs">refrigerator</p>
+                        </div>
+                    </div>
+                    <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
+                        <div class="p-2">
+                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <p class="pt-2 text-center text-xs">meja makan</p>
                         </div>
                     </div>
                 </div>
+                <div class="border lg:w-2/3"></div>
+                <p class="text-gray-800 pt-2 font-bold lg:text-xl">Kamar Mandi</p>
+                <div class="flex flex-wrap py-4 lg:gap-4 gap-2 lg:w-2/3">
+                    <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
+                        <div class="p-2">
+                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <p class="pt-2 text-center text-xs">shower</p>
+                        </div>
+                    </div>
+                    <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
+                        <div class="p-2">
+                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <p class="pt-2 text-center text-xs">water heater</p>
+                        </div>
+                    </div>
+                    <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
+                        <div class="p-2">
+                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <p class="pt-2 text-center text-xs">closet</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="border lg:w-2/3"></div>
+                <p class="text-gray-800 pt-2 font-bold lg:text-xl">Opsional</p>
+                <div class="flex flex-wrap py-4 lg:gap-4 gap-2 lg:w-2/3">
+                    <div class="w-[90px] h-[90px] rounded-[8px] bg-[#EFF0F2] flex items-center justify-center">
+                        <div class="p-2">
+                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <p class="pt-2 text-center text-xs">shower</p>
+                        </div>
+                    </div>
+                </div>
+                
                 <h2 class="text-gray-800 text-2xl lg:text-5xl font-bold">
                     Ukuran Kamar
                 </h2>
@@ -99,6 +150,12 @@
                         <div class="p-2 flex items-center">
                             <img class="mx-auto" src="bed.svg" alt="icon">
                             <p class="text-center pl-3">15 m</p>
+                        </div>
+                    </div>
+                    <div class="w-max h-[90px] rounded-[8px] flex items-center justify-center">
+                        <div class="p-2 flex items-center">
+                            <img class="mx-auto" src="bed.svg" alt="icon">
+                            <p class="text-center pl-3">4 orang</p>
                         </div>
                     </div>
                 </div>
