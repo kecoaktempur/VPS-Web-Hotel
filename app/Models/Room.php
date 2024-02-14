@@ -10,7 +10,7 @@ class Room extends Model
     use HasFactory;
 
     protected $table = 'rooms';
-    protected $fillable = ['type_id'];
+    protected $fillable = ['room_number', 'type_id', 'dispenser', 'magic_jar', 'rak_piring', 'alat_makan', 'meja_makan', 'dapur', 'living_room', 'microwave', 'kulkas', 'shower', 'waterheater', 'wastafel', 'closet', 'bathtub', 'ac', 'tv', 'single_bed', 'king_bed', 'queen_bed'];
 
     public function type()
     {

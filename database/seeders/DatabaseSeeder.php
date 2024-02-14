@@ -71,7 +71,7 @@ class DatabaseSeeder extends Seeder
             'waterheater' => true,
             'wastafel' => true,
             'closet' => true,
-            'bathub' => true,
+            'bathtub' => true,
             'ac' => true,
             'tv' => true,
             'single_bed' => 1,

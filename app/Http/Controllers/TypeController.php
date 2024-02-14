@@ -54,33 +54,99 @@ class TypeController extends Controller
 
     public function userShow($id)
     {
+        $type = Type::findOrFail($id);
+        $rooms = Room::where('type_id', $id)->get();
+        $otherTypes = Type::where('id', '!=', $id)->get();
+        return view('user.type.show', compact('type', 'rooms', 'otherTypes'));
     }
 
     public function index()
     {
+        $types = Type::all();
+        return view('admin.type.index', compact('types'));
     }
 
     public function create()
     {
+        return view('admin.type.create');
     }
 
     public function store(Request $request)
     {
+        $request->validate(
+            [
+                'name' => 'required|unique',
+                'size' => 'required|numeric',
+                'price' => 'required|numeric',
+                'description' => 'required',
+            ],
+            [
+                'name.required' => 'Name can\'t be empty!',
+                'name.unique' => 'There is already a type with the same name!',
+                'size.required' => 'Size can\'t be empty!',
+                'size.numeric' => 'Size must be numeric!',
+                'price.required' => 'Price can\'t be empty!',
+                'price.numeric' => 'Price must be numeric!',
+                'description.required' => 'Description can\'t be empty!'
+            ]
+        );
+
+        Type::create([
+            'name' => $request->name,
+            'size' => $request->size,
+            'price' => $request->price,
+            'description' => $request->description,
+        ]);
+
+        return redirect('/admin/type');
     }
 
     public function show($id)
     {
+        $type = Type::findOrFail($id);
+        return view('admin.type.show', compact('type'));
     }
 
     public function edit($id)
     {
+        $type = Type::findOrFail($id);
+        return view('admin.type.edit', compact('type'));
     }
 
     public function update(Request $request, $id)
     {
+        $request->validate(
+            [
+                'name' => 'required|unique',
+                'size' => 'required|numeric',
+                'price' => 'required|numeric',
+                'description' => 'required',
+            ],
+            [
+                'name.required' => 'Name can\'t be empty!',
+                'name.unique' => 'There is already a type with the same name!',
+                'size.required' => 'Size can\'t be empty!',
+                'size.numeric' => 'Size must be numeric!',
+                'price.required' => 'Price can\'t be empty!',
+                'price.numeric' => 'Price must be numeric!',
+                'description.required' => 'Description can\'t be empty!'
+            ]
+        );
+
+        Type::findOrFail($id)->update([
+            'name' => $request->name,
+            'size' => $request->size,
+            'price' => $request->price,
+            'description' => $request->description,
+        ]);
+
+        return redirect('/admin/type');
     }
 
     public function destroy($id)
     {
+        $type = Type::findOrFail($id);
+        $type->delete();
+        return redirect('/admin/type');
     }
 }
