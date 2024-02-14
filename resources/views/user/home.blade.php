@@ -164,7 +164,7 @@
     <div class="w-full overflow-hidden" id="slideContainerTipe">
         <ul class="flex w-full" id="sliderTipe">
             <li class="p-5 relative group lg:h-96" id="card">
-                <div class="flex h-full rounded-xl overflow-hidden relative">
+                <a href="#" class="flex h-full rounded-xl overflow-hidden relative">
                     <img src="https://i.ibb.co/fDngH9G/carosel-1.png" alt="black chair and white table" class="object-cover object-center w-full" />
                     <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden transition-opacity duration-500 ease-in-out opacity-100 group-hover:opacity-0 bg-gradient-to-t from-[#12182E] via-5% to-transparent">
                     </div>
@@ -194,10 +194,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </li>
             <li class="p-5 relative group lg:h-96" id="card">
-                <div class="flex h-full rounded-xl overflow-hidden relative">
+                <a href="#" class="flex h-full rounded-xl overflow-hidden relative">
                     <img src="https://i.ibb.co/fDngH9G/carosel-1.png" alt="black chair and white table" class="object-cover object-center w-full" />
                     <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden transition-opacity duration-500 ease-in-out opacity-100 group-hover:opacity-0 bg-gradient-to-t from-[#12182E] via-5% to-transparent">
                     </div>
@@ -227,10 +227,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </li>
             <li class="p-5 relative group lg:h-96" id="card">
-                <div class="flex h-full rounded-xl overflow-hidden relative">
+                <a href="#" class="flex h-full rounded-xl overflow-hidden relative">
                     <img src="https://i.ibb.co/fDngH9G/carosel-1.png" alt="black chair and white table" class="object-cover object-center w-full" />
                     <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden transition-opacity duration-500 ease-in-out opacity-100 group-hover:opacity-0 bg-gradient-to-t from-[#12182E] via-5% to-transparent">
                     </div>
@@ -260,7 +260,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </li>
         </ul>
     </div>
