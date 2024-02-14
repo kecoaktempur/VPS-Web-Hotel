@@ -165,8 +165,8 @@
         <ul class="flex w-full" id="sliderTipe">
             @foreach($types as $type)
             @php
-                $photo = $type->photos->first()->name;
-                @endphp
+            $photo = $type->photos->first()->name;
+            @endphp
             <li class="p-5 relative group lg:h-96" id="card">
                 <a href="{{ route('type.show.user', ['id' => $type->id]) }}" class="flex h-full rounded-xl overflow-hidden relative">
                     <img src="{{asset('img/'.$photo)}}" alt="{{ $photo }}" class="object-cover object-center w-full" />
@@ -193,7 +193,7 @@
                             </div>
                             <div class="items-end w-full">
                                 <div class=" text-center rounded-xl px-10 py-2 text-xl max-md:text-lg font-semibold leading-6 text-white bg-[#3E9CC0]">
-                                Rp {{ number_format($type->price, 0, ',', '.') }}
+                                    Rp {{ number_format($type->price, 0, ',', '.') }}
                                 </div>
                             </div>
                         </div>
@@ -274,12 +274,17 @@
         @foreach($reviews as $review)
         <div class="bg-white border-2 border-[#24305A] rounded-lg p-8 text-center w-full">
             <div class="flex items-center mb-1 space-x-1 rtl:space-x-reverse">
-                @for ($i = 0; $i < $review->rating; $i++)
-                <svg class="w-6 h-8 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
+                @for ($i = 1; $i <= $review->rating; $i++)
+                    <svg class="w-6 h-8 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
                 @endfor
-                <h1 class="ml-5">{{ $review->rating }} dari 5 Bintang</h1>
+                @for ($i = 5 - $review->rating; $i > 0; $i--)
+                    <svg class="w-6 h-8 text-gray-300 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                @endfor
+                    <h1 class="ml-5">{{ $review->rating }} dari 5 Bintang</h1>
             </div>
             <h1 class="font-bold text-xl text-start">{{ $review->name ? $review->name : 'Anonymous' }}</h1>
             <h1 class="text-start">{{ \Carbon\Carbon::parse($review->created_at)->locale('id')->isoFormat('D MMMM YYYY') }}</h1>
