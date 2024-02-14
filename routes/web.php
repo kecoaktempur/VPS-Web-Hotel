@@ -22,23 +22,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 // user
-Route::get('/', function () {
-    return view('user.home');
-});
+Route::get('/', [PageController::class, 'home']);
 Route::get('/home', [PageController::class, 'home'])->name('home');
 Route::post('/home', [ReviewController::class, 'store'])->name('review.store');
 Route::get('/type', [TypeController::class, 'userIndex'])->name('type.index.user');
 Route::post('/type', [TypeController::class, 'available'])->name('type.available');
-Route::get('/type/test', function () {
-    return view('user.type.show');
-});
 Route::get('/type/{id}', [TypeController::class, 'userShow'])->name('type.show.user');
+Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery');
 
 // admin
 Route::get('/admin/login', [AuthController::class, 'login'])->name('login');
 Route::post('/admin/login', [AuthController::class, 'authenticate'])->name('login');
-Route::get('/admin/register', [AuthController::class, 'register'])->name('register');
-Route::post('/admin/logout', [AuthController::class, 'create'])->name('register');
 Route::post('/admin/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/admin/type', [TypeController::class, 'index'])->name('type.index.admin');
@@ -52,7 +46,6 @@ Route::delete('/admin/type/delete/{id}', [TypeController::class, 'destroy'])->na
 Route::get('/admin/room', [RoomController::class, 'index'])->name('room');
 Route::get('/admin/room/create', [RoomController::class, 'create'])->name('room.create');
 Route::post('/admin/room/store', [RoomController::class, 'store'])->name('room.store');
-Route::get('/admin/room/{id}', [RoomController::class, 'show'])->name('room.show');
 Route::get('/admin/room/edit/{id}', [RoomController::class, 'edit'])->name('room.edit');
 Route::put('/admin/room/update/{id}', [RoomController::class, 'update'])->name('room.update');
 Route::delete('/admin/room/delete/{id}', [RoomController::class, 'destroy'])->name('room.destroy');
@@ -60,10 +53,12 @@ Route::delete('/admin/room/delete/{id}', [RoomController::class, 'destroy'])->na
 Route::get('/admin/transaction', [TransactionController::class, 'index'])->name('transaction');
 Route::get('/admin/transaction/create', [TransactionController::class, 'create'])->name('transaction.create');
 Route::post('/admin/transaction/store', [TransactionController::class, 'store'])->name('transaction.store');
-Route::get('/admin/transaction/{id}', [TransactionController::class, 'show'])->name('transaction.show');
+Route::get('/admin/transaction/current/{id}', [TransactionController::class, 'showCurrent'])->name('transaction.show.current');
+Route::get('/admin/transaction/past/{id}', [TransactionController::class, 'showPast'])->name('transaction.show.past');
 Route::get('/admin/transaction/edit/{id}', [TransactionController::class, 'edit'])->name('transaction.edit');
 Route::put('/admin/transaction/update/{id}', [TransactionController::class, 'update'])->name('transaction.update');
 Route::delete('/admin/transaction/delete/{id}', [TransactionController::class, 'destroy'])->name('transaction.destroy');
+Route::post('/admin/tranascation/checkout/{id}', [TransactionController::class, 'checkout'])->name('transaction.checkout');
 
 Route::get('/admin/notif', [NotificationController::class, 'index'])->name('notif');
 Route::get('/admin/notif/{id}', [NotificationController::class, 'show'])->name('notif.show');

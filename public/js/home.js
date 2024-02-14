@@ -106,6 +106,28 @@ allStar.forEach((item, idx) => {
 document.querySelector('form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const selectedRating = ratingValue.value;
-    console.log("Selected rating:", selectedRating);
+    const name = document.querySelector('#review-name').value;
+    const message = document.querySelector('#review-message').value;
+    const rating = ratingValue.value;
+
+    console.log(name + message + rating);
+
+    var formData = {
+        _token: $('meta[name="csrf-token"]').attr('content'),
+        name: name,
+        message: message,
+        rating:rating
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: reviewUrl,
+        data: formData,
+        success: function (response) {
+            window.location.reload()
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
 });

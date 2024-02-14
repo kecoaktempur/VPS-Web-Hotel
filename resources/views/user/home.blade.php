@@ -163,15 +163,19 @@
     </div>
     <div class="w-full overflow-hidden" id="slideContainerTipe">
         <ul class="flex w-full" id="sliderTipe">
+            @foreach($types as $type)
+            @php
+                $photo = $type->photos->first()->name;
+                @endphp
             <li class="p-5 relative group lg:h-96" id="card">
-                <a href="#" class="flex h-full rounded-xl overflow-hidden relative">
-                    <img src="https://i.ibb.co/fDngH9G/carosel-1.png" alt="black chair and white table" class="object-cover object-center w-full" />
+                <a href="{{ route('type.show.user', ['id' => $type->id]) }}" class="flex h-full rounded-xl overflow-hidden relative">
+                    <img src="{{asset('img/'.$photo)}}" alt="{{ $photo }}" class="object-cover object-center w-full" />
                     <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden transition-opacity duration-500 ease-in-out opacity-100 group-hover:opacity-0 bg-gradient-to-t from-[#12182E] via-5% to-transparent">
                     </div>
                     <div class="absolute bottom-0 left-0 right-0">
                         <div class="p-6">
                             <h3 class="text-xl lg:text-3xl font-bold leading-5 lg:leading-6 text-white mb-4">
-                                Standar Room
+                                {{ $type->name }}
                             </h3>
                             <div class="flex items-end">
                                 <div class="flex flex-col items-end justify-center grid grid-cols-[2fr,2fr] mb-5">
@@ -180,7 +184,7 @@
                                             <path fill="white" d="M38.723 28.549c4.417 0 8.217-3.944 8.217-9.08c0-5.074-3.82-8.833-8.217-8.833c-4.396 0-8.217 3.841-8.217 8.874c0 5.095 3.8 9.039 8.217 9.039m-23.645.473c3.821 0 7.15-3.452 7.15-7.91c0-4.416-3.35-7.683-7.15-7.683c-3.82 0-7.19 3.349-7.169 7.725c0 4.416 3.328 7.868 7.17 7.868M3.616 47.572h15.612c-2.136-3.102.473-9.347 4.89-12.757c-2.28-1.52-5.219-2.65-9.06-2.65C5.793 32.164 0 39.004 0 44.695c0 1.85 1.027 2.877 3.616 2.877m22.186 0h25.822c3.225 0 4.376-.925 4.376-2.733c0-5.3-6.636-12.613-17.297-12.613c-10.641 0-17.277 7.313-17.277 12.614c0 1.807 1.15 2.732 4.376 2.732" />
                                         </svg>
                                         <h5 class="ml-2 my-auto text-sm max-md:text-sm font-bold tracking-tight text-white">
-                                            2x Guest
+                                            {{ $type->size }} Guest
                                         </h5>
                                     </div>
                                     <div class="grid grid-cols-[.5fr,2fr]">
@@ -189,79 +193,14 @@
                             </div>
                             <div class="items-end w-full">
                                 <div class=" text-center rounded-xl px-10 py-2 text-xl max-md:text-lg font-semibold leading-6 text-white bg-[#3E9CC0]">
-                                    Rp 250.000
+                                Rp {{ number_format($type->price, 0, ',', '.') }}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </a>
             </li>
-            <li class="p-5 relative group lg:h-96" id="card">
-                <a href="#" class="flex h-full rounded-xl overflow-hidden relative">
-                    <img src="https://i.ibb.co/fDngH9G/carosel-1.png" alt="black chair and white table" class="object-cover object-center w-full" />
-                    <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden transition-opacity duration-500 ease-in-out opacity-100 group-hover:opacity-0 bg-gradient-to-t from-[#12182E] via-5% to-transparent">
-                    </div>
-                    <div class="absolute bottom-0 left-0 right-0">
-                        <div class="p-6">
-                            <h3 class="text-xl lg:text-3xl font-bold leading-5 lg:leading-6 text-white mb-4">
-                                Standar Room
-                            </h3>
-                            <div class="flex items-end">
-                                <div class="flex flex-col items-end justify-center grid grid-cols-[2fr,2fr] mb-5">
-                                    <div class="grid grid-cols-[.5fr,2fr]">
-                                        <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56">
-                                            <path fill="white" d="M38.723 28.549c4.417 0 8.217-3.944 8.217-9.08c0-5.074-3.82-8.833-8.217-8.833c-4.396 0-8.217 3.841-8.217 8.874c0 5.095 3.8 9.039 8.217 9.039m-23.645.473c3.821 0 7.15-3.452 7.15-7.91c0-4.416-3.35-7.683-7.15-7.683c-3.82 0-7.19 3.349-7.169 7.725c0 4.416 3.328 7.868 7.17 7.868M3.616 47.572h15.612c-2.136-3.102.473-9.347 4.89-12.757c-2.28-1.52-5.219-2.65-9.06-2.65C5.793 32.164 0 39.004 0 44.695c0 1.85 1.027 2.877 3.616 2.877m22.186 0h25.822c3.225 0 4.376-.925 4.376-2.733c0-5.3-6.636-12.613-17.297-12.613c-10.641 0-17.277 7.313-17.277 12.614c0 1.807 1.15 2.732 4.376 2.732" />
-                                        </svg>
-                                        <h5 class="ml-2 my-auto text-sm max-md:text-sm font-bold tracking-tight text-white">
-                                            2x Guest
-                                        </h5>
-                                    </div>
-                                    <div class="grid grid-cols-[.5fr,2fr]">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="items-end w-full">
-                                <div class=" text-center rounded-xl px-10 py-2 text-xl max-md:text-lg font-semibold leading-6 text-white bg-[#3E9CC0]">
-                                    Rp 250.000
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="p-5 relative group lg:h-96" id="card">
-                <a href="#" class="flex h-full rounded-xl overflow-hidden relative">
-                    <img src="https://i.ibb.co/fDngH9G/carosel-1.png" alt="black chair and white table" class="object-cover object-center w-full" />
-                    <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden transition-opacity duration-500 ease-in-out opacity-100 group-hover:opacity-0 bg-gradient-to-t from-[#12182E] via-5% to-transparent">
-                    </div>
-                    <div class="absolute bottom-0 left-0 right-0">
-                        <div class="p-6">
-                            <h3 class="text-xl lg:text-3xl font-bold leading-5 lg:leading-6 text-white mb-4">
-                                Standar Room
-                            </h3>
-                            <div class="flex items-end">
-                                <div class="flex flex-col items-end justify-center grid grid-cols-[2fr,2fr] mb-5">
-                                    <div class="grid grid-cols-[.5fr,2fr]">
-                                        <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56">
-                                            <path fill="white" d="M38.723 28.549c4.417 0 8.217-3.944 8.217-9.08c0-5.074-3.82-8.833-8.217-8.833c-4.396 0-8.217 3.841-8.217 8.874c0 5.095 3.8 9.039 8.217 9.039m-23.645.473c3.821 0 7.15-3.452 7.15-7.91c0-4.416-3.35-7.683-7.15-7.683c-3.82 0-7.19 3.349-7.169 7.725c0 4.416 3.328 7.868 7.17 7.868M3.616 47.572h15.612c-2.136-3.102.473-9.347 4.89-12.757c-2.28-1.52-5.219-2.65-9.06-2.65C5.793 32.164 0 39.004 0 44.695c0 1.85 1.027 2.877 3.616 2.877m22.186 0h25.822c3.225 0 4.376-.925 4.376-2.733c0-5.3-6.636-12.613-17.297-12.613c-10.641 0-17.277 7.313-17.277 12.614c0 1.807 1.15 2.732 4.376 2.732" />
-                                        </svg>
-                                        <h5 class="ml-2 my-auto text-sm max-md:text-sm font-bold tracking-tight text-white">
-                                            2x Guest
-                                        </h5>
-                                    </div>
-                                    <div class="grid grid-cols-[.5fr,2fr]">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="items-end w-full">
-                                <div class=" text-center rounded-xl px-10 py-2 text-xl max-md:text-lg font-semibold leading-6 text-white bg-[#3E9CC0]">
-                                    Rp 250.000
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
+            @endforeach
         </ul>
     </div>
     <div class="w-2/12 flex items-center">
@@ -332,34 +271,26 @@
 
 <div class="container flex flex-col mx-auto md:w-3/4 p-10">
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        @foreach($reviews as $review)
         <div class="bg-white border-2 border-[#24305A] rounded-lg p-8 text-center w-full">
             <div class="flex items-center mb-1 space-x-1 rtl:space-x-reverse">
+                @for ($i = 0; $i < $review->rating; $i++)
                 <svg class="w-6 h-8 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                     <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                 </svg>
-                <svg class="w-6 h-8 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-6 h-8 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-6 h-8 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-6 h-8 text-gray-300 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <h1 class="ml-5">5 dari 5 Bintang</h1>
+                @endfor
+                <h1 class="ml-5">{{ $review->rating }} dari 5 Bintang</h1>
             </div>
-            <h1 class="font-bold text-xl text-start">Yanto</h1>
-            <h1 class="text-start">Feb 13, 2021</h1>
-            <p class="mb-2 text-gray-500 text-justify">Jelek</p>
+            <h1 class="font-bold text-xl text-start">{{ $review->name ? $review->name : 'Anonymous' }}</h1>
+            <h1 class="text-start">{{ \Carbon\Carbon::parse($review->created_at)->locale('id')->isoFormat('D MMMM YYYY') }}</h1>
+            <p class="mb-2 text-gray-500 text-justify">{{ $review->message }}</p>
         </div>
+        @endforeach
     </div>
     <div class="flex justify-between items-center mb-6 mt-6">
         <h2 class="text-lg lg:text-2xl font-bold text-gray-900">Apa kata Anda?</h2>
     </div>
-    <form action="#">
+    <form>
         <div class="rating flex justify-center items-center gap-2 text-yellow-500 text-2xl mb-8">
             <input type="number" name="rating" hidden>
             <i class='bx bx-star star' style="color: #fde047;"></i>
@@ -371,11 +302,11 @@
         <div>
             <label for="Nama Kepala" class="block mb-2 text-lg font-medium text-gray-900">Nama
                 Kepala</label>
-            <input type="text" id="Nama Kepala" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#3E9CC0] focus:border-[#3E9CC0] block w-full p-2.5 mb-5" placeholder="Nama Kepala" required>
+            <input type="text" id="review-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#3E9CC0] focus:border-[#3E9CC0] block w-full p-2.5 mb-5" placeholder="Nama">
         </div>
         <div class="py-2 px-4 mb-4 bg-gray-50 rounded-lg rounded-t-lg border border-gray-200">
-            <label for="comment" class="sr-only">Your comment</label>
-            <textarea id="comment" rows="6" class="bg-gray-50 px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Write a comment..." required></textarea>
+            <label for="review-message" class="sr-only">Pesan anda</label>
+            <textarea id="review-message" rows="6" class="bg-gray-50 px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Tulis pesan anda..." required></textarea>
         </div>
         <div class="btn-group flex items-center gap-2">
             <button type="submit" class="btn submit py-3 px-4 rounded-xl border-none outline-none cursor-pointer text-white bg-[#3E9CC0] font-medium">Kirim</button>
@@ -395,6 +326,9 @@
 <div class="container flex mx-auto md:w-3/4 p-10">
     <iframe class="w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.5544321045513!2d106.88318407475386!3d-6.577776393415704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c70c8ab7d701%3A0x35ea8e00d2aa2c14!2sVenesia%20Park%20Sentul%20Syariah!5e0!3m2!1sid!2sid!4v1707789494890!5m2!1sid!2sid" style="border:0; height: 600px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
+<script>
+    var reviewUrl = "{{ route('review.store') }}";
+</script>
 <script src="{{ asset('js/home.js') }}"></script>
 @include('layouts.footer')
 @endsection
