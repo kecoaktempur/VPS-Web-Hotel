@@ -201,6 +201,7 @@ function pesanSekarang() {
     const total = document.getElementById('total').innerText.replace(/[^\d]/g, '');
     const checkIn = document.getElementById('haricheckin').innerText;
     const checkOut = document.getElementById('haricheckout').innerText;
+    const noteTambahan = document.getElementById('notetambahan').innerText;
     const items = new Set();
     const pesanan = [];
 

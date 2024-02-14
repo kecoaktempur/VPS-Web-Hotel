@@ -320,6 +320,69 @@
     </div>
 </div>
 
+<div class="container flex mx-auto grid grid-cols-3 w-3/4">
+    <div class="border-b-2 border-[#3E9CC0] w-full rounded-full h-0 my-auto"></div>
+    <div class="flex items-center justify-center"> <!-- Added mx-4 class for horizontal margin -->
+        <h1 class="text-center text-3xl font-extrabold tracking-tight leading-none text-[#12182E] md:text-4xl lg:text-5xl font-[Aleo]">
+            Kata Mereka
+        </h1>
+    </div>
+    <div class="border-b-2 border-[#3E9CC0] w-full rounded-full h-0 my-auto"></div>
+</div>
+
+<div class="container flex flex-col mx-auto md:w-3/4 p-10">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="bg-white border-2 border-[#24305A] rounded-lg p-8 text-center w-full">
+            <div class="flex items-center mb-1 space-x-1 rtl:space-x-reverse">
+                <svg class="w-6 h-8 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-6 h-8 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-6 h-8 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-6 h-8 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-6 h-8 text-gray-300 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <h1 class="ml-5">5 dari 5 Bintang</h1>
+            </div>
+            <h1 class="font-bold text-xl text-start">Yanto</h1>
+            <h1 class="text-start">Feb 13, 2021</h1>
+            <p class="mb-2 text-gray-500 text-justify">Jelek</p>
+        </div>
+    </div>
+    <div class="flex justify-between items-center mb-6 mt-6">
+        <h2 class="text-lg lg:text-2xl font-bold text-gray-900">Apa kata Anda?</h2>
+    </div>
+    <form action="#">
+        <div class="rating flex justify-center items-center gap-2 text-yellow-500 text-2xl mb-8">
+            <input type="number" name="rating" hidden>
+            <i class='bx bx-star star' style="color: #fde047;"></i>
+            <i class='bx bx-star star' style="color: #fde047;"></i>
+            <i class='bx bx-star star' style="color: #fde047;"></i>
+            <i class='bx bx-star star' style="color: #fde047;"></i>
+            <i class='bx bx-star star' style="color: #fde047;"></i>
+        </div>
+        <div>
+            <label for="Nama Kepala" class="block mb-2 text-lg font-medium text-gray-900">Nama
+                Kepala</label>
+            <input type="text" id="Nama Kepala" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#3E9CC0] focus:border-[#3E9CC0] block w-full p-2.5 mb-5" placeholder="Nama Kepala" required>
+        </div>
+        <div class="py-2 px-4 mb-4 bg-gray-50 rounded-lg rounded-t-lg border border-gray-200">
+            <label for="comment" class="sr-only">Your comment</label>
+            <textarea id="comment" rows="6" class="bg-gray-50 px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Write a comment..." required></textarea>
+        </div>
+        <div class="btn-group flex items-center gap-2">
+            <button type="submit" class="btn submit py-3 px-4 rounded-xl border-none outline-none cursor-pointer text-white bg-[#3E9CC0] font-medium">Kirim</button>
+        </div>
+    </form>
+</div>
+
 <div class="container flex mx-auto grid grid-cols-[1fr,3fr,1fr] w-3/4">
     <div class="border-b-2 border-[#3E9CC0] w-full rounded-full h-0 my-auto"></div>
     <div class="flex items-center justify-center">

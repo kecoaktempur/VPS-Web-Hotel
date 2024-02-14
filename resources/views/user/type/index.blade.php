@@ -131,6 +131,11 @@
                     <h1 class="mb-2 font-medium" id="totalnavbar">Rp 0</h1>
                 </div>
             </div>
+
+            <div class="py-2 px-4 mb-4 bg-gray-50 rounded-lg rounded-t-lg border border-gray-200">
+                <label for="comment" class="sr-only">Your comment</label>
+                <textarea id="notetambahan" rows="6" class="bg-gray-50 px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Write a comment..." required></textarea>
+            </div>
             <button type="button" onclick="pesanSekarang()" id="pesanButton" class="flex w-full text-xl justify-center rounded-xl bg-[#24305A] px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#0B163E]">Pesan
                 Sekarang</button>
         </form>
@@ -155,6 +160,7 @@
                     <h1 class="font-medium text-xl" id="total">Rp 0</h1>
                 </div>
             </div>
+
             <div class="w-full flex justify-center">
                 <button type="button" onclick="pesanSekarang()" id="pesanButton" class="flex items-center w-3/4 text-lg justify-center rounded-xl bg-[#24305A] px-1 py-1 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#0B163E] mx-auto">Pesan
                     Sekarang</button>
@@ -172,6 +178,11 @@
             <h1 class="mb-2 font-medium" id="haricheckinnavbar">none</h1>
             <h1 class="font-bold">Check Out</h1>
             <h1 class="mb-2 font-medium" id="haricheckoutnavbar">none</h1>
+
+            <div class="py-2 px-4 mb-4 rounded-lg rounded-t-lg border border-gray-200">
+                <label for="comment" class="sr-only">Your comment</label>
+                <textarea id="notetambahan" rows="6" class="bg-transparent px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Write a comment..." required></textarea>
+            </div>
 
             <div class="border-b-2 border-t-2 border-[#000000] pt-2">
                 <div id="cart-items-navbar"></div>

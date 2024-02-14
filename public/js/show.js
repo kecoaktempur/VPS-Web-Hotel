@@ -1,4 +1,10 @@
-// SLIDER
+function toggleModal(modalID) {
+    document.getElementById(modalID).classList.toggle("hidden");
+    document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+    document.getElementById(modalID).classList.toggle("flex");
+    document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+}
+
 let sliderContainerTipe = document.getElementById('slideContainerTipe');
 let sliderTipe = document.getElementById('sliderTipe');
 let cards = document.querySelectorAll('#card');
@@ -46,66 +52,4 @@ window.addEventListener('resize', function () {
         const element = cards[index];
         element.style.width = cardWidth + 'px';
     }
-});
-
-// AUTO PLAY SLIDER
-$(document).ready(function () {
-    $('.slider-sekitar').slick({
-        autoplay: true,
-        autoplaySpeed: 1000,
-        speed: 600,
-        draggable: true,
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        arrows: false,
-        dots: false,
-        responsive: [
-            {
-                breakpoint: 991,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 768, // Adjusted breakpoint for max-md
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    });
-});
-
-const allStar = document.querySelectorAll('.rating .star')
-const ratingValue = document.querySelector('.rating input')
-
-allStar.forEach((item, idx) => {
-    item.addEventListener('click', function () {
-        let click = 0
-        ratingValue.value = idx + 1
-
-        allStar.forEach(i => {
-            i.classList.replace('bxs-star', 'bx-star')
-            i.classList.remove('active')
-        })
-        for (let i = 0; i < allStar.length; i++) {
-            if (i <= idx) {
-                allStar[i].classList.replace('bx-star', 'bxs-star')
-                allStar[i].classList.add('active')
-            } else {
-                allStar[i].style.setProperty('--i', click)
-                click++
-            }
-        }
-    })
-});
-
-document.querySelector('form').addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    const selectedRating = ratingValue.value;
-    console.log("Selected rating:", selectedRating);
 });

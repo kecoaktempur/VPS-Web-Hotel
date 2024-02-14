@@ -22,11 +22,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 // user
-Route::get('/', function () {return view('user.home');});
+Route::get('/', function () {
+    return view('user.home');
+});
 Route::get('/home', [PageController::class, 'home'])->name('home');
 Route::post('/home', [ReviewController::class, 'store'])->name('review.store');
 Route::get('/type', [TypeController::class, 'userIndex'])->name('type.index.user');
 Route::post('/type', [TypeController::class, 'available'])->name('type.available');
+Route::get('/type/test', function () {
+    return view('user.type.show');
+});
 Route::get('/type/{id}', [TypeController::class, 'userShow'])->name('type.show.user');
 
 // admin
