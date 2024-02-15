@@ -28,21 +28,24 @@
                     <div class="flex-shrink w-1/3 max-w-full lg:w-full">
                         <div class="h-full max-h-24 lg:max-h-[160px] overflow-hidden lg:rounded-md">
                             <a href="#">
-                                <img class="object-cover w-full h-full mx-auto" src="\public\img\standard (2).jpg" alt="Image description">
+                                <img class="object-cover w-full h-full mx-auto hover:scale-110 transition-all duration-300" src="\public\img\standard (2).jpg" alt="Image description">
                             </a>
                         </div>
                     </div>
                     <div class="flex-shrink w-1/3 max-w-full lg:w-full">
                         <div class="relative h-full max-h-24 lg:max-h-[160px] overflow-hidden lg:rounded-md">
                             <a href="#">
-                                <img class="object-cover w-full h-full mx-auto" src="\public\img\standard (3).jpg" alt="Image description">
+                                <img class="object-cover w-full h-full mx-auto hover:scale-110 transition-all duration-300" src="\public\img\standard (3).jpg" alt="Image description">
                             </a>
                         </div>
                     </div>
                     <div class="flex-shrink w-1/3 max-w-full lg:w-full">
-                        <div class="relative h-full max-h-24 lg:max-h-[160px] overflow-hidden lg:rounded-md">
-                            <a href="#">
-                                <img class="object-cover w-full h-full mx-auto" src="\public\img\standard (4).jpg" alt="Image description">
+                        <div class="relative h-full max-h-24 lg:max-h-[160px] overflow-hidden lg:rounded-md group">
+                            <a href="#" class="flex flex-col h-full justify-center">
+                                <img class="object-cover w-full h-full mx-auto brightness-50 group-hover:brightness-75 transition" src="\public\img\standard (4).jpg" alt="Image description">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="text-gray-50">more picture</div>
+                                </div>
                             </a>
                         </div>
                     </div>
