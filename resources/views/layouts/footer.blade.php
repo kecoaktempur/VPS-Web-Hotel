@@ -3,7 +3,7 @@
         <div class="grid grid-cols-3">
             <div class="mb-6 md:mb-0">
                 <a href="{{ route('home') }}" class="flex items-center">
-                    <img src="{{ asset('img/logo_light.svg') }}" class="h-16 mb-5" alt="Vanesa Park" />
+                    <img src="{{ asset('img/VPS_Logo_Light.png') }}" class="h-20 mb-5" alt="Vanesa Park" />
                 </a>
                 <div class="flex items-center self-center text-md font-semibold w-full text-white">
                     497 Evergreen Rd. Roseville, CA 95673 <br>

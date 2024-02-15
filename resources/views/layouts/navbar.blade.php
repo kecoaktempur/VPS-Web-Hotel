@@ -2,7 +2,7 @@
     <div class='flex flex-wrap justify-between px-10 py-3'>
         <div class="flex-shrink-0 ml-2">
             <a aria-current="page" class="flex items-center" href="/">
-                <img class="h-10 w-auto" src="{{ asset('img/logo_dark.svg') }}" alt="">
+                <img class="h-12 w-auto" src="{{ asset('img/VPS_Logo_Dark.png') }}" alt="">
                 <p class="sr-only">Website Title</p>
             </a>
         </div>
@@ -14,11 +14,11 @@
             </button>
         </div>
         <ul id="collapseMenu" class='lg:!flex lg:space-x-10 max-lg:space-y-3 max-lg:hidden max-lg:w-full max-lg:my-4 my-auto'>
-            <li class='max-lg:border-b max-lg:py-2'><a href='{{ route('home') }}' class='{{ Str::contains(Route::currentRouteName(), 'home') ? 'hover:text-[#007bff] font-semibold block text-[15px] lg:border-b-2 lg:border-[#000000]' : 'hover:text-[#007bff] text-gray-600 font-reguler text-[15px]' }}'>Home</a>
+            <li class='max-lg:border-b max-lg:py-2'><a href='{{ route('home') }}' class='{{ Str::contains(Route::currentRouteName(), 'home') ? 'hover:text-[#3E9CC0] font-semibold block text-[15px] lg:border-b-2 lg:border-[#000000]' : 'hover:text-[#3E9CC0] text-gray-600 font-reguler text-[15px]' }}'>Home</a>
             </li>
-            <li class='max-lg:border-b max-lg:py-2'><a href='{{ route('type.index.user')}}' class='{{ Str::contains(Route::currentRouteName(), 'type') ? 'hover:text-[#007bff] font-semibold block text-[15px] lg:border-b-2 lg:border-[#000000]' : 'hover:text-[#007bff] text-gray-600 font-reguler text-[15px]' }}'>Rooms</a></li>
-            <li class='max-lg:border-b max-lg:py-2'><a href='#' class='{{ Str::contains(Route::currentRouteName(), 'gallery') ? 'hover:text-[#007bff] font-semibold block text-[15px] lg:border-b-2 lg:border-[#000000]' : 'hover:text-[#007bff] text-gray-600 font-reguler text-[15px]' }}'>Gallery</a></li>
-            <li class='max-lg:border-b max-lg:py-2'><a href='#' class='hover:text-[#007bff] text-gray-600 font-reguler text-[15px]'>Contact Us</a></li>
+            <li class='max-lg:border-b max-lg:py-2'><a href='{{ route('type.index.user')}}' class='{{ Str::contains(Route::currentRouteName(), 'type') ? 'hover:text-[#3E9CC0] font-semibold block text-[15px] lg:border-b-2 lg:border-[#000000]' : 'hover:text-[#3E9CC0] text-gray-600 font-reguler text-[15px]' }}'>Rooms</a></li>
+            <li class='max-lg:border-b max-lg:py-2'><a href='#' class='{{ Str::contains(Route::currentRouteName(), 'gallery') ? 'hover:text-[#3E9CC0] font-semibold block text-[15px] lg:border-b-2 lg:border-[#000000]' : 'hover:text-[#3E9CC0] text-gray-600 font-reguler text-[15px]' }}'>Gallery</a></li>
+            <li class='max-lg:border-b max-lg:py-2'><a href='#' class='hover:bg-transparent hover:border-2 hover:border-[#24305A] hover:text-gray-600 text-white font-semibold text-[15px] bg-[#24305A] rounded-xl p-3'>Contact Us</a></li>
         </ul>
     </div>
 </nav>

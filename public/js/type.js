@@ -11,9 +11,9 @@ function enableAmbilButton() {
     var checkout = document.getElementById("checkout").value;
 
     if (checkin && checkout) {
-        document.getElementById("ambilButton").disabled = false;
+        document.getElementById("ambil").disabled = false;
     } else {
-        document.getElementById("ambilButton").disabled = true;
+        document.getElementById("ambil").disabled = true;
     }
 }
 
@@ -202,14 +202,25 @@ function pesanSekarang() {
     const checkIn = document.getElementById('haricheckin').innerText;
     const checkOut = document.getElementById('haricheckout').innerText;
     const noteTambahan = document.getElementById('notetambahan').innerText;
-    const items = new Set();
-    const pesanan = [];
+    const itemsMap = new Map(); // Changed from Set to Map to store counts
 
     document.querySelectorAll('#namapesamkamar').forEach(item => {
         const itemName = item.innerText.trim();
-        if (!items.has(itemName)) { // Check if item has not been added yet
-            items.add(itemName); // Add item to Set
-            pesanan.push(itemName); // Add item to pesanan array
+        if (itemsMap.has(itemName)) {
+            // If item exists in map, increment count
+            itemsMap.set(itemName, itemsMap.get(itemName) + 1);
+        } else {
+            // If item doesn't exist in map, set count to 1
+            itemsMap.set(itemName, 1);
+        }
+    });
+
+    const pesanan = []; // Array to store item names with counts
+    itemsMap.forEach((count, itemName) => {
+        if (count > 1) {
+            pesanan.push(`${itemName} (${count})`); // Add count after item name
+        } else {
+            pesanan.push(itemName);
         }
     });
 
@@ -220,7 +231,7 @@ function pesanSekarang() {
     } else if (namaKepala.trim() === '') {
         alert("Please enter Nama Kepala.");
     } else {
-        const url = `https://wa.me/+6285655567005?text=Nama%20Kepala:%20${namaKepala}%0D%0ARuangan:%20${pesanan}%0D%0ACheck%20In:%20${checkIn}%0D%0ACheck%20Out:%20${checkOut}%0D%0ATotal:%20Rp%20${total}`;
+        const url = `https://wa.me/+6285655567005?text=Nama%20Kepala:%20${namaKepala}%0D%0ARuangan:%20${pesanan}%0D%0ACheck%20In:%20${checkIn}%0D%0ACheck%20Out:%20${checkOut}%0D%0ATotal:%20Rp%20${total}%0D%0ANote:%20${noteTambahan}`;
         window.open(url, '_blank');
     }
 }
@@ -230,8 +241,6 @@ function formatDate(value) {
 }
 
 function checkAvailability() {
-    updateValues();
-
     var checkinValue = formatDate(document.getElementById("checkin").value);
     var checkoutValue = formatDate(document.getElementById("checkout").value);
 
@@ -284,4 +293,6 @@ function checkAvailability() {
             $('[id^="type"]').hide();
         }
     });
+
+    updateValues();
 }

@@ -17,7 +17,7 @@
             <h1 class="mb-2 font-bold">Check Out</h1>
             <input type="date" id="checkout" name="checkout" placeholder="Add Date" class="p-2 w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-xl border-2 border-[#000000]">
         </div>
-        <button type="button" onclick="updateValues()" class="font-semibold bg-[#3E9CC0] lg:w-3/4 lg:mx-auto lg:h-1/2 lg:my-auto max-lg:h-full max-lg:min-h-[52px] text-white flex items-center justify-center transition duration-300 ease-in-out hover:bg-[#1680A8] rounded-xl">Check
+        <button type="button" onclick="checkAvailability()" class="font-semibold bg-[#3E9CC0] lg:w-3/4 lg:mx-auto lg:h-1/2 lg:my-auto max-lg:h-full max-lg:min-h-[52px] text-white flex items-center justify-center transition duration-300 ease-in-out hover:bg-[#1680A8] rounded-xl">Check
             Availability</button>
     </form>
 </div>
@@ -27,12 +27,12 @@
     <div class="flex flex-col mr-5grid-cols-2">
         @foreach ($types as $type)
         <div id="type{{ $type->id}}" class="bg-white border-2 border-[#24305A] rounded-xl shadow mb-10">
-            <div id="indicators-carousel" class="relative w-full" data-carousel="static">
+            <div id="indicators-carousel" class="relative w-full z-10" data-carousel="static">
                 @php
                 $photos = $type->photos;
                 $i = 0;
                 @endphp
-                <div class="relative h-56 overflow-hidden rounded-t-lg md:h-96">
+                <div class="relative h-56 overflow-hidden rounded-t-xl md:h-96">
                     @foreach ($photos as $photo)
                     <div class="hidden duration-700 ease-in-out" data-carousel-item="{{ $i++ == 0 ? 'active' : '' }}">
                         <img src="{{ asset('img/' . $photo->name) }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
@@ -43,13 +43,13 @@
                 @php
                 $i = 0;
                 @endphp
-                <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+                <div class="absolute flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
                     @foreach ($photos as $photo)
                     <button type="button" class="w-3 h-3 rounded-full" aria-current="{{ $i == 0 ? 'true' : 'false' }}" aria-label="Slide {{ $i+1 }}" data-carousel-slide-to="{{ $i++ }}"></button>
                     @endforeach
                 </div>
 
-                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <button type="button" class="absolute top-0 start-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
                     <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
                         <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
@@ -57,7 +57,7 @@
                         <span class="sr-only">Previous</span>
                     </span>
                 </button>
-                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <button type="button" class="absolute top-0 end-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
                     <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
                         <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
@@ -118,9 +118,7 @@
             <h1 class="mb-2 font-medium" id="haricheckout">None</h1>
 
             <div class="border-b-2 border-t-2 border-[#000000] pt-2">
-
-                <div id="cart-items"></div>
-
+                <div id="cart-items" class="overflow-y-auto max-h-[400px]"></div>
             </div>
 
             <div class="container mx-auto bg-white md:grid md:grid-cols-2">
@@ -132,9 +130,10 @@
                 </div>
             </div>
 
-            <div class="py-2 px-4 mb-4 bg-gray-50 rounded-lg rounded-t-lg border border-gray-200">
+            <h1 class="font-bold">Note</h1>
+            <div class="py-2 px-4 mb-4 rounded-lg rounded-t-lg border border-gray-200">
                 <label for="comment" class="sr-only">Your comment</label>
-                <textarea id="notetambahan" rows="6" class="bg-gray-50 px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Write a comment..." required></textarea>
+                <textarea id="notetambahan" rows="6" class="bg-transparent px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Tambah Kasur (1), Tambah Bantal (1)....."></textarea>
             </div>
             <button type="button" onclick="pesanSekarang()" id="pesanButton" class="flex w-full text-xl justify-center rounded-xl bg-[#24305A] px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#0B163E]">Pesan
                 Sekarang</button>
@@ -179,13 +178,14 @@
             <h1 class="font-bold">Check Out</h1>
             <h1 class="mb-2 font-medium" id="haricheckoutnavbar">none</h1>
 
-            <div class="py-2 px-4 mb-4 rounded-lg rounded-t-lg border border-gray-200">
-                <label for="comment" class="sr-only">Your comment</label>
-                <textarea id="notetambahan" rows="6" class="bg-transparent px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Write a comment..." required></textarea>
+            <div class="border-b-2 border-t-2 border-[#000000] pt-2">
+                <div id="cart-items-navbar" class="overflow-y-auto max-h-[120px]"></div>
             </div>
 
-            <div class="border-b-2 border-t-2 border-[#000000] pt-2">
-                <div id="cart-items-navbar"></div>
+            <h1 class="font-bold">Note</h1>
+            <div class="py-2 px-4 mb-4 rounded-lg rounded-t-lg border border-gray-200">
+                <label for="comment" class="sr-only">Your comment</label>
+                <textarea id="notetambahan" rows="6" class="bg-transparent px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Tambah Kasur (1), Tambah Bantal (1)....."></textarea>
             </div>
         </ul>
     </div>
