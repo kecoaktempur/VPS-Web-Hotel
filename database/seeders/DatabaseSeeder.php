@@ -239,6 +239,10 @@ class DatabaseSeeder extends Seeder
             ['name' => 'vip (4).jpg', 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'vip (5).jpg', 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'vip (6).jpg', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'nearby (1).jpg', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'nearby (2).jpg', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'nearby (3).jpg', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'nearby (4).jpg', 'created_at' => now(), 'updated_at' => now()],
         ]);
 
         DB::table('type_photo')->insert([
