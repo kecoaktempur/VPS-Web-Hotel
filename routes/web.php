@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // user
-Route::get('/', [PageController::class, 'home']);
+Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/home', [PageController::class, 'home'])->name('home');
 Route::post('/home', [ReviewController::class, 'store'])->name('review.store');
 Route::get('/type', [TypeController::class, 'userIndex'])->name('type.index.user');
