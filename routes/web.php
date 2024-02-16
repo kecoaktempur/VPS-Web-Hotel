@@ -31,7 +31,9 @@ Route::get('/type/{id}', [TypeController::class, 'userShow'])->name('type.show.u
 Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery');
 
 // admin
-Route::get('/admin/login', [AuthController::class, 'login'])->name('login');
+Route::get('/admin',  [PageController::class, 'index'])->name('index');
+
+Route::get( '/admin/login',  [AuthController::class, 'login'])->name('login');
 Route::post('/admin/login', [AuthController::class, 'authenticate'])->name('login');
 Route::post('/admin/logout', [AuthController::class, 'logout'])->name('logout');
 

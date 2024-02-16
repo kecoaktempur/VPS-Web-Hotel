@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function home()
+    public function index()
     {
         $types = Type::all();
         $reviews = Review::orderBy('created_at', 'desc')->limit(6)->get();
