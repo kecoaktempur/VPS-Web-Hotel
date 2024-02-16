@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TypePhoto extends Model
+class Review extends Model
 {
     use HasFactory;
 
-    protected $table = 'type_photo';
-    protected $fillable = ['type_id', 'photo_id'];
+    protected $table = 'reviews';
+    protected $fillable = ['name', 'message', 'rating'];
 }
