@@ -44,15 +44,18 @@
                     <h3>Transaksi</h3>
                 </div>
             </a>
-            <a href="{{ url('/admin/logout') }}" class="tab" id="tab">
-                <div class="tab-content">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    <h3>Logout</h3>
-                </div>
-            </a>
+            <form action="{{ route('logout') }}" method="POST">
+                <button type="submit" class="tab" id="tab">
+                    <div class="tab-content">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <h3>Logout</h3>
+                    </div>
+                </button>
+                @csrf
+            </form>
         </div>
 
-        {{--  Content --}}
+        {{-- Content --}}
 
         @yield('admin-content')
 </body>

@@ -331,6 +331,8 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
+        DB::table('users')->insert(['username' => 'admin', 'password' => Hash::make('password')]);
+
         // DB::table('current_transactions')->insert([
         //     ['room_id' => 1, 'name' => 'Yuta', 'start_date' => '2024-02-01', 'end_date' => '2024-02-03'],
         //     ['room_id' => 2, 'name' => 'Yuta', 'start_date' => '2024-02-01', 'end_date' => '2024-02-02'],
