@@ -21,8 +21,12 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body>
-    @include('layouts.navbar')
+<body class=" {{ request()->is('admin*') && Route::currentRouteName() != 'login' ? 'bg-gray-100 flex' : '' }}">
+    @if(request()->is('admin*') && Route::currentRouteName() != 'login')
+        @include('layouts.navbar-admin')
+    @elseif(Route::currentRouteName() != 'login')
+        @include('layouts.navbar-user')
+    @endif
     @yield('content')
 </body>
 
