@@ -14,13 +14,13 @@
 <body>
     <main>
         <div class="sidebar">
-            <a href="" id="" class="tab">
+            <a href="{{ url('/admin') }}" id="" class="tab">
                 <div class="tab-content">
                     <i class="fa-solid fa-bars-progress"></i>
                     <h3>Dashboard</h3>
                 </div>
             </a>
-            <a href="" id="" class="tab">
+            <a href="{{ url('/admin/transaction') }}" id="" class="tab">
                 <div class="tab-content">
                     <i class="fa-solid fa-wallet"></i>
                     <h3>Transaksi</h3>
@@ -44,13 +44,16 @@
                     <h3>Transaksi</h3>
                 </div>
             </a>
-            <a href="" class="tab" id="tab">
+            <a href="{{ url('/admin/logout') }}" class="tab" id="tab">
                 <div class="tab-content">
                     <i class="fa-solid fa-arrow-right-from-bracket"></i>
                     <h3>Logout</h3>
                 </div>
             </a>
         </div>
+
+        {{--  Content --}}
+
         @yield('admin-content')
 </body>
 
