@@ -28,7 +28,9 @@ Route::post('/type', [TypeController::class, 'available'])->name('type.available
 Route::get('/type/{id}', [TypeController::class, 'showUser'])->name('type.show.user');
 
 // admin
-Route::get('/admin/login', [AuthController::class, 'login'])->name('login');
+Route::get('/admin',  [PageController::class, 'index'])->name('index');
+
+Route::get( '/admin/login',  [AuthController::class, 'login'])->name('login');
 Route::post('/admin/login', [AuthController::class, 'authenticate'])->name('login');
 Route::get('/admin/register', [AuthController::class, 'register'])->name('register');
 Route::post('/admin/logout', [AuthController::class, 'create'])->name('register');
