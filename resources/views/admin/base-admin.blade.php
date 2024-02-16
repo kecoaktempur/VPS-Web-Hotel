@@ -26,13 +26,13 @@
                     <h3>Transaksi</h3>
                 </div>
             </a>
-            <a href="" id="" class="tab">
+            <a href="{{ url('/admin/type') }}" id="" class="tab">
                 <div class="tab-content">
                     <i class="fa-solid fa-file"></i>
                     <h3>Tipe</h3>
                 </div>
             </a>
-            <a href="" class="tab">
+            <a href="{{ url('/admin/room') }}" class="tab">
                 <div class="tab-content">
                     <i class="fa-solid fa-file-circle-check"></i>
                     <h3>Ruangan</h3>
