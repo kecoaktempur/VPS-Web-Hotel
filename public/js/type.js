@@ -88,10 +88,58 @@ function handleClick() {
 toggleBtn.addEventListener('click', handleClick);
 
 // TRANSACTION
-function addItem(i) {
-    const namaKamar = document.getElementById('namakamar' + i).innerText;
-    const hargaKamar = document.getElementById('hargakamar' + i).innerText;
-    const jumlah = document.getElementById('jumlah' + i).value;
+function removeOptions(typeId, jumlah, max) {
+    var select = document.getElementById("jumlah" + typeId);
+
+    select.innerHTML = '';
+
+    if (max == jumlah) {
+        var option = document.createElement("option");
+        option.text = 1;
+        option.value = 0;
+        select.appendChild(option);
+        document.getElementById("ambil" + typeId).disabled = true;
+    }
+    else {
+        for (var i = 1; i <= (max - jumlah); i++) {
+            var option = document.createElement("option");
+            option.text = i;
+            option.value = i;
+            select.appendChild(option);
+        }
+    }
+}
+
+function addOptions(typeId, max) {
+    var select = document.getElementById("jumlah" + typeId);
+
+    if (max == 0){
+        select.innerHTML = '';
+        document.getElementById("ambil" + typeId).disabled = false;
+    }
+    var option = document.createElement("option");
+    option.text = max+1;
+    option.value = max+1;
+    select.appendChild(option);
+}
+
+function addItem(typeid) {
+    const namaKamar = document.getElementById('namakamar' + typeid).innerText;
+    const hargaKamar = document.getElementById('hargakamar' + typeid).innerText;
+    const select = document.getElementById('jumlah' + typeid);
+    const options = select.getElementsByTagName('option');
+    let max = Number.MIN_SAFE_INTEGER;
+    for (let option of options) {
+        const optionValue = parseInt(option.value);
+        if (!isNaN(optionValue) && optionValue > max) {
+            max = optionValue;
+        }
+    }
+    const jumlah = select.value;
+
+    // console.log('jumlah ' + jumlah, ' max ' + max);
+
+    removeOptions(typeid, jumlah, max)
 
     const checkin = document.getElementById("checkin").value;
     const checkout = document.getElementById("checkout").value;
@@ -112,6 +160,7 @@ function addItem(i) {
 <div class="container mx-auto md:grid md:grid-cols-2">
     <div class="flex flex-col">
         <h1 class="mb-2 font-bold" id="namapesamkamar">${namaKamar}</h1>
+        <h1 class="hidden" id="typeid">${typeid}</h1>
     </div>
     <div class="flex flex-col items-end">
         <button onclick="removeItem(this)"
@@ -143,6 +192,20 @@ function removeItem(element) {
 
     // console.log("Main Cart Item:", CartItem);
     // console.log("Cart Type:", cartType);
+
+    const typeid = CartItem.querySelector('#typeid').textContent;
+    const select = document.getElementById('jumlah' + typeid);
+    const options = select.getElementsByTagName('option');
+    let max = Number.MIN_SAFE_INTEGER;
+    for (let option of options) {
+        const optionValue = parseInt(option.value);
+        if (!isNaN(optionValue) && optionValue > max) {
+            max = optionValue;
+        }
+    }
+    
+    // console.log(typeid, max);
+    addOptions(typeid, max);
 
     // Remove the main cart item
     CartItem.remove();

@@ -94,7 +94,7 @@
                     <select id="jumlah{{ $type->id }}" name="jumlah{{ $type->id }}" autocomplete="jumlah{{ $type->id }}" required class="rounded-xl px-3 py-1.5 mx-2 max-md:mx-1 font-semibold leading-6 border-2 border-[#24305A] placeholder:text-gray-400 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-800">
                         <option value="1" selected>1</option>
                     </select>
-                    <button onclick="addItem(<?php echo $type->id; ?>)" type="button" class="rounded-xl px-3 py-2 mx-2 text-xl max-md:text-sm max-md:mx-0 bg-[#3E9CC0] font-semibold leading-6 text-white" id="ambil">
+                    <button onclick="addItem(<?php echo $type->id; ?>)" type="button" class="rounded-xl px-3 py-2 mx-2 text-xl max-md:text-sm max-md:mx-0 bg-[#3E9CC0] font-semibold leading-6 text-white" id="ambil{{ $type->id }}">
                         Ambil
                     </button>
                 </form>
