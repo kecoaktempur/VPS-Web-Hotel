@@ -58,18 +58,19 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin/transaction/current', [TransactionController::class, 'indexCurrent'])->name('transaction.index.current');
     Route::get('/admin/transaction/create', [TransactionController::class, 'create'])->name('transaction.create');
     Route::post('/admin/transaction/store', [TransactionController::class, 'store'])->name('transaction.store');
-    Route::get('/admin/transaction/current/{id}', [TransactionController::class, 'showCurrent'])->name('transaction.show.current');
+    // Route::get('/admin/transaction/current/{id}', [TransactionController::class, 'showCurrent'])->name('transaction.show.current');
     Route::get('/admin/transaction/edit/{id}', [TransactionController::class, 'edit'])->name('transaction.edit');
     Route::put('/admin/transaction/update/{id}', [TransactionController::class, 'update'])->name('transaction.update');
     Route::delete('/admin/transaction/current/delete/{id}', [TransactionController::class, 'destroyCurrent'])->name('transaction.destroy.current');
     Route::put('/admin/tranascation/checkout/{id}', [TransactionController::class, 'checkout'])->name('transaction.checkout');
     
     Route::get('/admin/transaction/past', [TransactionController::class, 'indexPast'])->name('transaction.index.past');
-    Route::get('/admin/transaction/past/{id}', [TransactionController::class, 'showPast'])->name('transaction.show.past');
+    // Route::get('/admin/transaction/past/{id}', [TransactionController::class, 'showPast'])->name('transaction.show.past');
     Route::delete('/admin/transaction/past/delete/{id}', [TransactionController::class, 'destroyPast'])->name('transaction.destroy.past');
     
     Route::get('/admin/notif', [NotificationController::class, 'index'])->name('notif');
-    Route::get('/admin/notif/{id}', [NotificationController::class, 'show'])->name('notif.show');
+    Route::put('/admin/notif/read/{id}', [NotificationController::class, 'read'])->name('notif.read');
+    // Route::get('/admin/notif/{id}', [NotificationController::class, 'show'])->name('notif.show');
     
     Route::get('/admin/photo', [PhotoController::class, 'index'])->name('photo');
     Route::get('/admin/photo/create', [PhotoController::class, 'create'])->name('photo.create');

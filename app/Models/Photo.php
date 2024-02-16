@@ -12,8 +12,8 @@ class Photo extends Model
     protected $table = 'photos';
     protected $fillable = ['name'];
 
-    public function types()
+    public function type()
     {
-        return $this->belongsToMany(Type::class, 'type_photo');
+        return $this->belongsTo(Type::class, 'type_photo');
     }
 }

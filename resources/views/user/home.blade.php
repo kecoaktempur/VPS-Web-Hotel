@@ -286,7 +286,7 @@
                     @endfor
                     <h1 class="ml-5">{{ $review->rating }} dari 5 Bintang</h1>
             </div>
-            <h1 class="font-bold text-xl text-start">{{ $review->name ? $review->name : 'Anonymous' }}</h1>
+            <h1 class="font-bold text-xl text-start">{{ $review->name ? $review->name : 'Anonim' }}</h1>
             <h1 class="text-start">{{ \Carbon\Carbon::parse($review->created_at)->locale('id')->isoFormat('D MMMM YYYY') }}</h1>
             <p class="mb-2 text-gray-500 text-justify">{{ $review->message }}</p>
         </div>

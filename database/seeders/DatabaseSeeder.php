@@ -333,26 +333,41 @@ class DatabaseSeeder extends Seeder
 
         DB::table('users')->insert(['username' => 'admin', 'password' => Hash::make('password')]);
 
-        // DB::table('current_transactions')->insert([
-        //     ['room_id' => 1, 'name' => 'Yuta', 'start_date' => '2024-02-01', 'end_date' => '2024-02-03'],
-        //     ['room_id' => 2, 'name' => 'Yuta', 'start_date' => '2024-02-01', 'end_date' => '2024-02-02'],
-        //     ['room_id' => 3, 'name' => 'Yuta', 'start_date' => '2024-02-02', 'end_date' => '2024-02-05'],
-        //     ['room_id' => 1, 'name' => 'Yuta', 'start_date' => '2024-02-03', 'end_date' => '2024-02-04'],
-        //     ['room_id' => 4, 'name' => 'Yuta', 'start_date' => '2024-02-03', 'end_date' => '2024-02-05'],
-        //     ['room_id' => 4, 'name' => 'Yuta', 'start_date' => '2024-02-04', 'end_date' => '2024-02-06'],
-        //     ['room_id' => 10, 'name' => 'Yuta', 'start_date' => '2024-02-06', 'end_date' => '2024-02-06'],
-        //     ['room_id' => 4, 'name' => 'Yuta', 'start_date' => '2024-02-07', 'end_date' => '2024-02-10'],
-        //     ['room_id' => 8, 'name' => 'Yuta', 'start_date' => '2024-02-07', 'end_date' => '2024-02-07'],
-        //     ['room_id' => 8, 'name' => 'Yuta', 'start_date' => '2024-02-08', 'end_date' => '2024-02-09'],
-        //     ['room_id' => 10, 'name' => 'Yuta', 'start_date' => '2024-02-08', 'end_date' => '2024-02-09'],
-        //     ['room_id' => 1, 'name' => 'Yuta', 'start_date' => '2024-02-10', 'end_date' => '2024-02-11'],
-        //     ['room_id' => 5, 'name' => 'Yuta', 'start_date' => '2024-02-11', 'end_date' => '2024-02-12'],
-        //     ['room_id' => 9, 'name' => 'Yuta', 'start_date' => '2024-02-10', 'end_date' => '2024-02-12'],
-        //     ['room_id' => 6, 'name' => 'Yuta', 'start_date' => '2024-02-10', 'end_date' => '2024-02-15'],
-        //     ['room_id' => 4, 'name' => 'Yuta', 'start_date' => '2024-02-13', 'end_date' => '2024-02-14'],
-        //     ['room_id' => 10, 'name' => 'Yuta', 'start_date' => '2024-02-13', 'end_date' => '2024-02-14'],
-        //     ['room_id' => 8, 'name' => 'Yuta', 'start_date' => '2024-02-13', 'end_date' => '2024-02-14'],
-        //     ['room_id' => 7, 'name' => 'Yuta', 'start_date' => '2024-02-13', 'end_date' => '2024-02-14'],
-        // ]);
+        DB::table('current_transactions')->insert([
+            ['room_id' => 1, 'name' => 'Yuta', 'start_date' => '2024-02-01', 'end_date' => '2024-02-03'],
+            ['room_id' => 2, 'name' => 'Yuta', 'start_date' => '2024-02-01', 'end_date' => '2024-02-02'],
+            ['room_id' => 3, 'name' => 'Yuta', 'start_date' => '2024-02-02', 'end_date' => '2024-02-05'],
+            ['room_id' => 1, 'name' => 'Yuta', 'start_date' => '2024-02-03', 'end_date' => '2024-02-04'],
+            ['room_id' => 4, 'name' => 'Yuta', 'start_date' => '2024-02-03', 'end_date' => '2024-02-05'],
+            ['room_id' => 4, 'name' => 'Yuta', 'start_date' => '2024-02-04', 'end_date' => '2024-02-06'],
+            ['room_id' => 10, 'name' => 'Yuta', 'start_date' => '2024-02-06', 'end_date' => '2024-02-06'],
+            ['room_id' => 4, 'name' => 'Yuta', 'start_date' => '2024-02-07', 'end_date' => '2024-02-10'],
+            ['room_id' => 8, 'name' => 'Yuta', 'start_date' => '2024-02-07', 'end_date' => '2024-02-07'],
+            ['room_id' => 8, 'name' => 'Yuta', 'start_date' => '2024-02-08', 'end_date' => '2024-02-09'],
+            ['room_id' => 10, 'name' => 'Yuta', 'start_date' => '2024-02-08', 'end_date' => '2024-02-09'],
+            ['room_id' => 1, 'name' => 'Yuta', 'start_date' => '2024-02-10', 'end_date' => '2024-02-11'],
+            ['room_id' => 5, 'name' => 'Yuta', 'start_date' => '2024-02-11', 'end_date' => '2024-02-12'],
+            ['room_id' => 9, 'name' => 'Yuta', 'start_date' => '2024-02-10', 'end_date' => '2024-02-12'],
+            ['room_id' => 6, 'name' => 'Yuta', 'start_date' => '2024-02-10', 'end_date' => '2024-02-15'],
+            ['room_id' => 4, 'name' => 'Yuta', 'start_date' => '2024-02-13', 'end_date' => '2024-02-14'],
+            ['room_id' => 10, 'name' => 'Yuta', 'start_date' => '2024-02-13', 'end_date' => '2024-02-14'],
+            ['room_id' => 8, 'name' => 'Yuta', 'start_date' => '2024-02-13', 'end_date' => '2024-02-14'],
+            ['room_id' => 7, 'name' => 'Yuta', 'start_date' => '2024-02-13', 'end_date' => '2024-02-14'],
+        ]);
+
+        DB::table('past_transactions')->insert([
+            ['room_id' => 1, 'name' => 'Yuji', 'start_date' => '2024-02-01', 'end_date' => '2024-02-03'],
+            ['room_id' => 2, 'name' => 'Yuji', 'start_date' => '2024-02-01', 'end_date' => '2024-02-02'],
+            ['room_id' => 3, 'name' => 'Yuji', 'start_date' => '2024-02-02', 'end_date' => '2024-02-05'],
+            ['room_id' => 1, 'name' => 'Yuji', 'start_date' => '2024-02-03', 'end_date' => '2024-02-04'],
+        ]);
+
+        DB::table('expirings')->insert([
+            ['transaction_id' => 1, 'is_read' => 1],
+            ['transaction_id' => 3, 'is_read' => 0],
+            ['transaction_id' => 4, 'is_read' => 0],
+            ['transaction_id' => 7, 'is_read' => 1],
+            ['transaction_id' => 10, 'is_read' => 1],
+        ]);
     }
 }

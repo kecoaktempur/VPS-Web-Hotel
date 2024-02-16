@@ -6,7 +6,7 @@
 
     <div class="w-full overflow-x-hidden border-t flex flex-col">
         <main class="w-full flex-grow p-6">
-            <h1 class="text-3xl text-black pb-6">Review</h1>
+            <h1 class="text-3xl text-black pb-6">Transaksi Lama</h1>
 
             <div class="w-full mt-5">
                 <p class="text-xl pb-3 flex items-center">
@@ -20,13 +20,22 @@
                                     No
                                 </th>
                                 <th scope="col" class="px-6 py-3 font-extrabold">
-                                    Nama
+                                    Nama Kepala
                                 </th>
                                 <th scope="col" class="px-6 py-3 font-extrabold">
-                                    Komentar
+                                    Tipe Ruangan
                                 </th>
                                 <th scope="col" class="px-6 py-3 font-extrabold">
-                                    Rating
+                                    Nomor Ruangan
+                                </th>
+                                <th scope="col" class="px-6 py-3 font-extrabold">
+                                    Tanggal Mulai
+                                </th>
+                                <th scope="col" class="px-6 py-3 font-extrabold">
+                                    Tanggal Selesai
+                                </th>
+                                <th scope="col" class="px-6 py-3 font-extrabold">
+                                    Tanggal Checkout
                                 </th>
                                 <th scope="col" class="px-6 py-3 font-extrabold">
                                     Action
@@ -40,22 +49,31 @@
 
 
                         <tbody>
-                            @foreach ($reviews as $review)
+                            @foreach ($pastTransactions as $transaction)
                             <tr>
                                 <th scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap">
                                     {{ $count++ }}
                                 </th>
                                 <th scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap">
-                                    {{ $review->name ? $review->name : 'Anonim' }}
+                                    {{ $transaction->name }}
                                 </th>
                                 <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap">
-                                    {{ $review->message }}
+                                    {{ $transaction->room->type->name }}
                                 </td>
                                 <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap">
-                                    {{ $review->rating }}
+                                    {{ $transaction->room->room_number }}
                                 </td>
                                 <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap">
-                                    <form action="{{ route('review.destroy', ['id' => $review->id]) }} " method="POST">
+                                    {{ \Carbon\Carbon::parse($transaction->start_date)->locale('id')->isoFormat('D MMMM YYYY') }}
+                                </td>
+                                <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap">
+                                    {{ \Carbon\Carbon::parse($transaction->end_date)->locale('id')->isoFormat('D MMMM YYYY') }}
+                                </td>
+                                <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap">
+                                    {{ $transaction->check_out_date ? \Carbon\Carbon::parse($transaction->check_out_date)->locale('id')->isoFormat('D MMMM YYYY') : 'Belum Checkout' }}
+                                </td>
+                                <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap">
+                                    <form action="{{ route('transaction.destroy.past', ['id' => $transaction->id]) }} " method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="rounded-md bg-rose-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500">

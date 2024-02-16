@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function index()
+    // user
+    public function home()
     {
         $types = Type::all();
         $reviews = Review::orderBy('created_at', 'desc')->limit(6)->get();
@@ -20,5 +21,11 @@ class PageController extends Controller
     {
         $photos = Photo::all();
         return view('user.gallery', compact('photos'));
+    }
+
+    // admin
+    public function dashboard()
+    {
+        return view('admin.dashboard');
     }
 }

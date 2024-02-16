@@ -1,8 +1,8 @@
-@extends('admin.base-admin')
+@extends('layouts.app')
 <link rel="stylesheet" href="css/admin/index.css">
-<title>Admin</title>
-@section('admin-content')
-    <div class="container">
+@section('content')
+<div class="container">
+        @include('layouts.navbar-admin-mobile')
         <div class="content-header">
             <h2>Dashboard</h2>
             <span></span>
