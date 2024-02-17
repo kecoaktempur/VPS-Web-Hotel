@@ -12,7 +12,7 @@
                         @csrf
                         @method('PUT')
                         <div class="flex items-center justify-between mb-5">
-                            <h1 class="text-2xl font-bold" style="color: #070A52;">Tambah Ruangan</h1>
+                            <h1 class="text-2xl font-bold" style="color: #070A52;">Edit Ruangan</h1>
                             <div class="flex space-x-2">
                                 <a href="{{ route('room') }}" class="text-sm bg-transparent hover:bg-red-600 text-[#24305A] font-semibold hover:text-white py-1.5 px-2 border border-[#24305A]  hover:border-transparent rounded">
                                     Cancel

@@ -10,7 +10,7 @@
                 <div class="bg-white overflow-auto mt-5">
                     <form action="{{ route('type.update', ['id' => $type->id]) }}" method="POST">
                         @csrf
-                        @method('PUT');
+                        @method('PUT')
                         <div class="flex items-center justify-between mb-5">
                             <h1 class="text-2xl font-bold" style="color: #070A52;">Edit Tipe Ruangan</h1>
                             <div class="flex space-x-2">

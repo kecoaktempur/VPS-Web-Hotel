@@ -26,19 +26,38 @@ class TypeController extends Controller
                         ->from('current_transactions')
                         ->where(function ($q) use ($start_date, $end_date) {
                             $q->where(function ($inner) use ($start_date) {
-                                $inner->where('start_date', '<=', $start_date)
-                                    ->where('end_date', '>', $start_date);
-                            })
-                                ->orWhere(function ($inner) use ($end_date) {
-                                    $inner->where('start_date', '<', $end_date)
+                                $inner->where(function ($subInner) use ($start_date) {
+                                    $subInner->where('check_out_date', '!=', null)
+                                        ->where('start_date', '<=', $start_date)
+                                        ->where('check_out_date', '>', $start_date);
+                                })->orWhere(function ($subInner) use ($start_date) {
+                                    $subInner->where('check_out_date', '=', null)
+                                        ->where('start_date', '<=', $start_date)
+                                        ->where('end_date', '>', $start_date);
+                                });
+                            })->orWhere(function ($inner) use ($end_date) {
+                                $inner->where(function ($subInner) use ($end_date) {
+                                    $subInner->where('check_out_date', '!=', null)
+                                        ->where('start_date', '<', $end_date)
+                                        ->where('check_out_date', '>=', $end_date);
+                                })->orWhere(function ($subInner) use ($end_date) {
+                                    $subInner->where('check_out_date', '=', null)
+                                        ->where('start_date', '<', $end_date)
                                         ->where('end_date', '>=', $end_date);
-                                })
-                                ->orWhere(function ($inner) use ($start_date, $end_date) {
-                                    $inner->where('start_date', '>=', $start_date)
+                                });
+                            })->orWhere(function ($inner) use ($start_date, $end_date) {
+                                $inner->where(function ($subInner) use ($start_date, $end_date) {
+                                    $subInner->where('check_out_date', '!=', null)
+                                        ->where('start_date', '>=', $start_date)
+                                        ->where('check_out_date', '<=', $end_date);
+                                })->orWhere(function ($subInner) use ($start_date, $end_date) {
+                                    $subInner->where('check_out_date', '=', null)
+                                        ->where('start_date', '>=', $start_date)
                                         ->where('end_date', '<=', $end_date);
                                 });
+                            });
                         });
-                })->get();
+                })->get();                
 
                 $availableTypes = $availableRooms->pluck('type_id')->unique();
                 $roomPerTypes = $availableRooms->groupBy('type_id')->map->count();
