@@ -5,10 +5,10 @@
                 <a href="{{ route('home') }}" class="flex items-center">
                     <img src="{{ asset('img/VPS_Logo_Light.png') }}" class="h-20 mb-5" alt="Vanesa Park" />
                 </a>
-                <div class="flex items-center self-center text-md font-semibold w-full text-white">
-                    497 Evergreen Rd. Roseville, CA 95673 <br>
-                    +44 345 678 903 <br>
-                    luxury_hotels@gmail.com
+                <div class="flex items-center self-center text-md font-semibold w-full text-white text-sm">
+                    Jl. Taman Venesia Utara No.86, Sumur Batu, <br>Kabupaten Bogor, Jawa Barat 16810 <br>
+                    081517060899 <br>
+                    venesiaparksyariah@gmail.com
                 </div>
             </div>
 
