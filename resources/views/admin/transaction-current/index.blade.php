@@ -54,6 +54,9 @@
                                     Tanggal Checkout
                                 </th>
                                 <th scope="col" class="px-6 py-3 font-extrabold">
+                                    Notes
+                                </th>
+                                <th scope="col" class="px-6 py-3 font-extrabold">
                                     Action
                                 </th>
                             </tr>
@@ -89,9 +92,19 @@
                                     {{ $transaction->check_out_date ? \Carbon\Carbon::parse($transaction->check_out_date)->locale('id')->isoFormat('D MMMM YYYY') : 'Belum Checkout' }}
                                 </td>
                                 <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap">
+                                    {{ $transaction->notes }}
+                                </td>
+                                <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap">
                                     <div class="flex">
+                                        <form action="{{ route('transaction.checkout', ['id' => $transaction->id]) }} " method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <button class="{{$transaction->check_out_date ? "bg-green-200" : "bg-green-800 hover:bg-green-950" }} rounded-md  px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800" {{$transaction->check_out_date ? "disabled" : "" }}>
+                                                Checkout
+                                            </button>
+                                        </form>
                                         <a href="{{ route('transaction.edit', ['id' => $transaction->id]) }}">
-                                            <button class="rounded-md bg-blue-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800">
+                                            <button class="ml-2 rounded-md bg-blue-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800">
                                                 Edit
                                             </button>
                                         </a>
