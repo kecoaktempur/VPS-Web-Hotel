@@ -73,16 +73,16 @@ class TypeController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate(
             [
-                'name' => 'required|unique',
+                'name' => 'required',
                 'size' => 'required|numeric',
                 'price' => 'required|numeric',
                 'description' => 'required',
             ],
             [
                 'name.required' => 'Name can\'t be empty!',
-                'name.unique' => 'There is already a type with the same name!',
                 'size.required' => 'Size can\'t be empty!',
                 'size.numeric' => 'Size must be numeric!',
                 'price.required' => 'Price can\'t be empty!',
@@ -117,7 +117,7 @@ class TypeController extends Controller
     {
         $request->validate(
             [
-                'name' => 'required|unique',
+                'name' => 'required',
                 'size' => 'required|numeric',
                 'price' => 'required|numeric',
                 'description' => 'required',
