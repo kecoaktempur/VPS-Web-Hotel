@@ -29,12 +29,11 @@ class TransactionController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('admin.transaction.create', compact('types'));
+        return view('admin.transaction-current.create', compact('types'));
     }
 
     public function store(Request $request)
     {
-
     }
 
     public function showCurrent($id)
@@ -89,16 +88,16 @@ class TransactionController extends Controller
                         $inner->where('start_date', '<', $end_date)
                             ->where('end_date', '>', $start_date);
                     })
-                    ->orWhere(function ($inner) use ($start_date) {
-                        $inner->where('start_date', '<=', $start_date)
-                            ->where('end_date', '>=', $start_date);
-                    })
-                    ->orWhere(function ($inner) use ($start_date, $end_date) {
-                        $inner->where('start_date', '>=', $start_date)
-                            ->where('end_date', '<=', $end_date);
-                    });
+                        ->orWhere(function ($inner) use ($start_date) {
+                            $inner->where('start_date', '<=', $start_date)
+                                ->where('end_date', '>=', $start_date);
+                        })
+                        ->orWhere(function ($inner) use ($start_date, $end_date) {
+                            $inner->where('start_date', '>=', $start_date)
+                                ->where('end_date', '<=', $end_date);
+                        });
                 });
-        })->first();    
+        })->first();
 
         CurrentTransaction::findOrFail($id)->update([
             'room_id' => $room->id,
@@ -127,6 +126,5 @@ class TransactionController extends Controller
 
     public function checkout(Request $request, $id)
     {
-
     }
 }

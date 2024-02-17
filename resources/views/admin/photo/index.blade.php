@@ -6,12 +6,16 @@
 
     <div class="w-full overflow-x-hidden border-t flex flex-col">
         <main class="w-full flex-grow p-6">
-            <h1 class="text-3xl text-black pb-6">Foto</h1>
+            <div class="flex items-center justify-between mb-5">
+                <h1 class="text-3xl text-[#24305A] font-bold pb-6">Foto</h1>
+                <div class="flex space-x-2">
+                    <a href="{{ route('photo.create')}}" class="rounded-md bg-[#24305A] px-3 py-2.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800 text-xl">
+                        Tambah Foto
+                    </a>
+                </div>
+            </div>
 
             <div class="w-full mt-5">
-                <p class="text-xl pb-3 flex items-center">
-                    <i class="fas fa-list mr-3"></i> Latest Reports
-                </p>
                 <div class="bg-white overflow-auto">
                     <table class="w-full table-auto text-sm text-left rtl:text-right text-gray-500 overflow:hidden">
                         <thead class="text-xs uppercase border-b border-gray-700" style="color: #070A52;">
@@ -65,7 +69,7 @@
                                     <form action="{{ route('photo.destroy', ['id' => $photo->id]) }} " method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="rounded-md bg-rose-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500">
+                                        <button type="submit" class="ml-2 rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
                                             Delete
                                         </button>
                                     </form>

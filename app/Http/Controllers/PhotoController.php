@@ -20,7 +20,7 @@ class PhotoController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('admin.type.photo', compact('types'));
+        return view('admin.photo.create', compact('types'));
     }
 
     public function store(Request $request)
@@ -41,14 +41,14 @@ class PhotoController extends Controller
         $file->storeAs('public/img', $name);
 
         $photo = Photo::create([
-            'name' => $name, 
+            'name' => $name,
         ]);
 
-        if ($request->type){
+        if ($request->type) {
             TypePhoto::create([
                 'type_id' => $request->type,
                 'photo_id' => $photo->id
-            ]);   
+            ]);
         }
 
         return redirect('/admin/photo');

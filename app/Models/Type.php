@@ -19,6 +19,6 @@ class Type extends Model
 
     public function photos()
     {
-        return $this->hasMany(Photo::class, 'type_photo');
+        return $this->belongsToMany(Photo::class, 'type_photo');
     }
 }

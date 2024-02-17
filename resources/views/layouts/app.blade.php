@@ -19,13 +19,29 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
 
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        input[type='number']::-webkit-inner-spin-button,
+        input[type='number']::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .custom-number-input input:focus {
+            outline: none !important;
+        }
+
+        .custom-number-input button:focus {
+            outline: none !important;
+        }
+    </style>
 </head>
 
 <body class=" {{ request()->is('admin*') && Route::currentRouteName() != 'login' ? 'bg-gray-100 flex' : '' }}">
     @if(request()->is('admin*') && Route::currentRouteName() != 'login')
-        @include('layouts.navbar-admin')
+    @include('layouts.navbar-admin')
     @elseif(Route::currentRouteName() != 'login')
-        @include('layouts.navbar-user')
+    @include('layouts.navbar-user')
     @endif
     @yield('content')
 </body>

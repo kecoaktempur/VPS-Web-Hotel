@@ -6,7 +6,7 @@
 
     <div class="w-full overflow-x-hidden border-t flex flex-col">
         <main class="w-full flex-grow p-6">
-            <h1 class="text-3xl text-black pb-6">Reminder Checkout</h1>
+            <h1 class="text-3xl text-[#24305A] font-bold pb-6">Reminder Checkout</h1>
 
             <div class="w-full mt-5">
                 <p class="text-xl pb-3 flex items-center">
@@ -79,7 +79,7 @@
                                     <form action="{{ route('notif.read', ['id' => $notif->id]) }} " method="POST">
                                         @csrf
                                         @method('PUT')
-                                        <button type="submit" class="{{ $notif->is_read == 1 ? "bg-rose-200" : "bg-rose-500 hover:bg-red-600" }} rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500" {{ $notif->is_read == 1 ? 'disabled' : '' }}>
+                                        <button type="submit" class="{{ $notif->is_read == 1 ? "bg-blue-200" : "bg-blue-800 hover:bg-blue-950" }} rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500" {{ $notif->is_read == 1 ? 'disabled' : '' }}>
                                             Mark As Read
                                         </button>
                                     </form>

@@ -4,4 +4,8 @@ document.getElementById('openSidebarMini').addEventListener('click', function ()
     elements.forEach(function (element) {
         element.classList.toggle('hidden');
     });
+    var elements = document.querySelectorAll('#navLink');
+    elements.forEach(function (element) {
+        element.classList.toggle('pl-6');
+    });
 });
