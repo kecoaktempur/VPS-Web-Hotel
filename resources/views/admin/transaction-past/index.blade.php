@@ -29,7 +29,7 @@
                                     No
                                 </th>
                                 <th scope="col" class="px-6 py-3 font-extrabold">
-                                    Nama Kepala
+                                    Nama Lengkap
                                 </th>
                                 <th scope="col" class="px-6 py-3 font-extrabold">
                                     Tipe Ruangan

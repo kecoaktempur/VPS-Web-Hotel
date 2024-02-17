@@ -25,10 +25,12 @@
             <h1 class="text-3xl font-extrabold tracking-tight leading-none text-[#12182E] md:text-4xl lg:text-5xl font-[Aleo]">
                 Tentang Kami</h1>
             <div class="border-b-2 border-[#3E9CC0] w-1/5"></div>
-            <p class="max-w-2xl mt-8 mb-6 font-medium text-black lg:mb-8 md:text-sm lg:text-base">Amet minim
-                mollit
-                non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequatduis enim. Amet minim
-                mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequatduis enim.
+            <p class="max-w-2xl mt-8 mb-6 font-medium text-black lg:mb-8 md:text-sm lg:text-base text-justify whitespace-pre-wrap">
+Venesia Park Sentul Syariah, tempat yang menyediakan keseimbangan sempurna antara kenyamanan dan ketenangan. Terletak di kawasan yang aman dan nyaman.
+
+Kami menyediakan 4 tipe kamar yang dapat memenuhi berbagai kebutuhan: Standard, Deluxe, Family, dan VIP. Dengan fokus pada kehangatan keluarga, staff kami siap memberikan pelayanan yang ramah dan profesional untuk memastikan pengalaman menginap Anda menjadi tak terlupakan. 
+                
+Kami berkomitmen untuk menjaga nilai-nilai keberagaman dan memastikan semua tamu merasa dihormati dan diakomodasi dengan baik. Untuk tamu yang menginap sebagai pasangan lawan jenis, kami meminta Anda mengirimkan foto KTP suami istri melalui WhatsApp kami sebagai bagian dari kebijakan keamanan kami.
             </p>
             <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-[#3E9CC0] hover:bg-transparent focus:ring-4 focus:ring-primary-300 hover:border-2 hover:border-[#000000] hover:text-black mt-2">Contact
                 Us
@@ -306,7 +308,7 @@
         </div>
         <div>
             <label for="Nama Kepala" class="block mb-2 text-lg font-medium text-gray-900">Nama
-                Kepala</label>
+                Lengkap</label>
             <input type="text" id="review-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#3E9CC0] focus:border-[#3E9CC0] block w-full p-2.5 mb-5" placeholder="Nama">
         </div>
         <div class="py-2 px-4 mb-4 bg-gray-50 rounded-lg rounded-t-lg border border-gray-200">

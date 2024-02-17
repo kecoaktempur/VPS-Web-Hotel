@@ -32,7 +32,7 @@
                             </div>
                             <div class="w-1/3 pl-2 mb-2">
                                 <div class="relative mb-2">
-                                    <h1 class="mb-2 font-bold">Nama Kepala</h1>
+                                    <h1 class="mb-2 font-bold">Nama Lengkap</h1>
                                     <input type="text" id="name" name="name" class="block px-2.5 py-2.5 w-full text-sm text-gray-900 bg-transparent rounded-xl border-1 border-2 border-black appearance-none focus:outline-none focus:ring-0 focus:border-black peer bg-white" placeholder="Nama Kepala" value="{{ $transaction->name }}" />
                                 </div>
                                 @if($errors->has('name'))
