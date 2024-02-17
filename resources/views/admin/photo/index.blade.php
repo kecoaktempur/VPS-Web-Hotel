@@ -1,5 +1,20 @@
 @extends('layouts.app')
 @section('content')
+<div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
+    <!-- Move the "x" button inside the modal container and position it at the top left corner -->
+    <div class="absolute top-0 right-0 p-4">
+        <button class="text-black text-4xl leading-none font-semibold outline-none focus:outline-none cursor-pointer" onclick="toggleModal('modal-id')"> × </button>
+    </div>
+    <div class="relative w-full max-w-screen-lg max-h-[700px]">
+        <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+            <div class="flex items-start justify-between p-5 rounded-t relative h-56 md:h-screen overflow-hidden rounded-lg">
+                <img src="{{ asset('img/deluxe (1).jpg') }}" class="w-full h-full object-cover" alt="...">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
+
 <div class="w-full flex flex-col h-screen overflow-y-hidden">
     <!-- Mobile Header & Nav -->
     @include('layouts.navbar-admin-mobile')
@@ -49,8 +64,8 @@
                                 <th scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap">
                                     {{ $count++ }}
                                 </th>
-                                <th scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap max-w-36">
-                                    <img src="{{ asset('img/' . $photo->name) }}" alt="">
+                                <th scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap max-w-36" onclick="toggleModal('modal-id')">
+                                    <img src=" {{ asset('img/' . $photo->name) }}" alt="">
                                 </th>
                                 <th scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap">
                                     {{ $photo->name }}
@@ -88,4 +103,6 @@
     </div>
     </main>
 </div>
+
+<script src="{{ asset('js/admin_foto.js') }}"></script>
 @endsection
