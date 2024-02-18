@@ -1,31 +1,30 @@
 <footer class="bg-[#24305A] mt-20">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-        <div class="grid grid-cols-3">
+        <div class="flex flex-col md:grid md:grid-cols-3">
             <div class="mb-6 md:mb-0">
                 <a href="{{ route('home') }}" class="flex items-center">
-                    <img src="{{ asset('img/VPS_Logo_Light.png') }}" class="h-20 mb-5" alt="Vanesa Park" />
+                    <img src="{{ asset('img/VPS_Logo_Light.png') }}" class="max-w-64 md:max-w-full h-auto mb-5 mx-auto" alt="Vanesa Park" />
                 </a>
-                <div class="flex items-center self-center text-md font-semibold w-full text-white text-sm">
-                    Jl. Taman Venesia Utara No.86, Sumur Batu, <br>Kabupaten Bogor, Jawa Barat 16810 <br>
-                    081517060899 <br>
-                    venesiaparksyariah@gmail.com
+                <div class="text-center md:text-left">
+                    <div class="items-center self-center text-md font-semibold w-full text-white text-sm">
+                        Jl. Taman Venesia Utara No.86, Sumur Batu, <br>Kabupaten Bogor, Jawa Barat 16810
+                    </div>
                 </div>
             </div>
-
-            <div class="text-center">
+            <div class="text-center pt-4">
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact Info</h2>
                     <ul class="text-gray-500 dark:text-gray-400 font-medium">
                         <li class="mb-4">
-                            <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
+                            <a href="#" class="hover:underline">081517060899
                         </li>
                         <li>
-                            <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                            <a href="#" class="hover:underline">venesiaparksyariah@gmail.com</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="text-center">
+            <div class="text-center pt-4">
                 <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
                 <ul class="text-gray-500 dark:text-gray-400 font-medium">
                     <li class="mb-4 flex items-center justify-center">
