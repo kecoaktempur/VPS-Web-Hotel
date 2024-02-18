@@ -59,7 +59,7 @@ Kami berkomitmen untuk menjaga nilai-nilai keberagaman dan memastikan semua tamu
         <div class="relative w-3/4 lg:-ml-20 rounded-xl p-5" style="background-color: rgba(18, 24, 46, 0.95);">
             <h1 class="text-3xl font-extrabold tracking-tight leading-none text-white md:text-4xl lg:text-5xl font-[Aleo] text-center p-10">
                 Fasilitas</h1>
-            <div class='flex grid-cols-[0.75fr, 1fr] w-full mx-10 mb-3'>
+            <div class='flex grid-cols-[0.75fr, 1fr] w-full md:mx-10 mb-3'>
                 <div class="rounded-xl bg-gray-200 my-auto p-5">
                     <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
                         <g fill="none">
@@ -70,24 +70,24 @@ Kami berkomitmen untuk menjaga nilai-nilai keberagaman dan memastikan semua tamu
                         </g>
                     </svg>
                 </div>
-                <div class="w-3/4 rounded-xl  my-auto p-5">
+                <div class="w-3/4 rounded-xl  my-auto pl-2 md:p-5">
                     <p class="font-medium text-white  md:text-sm lg:text-base">Dekat dengan
                         BCA Learning Institute, AEON Mall, IKEA.
                     </p>
                 </div>
             </div>
-            <div class='flex grid-cols-[0.75fr, 2fr] w-full mx-10 mb-5'>
+            <div class='flex grid-cols-[0.75fr, 2fr] w-full md:mx-10 mb-5'>
                 <div class="rounded-xl bg-gray-200 my-auto p-5">
                     <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                         <path fill="currentColor" d="M5.251 9.749a.749.749 0 1 0 0-1.498a.749.749 0 0 0 0 1.498m6.247-.75A.749.749 0 1 1 10 9a.749.749 0 0 1 1.498 0M6.5 1a.5.5 0 0 0-.5.5V2h-.681a2 2 0 0 0-1.984 1.744L3.173 5H2.5a.5.5 0 0 0 0 1h.544l-.01.074A1.5 1.5 0 0 0 2 7.5v3A1.5 1.5 0 0 0 3.5 12v1.25a.75.75 0 0 0 1.5 0V12h5.997v1.25a.75.75 0 0 0 1.5 0V12h.003a1.5 1.5 0 0 0 1.5-1.5v-3a1.5 1.5 0 0 0-1.04-1.428L12.951 6h.549a.5.5 0 0 0 0-1h-.677l-.16-1.253A2 2 0 0 0 10.68 2H10v-.5a.5.5 0 0 0-.5-.5zM4.052 6l.275-2.128A1 1 0 0 1 5.319 3h5.36a1 1 0 0 1 .992.873L11.943 6zM13 10.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5z" />
                     </svg>
                 </div>
-                <div class="w-3/4 rounded-xl  my-auto p-5">
+                <div class="w-3/4 rounded-xl  my-auto pl-2 md:p-5">
                     <p class="font-medium text-white  md:text-sm lg:text-base">Layanan Grab & Gojek 24 jam.
                     </p>
                 </div>
             </div>
-            <div class='flex grid-cols-[0.75fr, 2fr] w-full mx-10 mb-5'>
+            <div class='flex grid-cols-[0.75fr, 2fr] w-full md:mx-10 mb-5'>
                 <div class="rounded-xl bg-gray-200 my-auto p-5">
                     <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g fill="none" stroke="currentColor" stroke-width="1.5">
@@ -96,35 +96,35 @@ Kami berkomitmen untuk menjaga nilai-nilai keberagaman dan memastikan semua tamu
                         </g>
                     </svg>
                 </div>
-                <div class="w-3/4 rounded-xl  my-auto p-5">
+                <div class="w-3/4 rounded-xl  my-auto pl-2 md:p-5">
                     <p class="font-medium text-white  md:text-sm lg:text-base">Tempat parkir yang luas.
                     </p>
                 </div>
             </div>
-            <div class='flex grid-cols-[0.75fr, 2fr] w-full mx-10 mb-5'>
+            <div class='flex grid-cols-[0.75fr, 2fr] w-full md:mx-10 mb-5'>
                 <div class="rounded-xl bg-gray-200 my-auto p-5">
                     <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M20.916 9.564a.998.998 0 0 0-.513-1.316L7.328 2.492c-.995-.438-2.22.051-2.645 1.042l-2.21 5.154a2.001 2.001 0 0 0 1.052 2.624L9.563 13.9L8.323 17H4v-3H2v8h2v-3h4.323c.823 0 1.552-.494 1.856-1.258l1.222-3.054l5.205 2.23a1 1 0 0 0 1.31-.517l.312-.71l1.701.68l2-5l-1.536-.613zm-4.434 5.126L4.313 9.475l2.208-5.152l12.162 5.354z" />
                     </svg>
                 </div>
-                <div class="w-3/4 rounded-xl  my-auto p-5">
+                <div class="w-3/4 rounded-xl  my-auto pl-2 md:p-5">
                     <p class="font-medium text-white  md:text-sm lg:text-base">CCTV 24 jam untuk meningkatkan
                         keamanan.
                     </p>
                 </div>
             </div>
-            <div class='flex grid-cols-[0.75fr, 2fr] w-full mx-10 mb-5'>
+            <div class='flex grid-cols-[0.75fr, 2fr] w-full md:mx-10 mb-5'>
                 <div class="rounded-xl bg-gray-200 my-auto p-5">
                     <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
                         <path fill="currentColor" d="M82 56V24a6 6 0 0 1 12 0v32a6 6 0 0 1-12 0m38 6a6 6 0 0 0 6-6V24a6 6 0 0 0-12 0v32a6 6 0 0 0 6 6m32 0a6 6 0 0 0 6-6V24a6 6 0 0 0-12 0v32a6 6 0 0 0 6 6m94 58v8a38 38 0 0 1-36.94 38a94.55 94.55 0 0 1-31.13 44H208a6 6 0 0 1 0 12H32a6 6 0 0 1 0-12h30.07A94.34 94.34 0 0 1 26 136V88a6 6 0 0 1 6-6h176a38 38 0 0 1 38 38m-44 16V94H38v42a82.27 82.27 0 0 0 46.67 74h70.66A82.27 82.27 0 0 0 202 136m32-16a26 26 0 0 0-20-25.29V136a93.18 93.18 0 0 1-1.69 17.64A26 26 0 0 0 234 128Z" />
                     </svg>
                 </div>
-                <div class="w-3/4 rounded-xl  my-auto p-5">
+                <div class="w-3/4 rounded-xl  my-auto pl-2 md:p-5">
                     <p class="font-medium text-white  md:text-sm lg:text-base">Daerah komunal.
                     </p>
                 </div>
             </div>
-            <div class='flex grid-cols-[0.75fr, 2fr] w-full mx-10 mb-5'>
+            <div class='flex grid-cols-[0.75fr, 2fr] w-full md:mx-10 mb-5'>
                 <div class="rounded-xl bg-gray-200 my-auto p-5">
                     <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <path fill="currentColor" d="M346.65 304.3a136 136 0 0 0-180.71 0a21 21 0 1 0 27.91 31.38a94 94 0 0 1 124.89 0a21 21 0 0 0 27.91-31.4Z" />
@@ -133,7 +133,7 @@ Kami berkomitmen untuk menjaga nilai-nilai keberagaman dan memastikan semua tamu
                         <circle cx="256.28" cy="393.41" r="32" fill="currentColor" />
                     </svg>
                 </div>
-                <div class="w-3/4 rounded-xl  my-auto p-5">
+                <div class="w-3/4 rounded-xl  my-auto pl-2 md:p-5">
                     <p class="font-medium text-white  md:text-sm lg:text-base">Wifi gratis.
                     </p>
                 </div>
