@@ -6,7 +6,10 @@
         </svg>
     </button>
     <div class="p-6">
-        <img class="h-10 w-auto" src="{{ asset('img/VPS_Logo_Dark.png') }}" alt="" id="textSidebarMini">
+        <a aria-current="page" class="flex items-center" href="/">
+            <img class="h-10 w-auto" src="{{ asset('img/VPS_Logo_Dark.png') }}" alt="">
+            <p class="sr-only">Website Title</p>
+        </a>
     </div>
     <nav class="text-white text-base font-semibold pt-3">
         <a href="{{ route('dashboard') }}" class="flex justify-center py-4 pl-6 text-black hover:bg-[#24305A] group {{ Str::contains(Route::currentRouteName(), 'dashboard') ? 'bg-[#24305A]' : '' }}" id="navLink">

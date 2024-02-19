@@ -17,12 +17,11 @@
             <h1 class="mb-2 font-bold">Check Out</h1>
             <input type="date" id="checkout" name="checkout" placeholder="Add Date" class="p-2 w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-xl border-2 border-[#000000]">
         </div>
-        <button type="button" onclick="checkAvailability()" class="font-semibold bg-[#3E9CC0] lg:w-3/4 lg:mx-auto lg:h-1/2 lg:my-auto max-lg:h-full max-lg:min-h-[52px] text-white flex items-center justify-center transition duration-300 ease-in-out hover:bg-[#1680A8] rounded-xl">Check
-            Availability</button>
+        <button type="button" onclick="checkAvailability()" class="font-semibold bg-[#3E9CC0] lg:w-3/4 lg:mx-auto lg:h-1/2 lg:my-auto max-lg:h-full max-lg:min-h-[52px] text-white flex items-center justify-center transition duration-300 ease-in-out hover:bg-[#1680A8] rounded-xl">Cek Ketersediaan</button>
     </form>
 </div>
 
-<div class="container mx-auto font-bold text-6xl mb-2 font-[Aleo] text-center pb-10">Room Type</div>
+<div class="container mx-auto font-bold text-6xl mb-2 font-[Aleo] text-center pb-10">Tipe Ruangan</div>
 <div class="container mx-auto bg-white md:grid md:grid-cols-[2fr,.75fr] md:grid-flow-col rounded-xl font-[Montserrat] w-5/6">
     <div class="flex flex-col mr-5grid-cols-2">
         @foreach ($types as $type)
@@ -86,7 +85,7 @@
                         <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56">
                             <path fill="currentColor" d="M38.723 28.549c4.417 0 8.217-3.944 8.217-9.08c0-5.074-3.82-8.833-8.217-8.833c-4.396 0-8.217 3.841-8.217 8.874c0 5.095 3.8 9.039 8.217 9.039m-23.645.473c3.821 0 7.15-3.452 7.15-7.91c0-4.416-3.35-7.683-7.15-7.683c-3.82 0-7.19 3.349-7.169 7.725c0 4.416 3.328 7.868 7.17 7.868M3.616 47.572h15.612c-2.136-3.102.473-9.347 4.89-12.757c-2.28-1.52-5.219-2.65-9.06-2.65C5.793 32.164 0 39.004 0 44.695c0 1.85 1.027 2.877 3.616 2.877m22.186 0h25.822c3.225 0 4.376-.925 4.376-2.733c0-5.3-6.636-12.613-17.297-12.613c-10.641 0-17.277 7.313-17.277 12.614c0 1.807 1.15 2.732 4.376 2.732" />
                         </svg>
-                        <h5 class="text-lg max-md:text-sm font-bold tracking-tight text-[#24305A]">{{ $type->size }} Guest
+                        <h5 class="text-lg max-md:text-sm font-bold tracking-tight text-[#24305A]">{{ $type->size }} Pengunjung
                         </h5>
                     </div>
                 </div>
@@ -130,7 +129,7 @@
                 </div>
             </div>
 
-            <h1 class="font-bold">Note</h1>
+            <h1 class="font-bold">Catatan</h1>
             <div class="py-2 px-4 mb-4 rounded-lg rounded-t-lg border border-gray-200">
                 <label for="comment" class="sr-only">Your comment</label>
                 <textarea id="notetambahan" rows="6" class="bg-transparent px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Tambah Kasur (1), Tambah Bantal (1)....."></textarea>
@@ -182,7 +181,7 @@
                 <div id="cart-items-navbar" class="overflow-y-auto max-h-[120px]"></div>
             </div>
 
-            <h1 class="font-bold">Note</h1>
+            <h1 class="font-bold">Catatan</h1>
             <div class="py-2 px-4 mb-4 rounded-lg rounded-t-lg border border-gray-200">
                 <label for="comment" class="sr-only">Your comment</label>
                 <textarea id="notetambahan" rows="6" class="bg-transparent px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Tambah Kasur (1), Tambah Bantal (1)....."></textarea>

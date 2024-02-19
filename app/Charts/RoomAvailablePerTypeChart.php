@@ -41,20 +41,20 @@ class RoomAvailablePerTypeChart
                             });
                         });
                 })->count();
-        
+
             $notAvailableCount = Room::where('type_id', $type->id)->count() - $availableCount;
-        
+
             $availableDatas[] = $availableCount;
             $notAvailableDatas[] = $notAvailableCount;
         }
-        
+
 
         return $this->chart->barChart()
             ->setTitle('Ketersediaan Ruangan per Tipe')
             ->setSubtitle('Tanggal ' . Carbon::parse($dateNow)->locale('id')->isoFormat('D MMMM YYYY'))
+            ->setColors(['#1C64F2', '#16BDCA'])
             ->addData('Tersedia', $availableDatas)
             ->addData('Tidak Tersedia', $notAvailableDatas)
-            ->setXAxis($typeNames)
-            ->setColors(['#ffc63b', '#ff6384']);
+            ->setXAxis($typeNames);
     }
 }

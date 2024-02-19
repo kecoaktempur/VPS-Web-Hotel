@@ -13,23 +13,14 @@
             </div>
             <div class="text-center pt-4">
                 <div>
-                    {{-- <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact Info</h2>
-                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline">081517060899
-                        </li>
-                        <li>
-                            <a href="#" class="hover:underline">venesiaparksyariah@gmail.com</a>
-                        </li>
-                    </ul> --}}
                 </div>
             </div>
             <div class="text-center md:text-right pt-4">
                 <div>
-                    <h2 class="mb-6 text-sm md:text-xl font-semibold text-gray-900 uppercase dark:text-white">Contact Info</h2>
+                    <h2 class="mb-6 text-sm md:text-xl font-semibold text-gray-900 uppercase dark:text-white">Hubungi Kami</h2>
                     <ul class="text-gray-500 dark:text-gray-400 font-medium">
                         <li class="mb-4">
-                            <a href="#" class="hover:underline">(081) 517-060899
+                            <a href="https://wa.me/+6281359994322" class="hover:underline">(081) 517-060899
                         </li>
                         <li>
                             <a href="#" class="hover:underline">venesiaparksyariah@gmail.com</a>

@@ -19,7 +19,7 @@ class RoomAvailableTodayChart
     {
         $dateNow = Carbon::now()->toDateString();
         $roomCount = Room::count();
-    
+
         $roomAvailable = Room::whereNotIn('id', function ($query) use ($dateNow) {
             $query->select('room_id')
                 ->from('current_transactions')
@@ -37,13 +37,14 @@ class RoomAvailableTodayChart
                     });
                 });
         })->count();
-    
+
         $roomNotAvailable = $roomCount - $roomAvailable;
-    
+
         return $this->chart->pieChart()
             ->setTitle('Ketersediaan Ruangan Hari Ini')
             ->setSubtitle('Tanggal ' . Carbon::parse($dateNow)->locale('id')->isoFormat('D MMMM YYYY'))
             ->addData([$roomAvailable, $roomNotAvailable])
-            ->setLabels(['Tersedia', 'Tidak Tersedia']);
+            ->setLabels(['Tersedia', 'Tidak Tersedia'])
+            ->setColors(['#1C64F2', '#16BDCA']);
     }
 }

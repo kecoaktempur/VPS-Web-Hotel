@@ -45,6 +45,7 @@ class TransactionCountPerMonthChart
             ->setTitle('Jumlah Transaksi')
             ->setSubtitle('Per Bulan Tahun 2024')
             ->addData('Jumlah Transaksi', $monthlyCounts)
-            ->setXAxis(['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']);
+            ->setXAxis(['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'])
+            ->setColors(['#9061F9']);
     }
 }

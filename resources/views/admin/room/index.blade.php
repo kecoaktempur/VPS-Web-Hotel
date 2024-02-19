@@ -169,7 +169,12 @@
                                 <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap">
                                     <div class="flex">
                                         <a href="{{ route('room.edit', ['id' => $room->id]) }}">
-                                            <button class="rounded-md bg-blue-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800">
+                                            <button class="rounded-md bg-green-800 hover:bg-green-950 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800">
+                                                Detail
+                                            </button>
+                                        </a>
+                                        <a href="{{ route('room.edit', ['id' => $room->id]) }}">
+                                            <button class="ml-2 rounded-md bg-blue-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800">
                                                 Edit
                                             </button>
                                         </a>

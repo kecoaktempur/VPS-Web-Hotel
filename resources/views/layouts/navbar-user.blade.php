@@ -15,16 +15,16 @@
         </div>
         <ul id="collapseMenu" class='lg:!flex lg:space-x-10 max-lg:space-y-3 max-lg:hidden max-lg:w-full max-lg:my-4 my-auto'>
             <li class='max-lg:border-b max-lg:py-2'>
-                <a href='{{ route('home') }}' class='{{ Str::contains(Route::currentRouteName(), 'home') ? 'hover:text-[#3E9CC0] font-semibold block text-[15px] lg:border-b-2 lg:border-[#000000]' : 'hover:text-[#3E9CC0] text-gray-600 font-reguler text-[15px]' }}'>Home</a>
+                <a href='{{ route('home') }}' class='{{ Str::contains(Route::currentRouteName(), 'home') ? 'hover:font-bold font-semibold block text-[15px] lg:border-b-2 lg:border-[#000000]' : 'hover:font-bold text-gray-600 font-reguler text-[15px]' }}'>Beranda</a>
             </li>
             <li class='max-lg:border-b max-lg:py-2'>
-                <a href='{{ route('type.index.user')}}' class='{{ Str::contains(Route::currentRouteName(), 'type') ? 'hover:text-[#3E9CC0] font-semibold block text-[15px] lg:border-b-2 lg:border-[#000000]' : 'hover:text-[#3E9CC0] text-gray-600 font-reguler text-[15px]' }}'>Rooms</a>
+                <a href='{{ route('type.index.user')}}' class='{{ Str::contains(Route::currentRouteName(), 'type') ? 'hover:font-bold font-semibold block text-[15px] lg:border-b-2 lg:border-[#000000]' : 'hover:font-bold text-gray-600 font-reguler text-[15px]' }}'>Ruangan</a>
             </li>
             <li class='max-lg:border-b max-lg:py-2'>
-                <a href='{{ route('gallery')}}' class='{{ Str::contains(Route::currentRouteName(), 'gallery') ? 'hover:text-[#3E9CC0] font-semibold block text-[15px] lg:border-b-2 lg:border-[#000000]' : 'hover:text-[#3E9CC0] text-gray-600 font-reguler text-[15px]' }}'>Gallery</a>
+                <a href='{{ route('gallery')}}' class='{{ Str::contains(Route::currentRouteName(), 'gallery') ? 'hover:font-bold font-semibold block text-[15px] lg:border-b-2 lg:border-[#000000]' : 'hover:font-bold text-gray-600 font-reguler text-[15px]' }}'>Galleri</a>
             </li>
             <li class='max-lg:border-b max-lg:py-2'>
-                <a href='https://wa.me/+6281359994322' class='hover:bg-transparent hover:border-2 hover:border-[#24305A] hover:text-gray-600 text-white font-semibold text-[15px] bg-[#24305A] rounded-xl p-3'>Contact Us</a>
+                <a href='https://wa.me/+6281359994322' class='hover:bg-transparent hover:border-2 hover:border-[#24305A] hover:text-gray-600 text-white font-semibold text-[15px] bg-[#24305A] rounded-xl p-3'>Hubungi Kami</a>
             </li>
         </ul>
     </div>

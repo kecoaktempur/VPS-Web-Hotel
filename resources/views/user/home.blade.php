@@ -5,14 +5,12 @@
     <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed mt-10">
         <div class="flex h-full items-center justify-center">
             <div class="text-white">
-                <p class="mt-8 mb-4 text-lg font-normal text-white lg:text-3xl sm:px-16 lg:px-48">Create
-                    Memories
-                    With
+                <p class="mt-8 mb-4 text-lg font-normal text-white lg:text-3xl sm:px-16 lg:px-48">Temukan Kenangan Tak Terlupakan di Hotel Kami
                 </p>
                 <h1 class="mb-8 text-4xl font-bold tracking-tight leading-none text-white md:text-5xl lg:text-6xl font-[Aleo]">
                     Venesia Park Sentul Syariah</h1>
                 <a href="{{ route('type.index.user')}}" class="rounded-xl border-2 border-neutral-50 px-3 pb-[8px] pt-[10px] text-lg lg:text-md sm:px-10 font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200" data-te-ripple-init data-te-ripple-color="light">
-                    Book Now
+                    Pesan Sekarang
                 </a>
             </div>
         </div>
@@ -28,8 +26,7 @@
             <p class="max-w-2xl mt-8 mb-6 font-medium text-black lg:mb-8 md:text-sm lg:text-base text-justify whitespace-pre-wrap">&nbsp;&nbsp;Venesia Park Sentul Syariah, tempat yang menyediakan keseimbangan sempurna antara kenyamanan dan ketenangan. Terletak di kawasan yang aman dan nyaman. <br> &nbsp;&nbsp;Kami menyediakan 4 tipe kamar yang dapat memenuhi berbagai kebutuhan: Standard, Deluxe, Family, dan VIP. Dengan fokus pada kehangatan keluarga, staff kami siap memberikan pelayanan yang ramah dan profesional untuk memastikan pengalaman menginap Anda menjadi tak terlupakan. <br> &nbsp;&nbsp;Kami berkomitmen untuk menjaga nilai-nilai keberagaman dan memastikan semua tamu merasa dihormati dan diakomodasi dengan baik. Untuk tamu yang menginap sebagai pasangan lawan jenis, kami meminta Anda mengirimkan foto KTP suami istri melalui WhatsApp kami sebagai bagian dari kebijakan keamanan kami.
             </p>
 
-            <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-[#3E9CC0] hover:bg-transparent focus:ring-4 focus:ring-primary-300 hover:border-2 hover:border-[#000000] hover:text-black mt-2">Contact
-                Us
+            <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-[#3E9CC0] hover:bg-transparent focus:ring-4 focus:ring-primary-300 hover:border-2 hover:border-[#000000] hover:text-black mt-2">Hubungi Kami
                 <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
@@ -182,7 +179,7 @@
                                             <path fill="white" d="M38.723 28.549c4.417 0 8.217-3.944 8.217-9.08c0-5.074-3.82-8.833-8.217-8.833c-4.396 0-8.217 3.841-8.217 8.874c0 5.095 3.8 9.039 8.217 9.039m-23.645.473c3.821 0 7.15-3.452 7.15-7.91c0-4.416-3.35-7.683-7.15-7.683c-3.82 0-7.19 3.349-7.169 7.725c0 4.416 3.328 7.868 7.17 7.868M3.616 47.572h15.612c-2.136-3.102.473-9.347 4.89-12.757c-2.28-1.52-5.219-2.65-9.06-2.65C5.793 32.164 0 39.004 0 44.695c0 1.85 1.027 2.877 3.616 2.877m22.186 0h25.822c3.225 0 4.376-.925 4.376-2.733c0-5.3-6.636-12.613-17.297-12.613c-10.641 0-17.277 7.313-17.277 12.614c0 1.807 1.15 2.732 4.376 2.732" />
                                         </svg>
                                         <h5 class="ml-2 my-auto text-sm max-md:text-sm font-bold tracking-tight text-white">
-                                            {{ $type->size }} Guest
+                                            {{ $type->size }} Pengunjung
                                         </h5>
                                     </div>
                                     <div class="grid grid-cols-[.5fr,2fr]">
@@ -228,28 +225,28 @@
             <div class="flex w-full">
                 <div class="p-5 relative group" id="sekitar_card" style="height: 500px;">
                     <div class="flex h-full rounded-xl overflow-hidden relative">
-                        <img src="{{ asset('img/facility (1).jpg') }}" alt="black chair and white table" class="object-cover object-center w-full" />
+                        <img src="{{ asset('img/nearby (1).jpg') }}" alt="black chair and white table" class="object-cover object-center w-full" />
                     </div>
                 </div>
             </div>
             <div class="flex w-full">
                 <div class="p-5 relative group" id="sekitar_card" style="height: 500px;">
                     <div class="flex h-full rounded-xl overflow-hidden relative">
-                        <img src="{{ asset('img/facility (2).jpg') }}" alt="black chair and white table" class="object-cover object-center w-full" />
+                        <img src="{{ asset('img/nearby (2).jpg') }}" alt="black chair and white table" class="object-cover object-center w-full" />
                     </div>
                 </div>
             </div>
             <div class="flex w-full">
                 <div class="p-5 relative group" id="sekitar_card" style="height: 500px;">
                     <div class="flex h-full rounded-xl overflow-hidden relative">
-                        <img src="{{ asset('img/facility (3).jpg') }}" alt="black chair and white table" class="object-cover object-center w-full" />
+                        <img src="{{ asset('img/nearby (3).jpg') }}" alt="black chair and white table" class="object-cover object-center w-full" />
                     </div>
                 </div>
             </div>
             <div class="flex w-full">
                 <div class="p-5 relative group" id="sekitar_card" style="height: 500px;">
                     <div class="flex h-full rounded-xl overflow-hidden relative">
-                        <img src="{{ asset('img/facility (4).jpg') }}" alt="black chair and white table" class="object-cover object-center w-full" />
+                        <img src="{{ asset('img/nearby (4).jpg') }}" alt="black chair and white table" class="object-cover object-center w-full" />
                     </div>
                 </div>
             </div>
@@ -270,7 +267,7 @@
 <div class="container flex flex-col mx-auto md:w-3/4 p-10">
     <div class="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 gap-4">
         @foreach($reviews as $review)
-        <div class="bg-white border-2 border-[#24305A] rounded-lg p-8 text-center w-full">
+        <div class="bg-white border-2 border-[#24305A] rounded-xl p-8 text-center w-full">
             <div class="flex items-center mb-1 space-x-1 rtl:space-x-reverse">
                 @for ($i = 1; $i <= $review->rating; $i++)
                     <svg class="w-6 h-8 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
@@ -294,13 +291,95 @@
         <h2 class="text-lg lg:text-2xl font-bold text-gray-900">Apa kata Anda?</h2>
     </div>
     <form>
-        <div class="rating flex justify-center items-center gap-2 text-yellow-500 text-2xl mb-8">
-            <input type="number" name="rating" hidden>
-            <i class='bx bx-star star' style="color: #fde047;"></i>
-            <i class='bx bx-star star' style="color: #fde047;"></i>
-            <i class='bx bx-star star' style="color: #fde047;"></i>
-            <i class='bx bx-star star' style="color: #fde047;"></i>
-            <i class='bx bx-star star' style="color: #fde047;"></i>
+        <div class="grid grid-cols-2 max-sm:grid-cols-1">
+            <div class="relative mb-2">
+                <h1 class="mb-2 font-bold">Foto</h1>
+                <input type="file" class="block w-full text-sm text-slate-500
+                                        file:mr-4 file:py-2 file:px-4 file:rounded-md
+                                        file:border-0 file:text-sm file:font-semibold
+                                        file:bg-blue-100 file:text-[#24305A]
+                                        hover:file:bg-pink-100" id="photo" name="photo" multiple />
+            </div>
+            <div class="relative mb-2">
+                <h1 class="mb-2 font-bold">Bintang</h1>
+                <div class="rating flex justify-start items-center gap-2 text-yellow-500 text-2xl mb-8 py-auto">
+                    <input type="number" name="rating" hidden>
+                    <i class='bx bx-star star' style="color: #fde047;"></i>
+                    <i class='bx bx-star star' style="color: #fde047;"></i>
+                    <i class='bx bx-star star' style="color: #fde047;"></i>
+                    <i class='bx bx-star star' style="color: #fde047;"></i>
+                    <i class='bx bx-star star' style="color: #fde047;"></i>
+                </div>
+            </div>
+        </div>
+        <div>
+            <label for="Nama Kepala" class="block mb-2 text-lg font-medium text-gray-900">Nama
+                Lengkap</label>
+            <input type="text" id="review-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#3E9CC0] focus:border-[#3E9CC0] block w-full p-2.5 mb-5" placeholder="Nama">
+        </div>
+        <div class="py-2 px-4 mb-4 bg-gray-50 rounded-lg rounded-t-lg border border-gray-200">
+            <label for="review-message" class="sr-only">Pesan anda</label>
+            <textarea id="review-message" rows="6" class="bg-gray-50 px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Tulis pesan anda..." required></textarea>
+        </div>
+        <div class="btn-group flex items-center gap-2">
+            <button type="submit" class="btn submit py-3 px-4 rounded-xl border-none outline-none cursor-pointer text-white bg-[#3E9CC0] font-medium">Kirim</button>
+        </div>
+    </form>
+</div>
+
+<div class="container flex flex-col mx-auto md:w-3/4 p-10">
+    <div class="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 gap-4">
+        @foreach($reviews as $review)
+        <div class="bg-white border-2 border-[#24305A] rounded-xl p-8 text-center w-full">
+            <div class="flex items-center mb-1 space-x-1 rtl:space-x-reverse">
+                @for ($i = 1; $i <= $review->rating; $i++)
+                    <svg class="w-6 h-8 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    @endfor
+                    @for ($i = 5 - $review->rating; $i > 0; $i--)
+                    <svg class="w-6 h-8 text-gray-300 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    @endfor
+                    <h1 class="ml-5">{{ $review->rating }} dari 5 Bintang</h1>
+            </div>
+            <h1 class="font-bold text-xl text-start">{{ $review->name ? $review->name : 'Anonim' }}</h1>
+            <h1 class="text-start">{{ \Carbon\Carbon::parse($review->created_at)->locale('id')->isoFormat('D MMMM YYYY') }}</h1>
+            <p class="mb-2 text-gray-500 text-justify">{{ $review->message }}</p>
+            <div class="grid grid-cols-2 max-sm:grid-cols-1">
+                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" />
+                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" />
+                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" />
+                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" />
+            </div>
+        </div>
+        @endforeach
+    </div>
+    <div class="flex justify-between items-center mb-6 mt-6">
+        <h2 class="text-lg lg:text-2xl font-bold text-gray-900">Apa kata Anda?</h2>
+    </div>
+    <form>
+        <div class="grid grid-cols-2 max-sm:grid-cols-1">
+            <div class="relative mb-2">
+                <h1 class="mb-2 font-bold">Foto</h1>
+                <input type="file" class="block w-full text-sm text-slate-500
+                                        file:mr-4 file:py-2 file:px-4 file:rounded-md
+                                        file:border-0 file:text-sm file:font-semibold
+                                        file:bg-blue-100 file:text-[#24305A]
+                                        hover:file:bg-pink-100" id="photo" name="photo" multiple />
+            </div>
+            <div class="relative mb-2">
+                <h1 class="mb-2 font-bold">Bintang</h1>
+                <div class="rating flex justify-start items-center gap-2 text-yellow-500 text-2xl mb-8 py-auto">
+                    <input type="number" name="rating" hidden>
+                    <i class='bx bx-star star' style="color: #fde047;"></i>
+                    <i class='bx bx-star star' style="color: #fde047;"></i>
+                    <i class='bx bx-star star' style="color: #fde047;"></i>
+                    <i class='bx bx-star star' style="color: #fde047;"></i>
+                    <i class='bx bx-star star' style="color: #fde047;"></i>
+                </div>
+            </div>
         </div>
         <div>
             <label for="Nama Kepala" class="block mb-2 text-lg font-medium text-gray-900">Nama
