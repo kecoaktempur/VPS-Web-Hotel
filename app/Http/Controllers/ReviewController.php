@@ -9,13 +9,13 @@ class ReviewController extends Controller
 {
     public function index()
     {
-        $reviews = Review::all();
+        $reviews = Review::paginate(10);
         return view('admin.review.index', compact('reviews'));
     }
 
     public function store(Request $request)
     {
-        if ($request->ajax()){
+        if ($request->ajax()) {
             Review::create([
                 'name' => $request->name,
                 'message' => $request->message,

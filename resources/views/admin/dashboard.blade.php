@@ -5,7 +5,7 @@
     <!-- Mobile Header & Nav -->
     @include('layouts.navbar-admin-mobile')
 
-    <div class="w-full overflow-x-hidden border-t flex flex-col">
+    <div class="w-full overflow-x-hidden border-t flex flex-col max-sm:pt-20">
         <main class="w-full flex-grow p-6">
             <h1 class="text-3xl text-black pb-6">Dashboard</h1>
 

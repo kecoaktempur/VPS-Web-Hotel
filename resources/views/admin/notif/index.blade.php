@@ -4,7 +4,7 @@
     <!-- Mobile Header & Nav -->
     @include('layouts.navbar-admin-mobile')
 
-    <div class="w-full overflow-x-hidden border-t flex flex-col">
+    <div class="w-full overflow-x-hidden border-t flex flex-col max-sm:pt-20">
         <main class="w-full flex-grow p-6">
             <h1 class="text-3xl text-[#24305A] font-bold pb-6">Reminder Checkout</h1>
 

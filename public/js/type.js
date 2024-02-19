@@ -9,11 +9,21 @@ function enableAmbilButton() {
     // Check if both check-in and check-out dates are selected
     var checkin = document.getElementById("checkin").value;
     var checkout = document.getElementById("checkout").value;
+    console.log(checkin && checkout);
+    console.log(checkout);
 
     if (checkin && checkout) {
-        document.getElementById("ambil").disabled = false;
+        // Enable buttons with IDs starting with "ambil"
+        var buttons = document.querySelectorAll('[id^="ambil"]');
+        buttons.forEach(function (button) {
+            button.disabled = false;
+        });
     } else {
-        document.getElementById("ambil").disabled = true;
+        // Disable buttons with IDs starting with "ambil"
+        var buttons = document.querySelectorAll('[id^="ambil"]');
+        buttons.forEach(function (button) {
+            button.disabled = true;
+        });
     }
 }
 
@@ -113,13 +123,13 @@ function removeOptions(typeId, jumlah, max) {
 function addOptions(typeId, max) {
     var select = document.getElementById("jumlah" + typeId);
 
-    if (max == 0){
+    if (max == 0) {
         select.innerHTML = '';
         document.getElementById("ambil" + typeId).disabled = false;
     }
     var option = document.createElement("option");
-    option.text = max+1;
-    option.value = max+1;
+    option.text = max + 1;
+    option.value = max + 1;
     select.appendChild(option);
 }
 
@@ -203,7 +213,7 @@ function removeItem(element) {
             max = optionValue;
         }
     }
-    
+
     // console.log(typeid, max);
     addOptions(typeid, max);
 

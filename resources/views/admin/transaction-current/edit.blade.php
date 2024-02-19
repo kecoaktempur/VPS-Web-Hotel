@@ -4,7 +4,7 @@
     <!-- Mobile Header & Nav -->
     @include('layouts.navbar-admin-mobile')
 
-    <div class="w-full overflow-x-hidden border-t flex flex-col">
+    <div class="w-full overflow-x-hidden border-t flex flex-col max-sm:pt-20">
         <main class="w-full flex-grow p-6">
             <div class="w-full mt-12 bg-white rounded-2xl p-5">
                 <div class="bg-white overflow-auto mt-5">
@@ -24,13 +24,13 @@
                             </div>
                         </div>
                         <div class="flex">
-                            <div class="w-1/3 mb-2">
+                            <div class="w-1/2 mb-2">
                                 <div class="relative mb-2">
                                     <h1 class="mb-2 font-bold">Nomor Ruangan (Tidak dapat diganti)</h1>
                                     <input type="text" id="room_number" name="room_number" class="block px-2.5 py-2.5 w-full text-sm text-gray-900 bg-transparent rounded-xl border-1 border-2 border-black appearance-none focus:outline-none focus:ring-0 focus:border-black peer bg-white" placeholder="Nama Kepala" value="{{ $transaction->room->room_number }}" readonly />
                                 </div>
                             </div>
-                            <div class="w-1/3 pl-2 mb-2">
+                            <div class="w-1/2 pl-2 mb-2">
                                 <div class="relative mb-2">
                                     <h1 class="mb-2 font-bold">Nama Lengkap</h1>
                                     <input type="text" id="name" name="name" class="block px-2.5 py-2.5 w-full text-sm text-gray-900 bg-transparent rounded-xl border-1 border-2 border-black appearance-none focus:outline-none focus:ring-0 focus:border-black peer bg-white" placeholder="Nama Kepala" value="{{ $transaction->name }}" />
@@ -76,7 +76,7 @@
                                 <h1 class="mb-2 font-bold">Note</h1>
                                 <div class="py-2 px-4 mb-4 rounded-lg rounded-t-lg border border-gray-200">
                                     <label for="notes" class="sr-only">Your notes</label>
-                                    <textarea id="notes" name="notes" rows="6" class="bg-transparent px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Tambah Kasur (1), Tambah Bantal (1)....." ><?php echo $transaction->notes; ?></textarea>
+                                    <textarea id="notes" name="notes" rows="6" class="bg-transparent px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Tambah Kasur (1), Tambah Bantal (1)....."><?php echo $transaction->notes; ?></textarea>
                                 </div>
                                 @if($errors->has('notes'))
                                 <div class="text-red-500 text-sm mt-1">

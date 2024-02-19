@@ -25,13 +25,9 @@
             <h1 class="text-3xl font-extrabold tracking-tight leading-none text-[#12182E] md:text-4xl lg:text-5xl font-[Aleo]">
                 Tentang Kami</h1>
             <div class="border-b-2 border-[#3E9CC0] w-1/5"></div>
-            <p class="max-w-2xl mt-8 mb-6 font-medium text-black lg:mb-8 md:text-sm lg:text-base text-justify whitespace-pre-wrap">
-Venesia Park Sentul Syariah, tempat yang menyediakan keseimbangan sempurna antara kenyamanan dan ketenangan. Terletak di kawasan yang aman dan nyaman.
-
-Kami menyediakan 4 tipe kamar yang dapat memenuhi berbagai kebutuhan: Standard, Deluxe, Family, dan VIP. Dengan fokus pada kehangatan keluarga, staff kami siap memberikan pelayanan yang ramah dan profesional untuk memastikan pengalaman menginap Anda menjadi tak terlupakan. 
-                
-Kami berkomitmen untuk menjaga nilai-nilai keberagaman dan memastikan semua tamu merasa dihormati dan diakomodasi dengan baik. Untuk tamu yang menginap sebagai pasangan lawan jenis, kami meminta Anda mengirimkan foto KTP suami istri melalui WhatsApp kami sebagai bagian dari kebijakan keamanan kami.
+            <p class="max-w-2xl mt-8 mb-6 font-medium text-black lg:mb-8 md:text-sm lg:text-base text-justify whitespace-pre-wrap">&nbsp;&nbsp;Venesia Park Sentul Syariah, tempat yang menyediakan keseimbangan sempurna antara kenyamanan dan ketenangan. Terletak di kawasan yang aman dan nyaman. <br> &nbsp;&nbsp;Kami menyediakan 4 tipe kamar yang dapat memenuhi berbagai kebutuhan: Standard, Deluxe, Family, dan VIP. Dengan fokus pada kehangatan keluarga, staff kami siap memberikan pelayanan yang ramah dan profesional untuk memastikan pengalaman menginap Anda menjadi tak terlupakan. <br> &nbsp;&nbsp;Kami berkomitmen untuk menjaga nilai-nilai keberagaman dan memastikan semua tamu merasa dihormati dan diakomodasi dengan baik. Untuk tamu yang menginap sebagai pasangan lawan jenis, kami meminta Anda mengirimkan foto KTP suami istri melalui WhatsApp kami sebagai bagian dari kebijakan keamanan kami.
             </p>
+
             <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-[#3E9CC0] hover:bg-transparent focus:ring-4 focus:ring-primary-300 hover:border-2 hover:border-[#000000] hover:text-black mt-2">Contact
                 Us
                 <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -143,7 +139,7 @@ Kami berkomitmen untuk menjaga nilai-nilai keberagaman dan memastikan semua tamu
     </div>
 </section>
 
-<div class="container flex mx-auto grid grid-cols-[0.5fr,2fr,3fr] w-3/4">
+<div class="container flex mx-auto grid grid-cols-[0.5fr,2fr,3fr] w-3/4  max-sm:w-full">
     <div class="border-b-2 border-[#3E9CC0] w-full rounded-full h-0 my-auto"></div>
     <div class="flex items-center justify-center"> <!-- Added mx-4 class for horizontal margin -->
         <h1 class="text-center text-3xl font-extrabold tracking-tight leading-none text-[#12182E] md:text-4xl lg:text-5xl font-[Aleo]">
@@ -163,7 +159,7 @@ Kami berkomitmen untuk menjaga nilai-nilai keberagaman dan memastikan semua tamu
             </button>
         </div>
     </div>
-    <div class="w-full overflow-hidden" id="slideContainerTipe">
+    <div class="w-full max-sm:h-full overflow-hidden" id="slideContainerTipe">
         <ul class="flex w-full" id="sliderTipe">
             @foreach($types as $type)
             @php
@@ -216,7 +212,7 @@ Kami berkomitmen untuk menjaga nilai-nilai keberagaman dan memastikan semua tamu
     </div>
 </div>
 
-<div class="container flex mx-auto grid grid-cols-[3fr,2fr,0.5fr] w-3/4">
+<div class="container flex mx-auto grid grid-cols-[3fr,2fr,0.5fr] w-3/4  max-sm:w-full">
     <div class="border-b-2 border-[#3E9CC0] w-full rounded-full h-0 my-auto"></div>
     <div class="flex items-center justify-center">
         <h1 class="text-center text-3xl font-extrabold tracking-tight leading-none text-[#12182E] md:text-4xl lg:text-5xl font-[Aleo]">
@@ -261,7 +257,7 @@ Kami berkomitmen untuk menjaga nilai-nilai keberagaman dan memastikan semua tamu
     </div>
 </div>
 
-<div class="container flex mx-auto grid grid-cols-3 w-3/4">
+<div class="container flex mx-auto grid grid-cols-3 w-3/4 max-sm:w-full">
     <div class="border-b-2 border-[#3E9CC0] w-full rounded-full h-0 my-auto"></div>
     <div class="flex items-center justify-center"> <!-- Added mx-4 class for horizontal margin -->
         <h1 class="text-center text-3xl font-extrabold tracking-tight leading-none text-[#12182E] md:text-4xl lg:text-5xl font-[Aleo]">
@@ -272,7 +268,7 @@ Kami berkomitmen untuk menjaga nilai-nilai keberagaman dan memastikan semua tamu
 </div>
 
 <div class="container flex flex-col mx-auto md:w-3/4 p-10">
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 gap-4">
         @foreach($reviews as $review)
         <div class="bg-white border-2 border-[#24305A] rounded-lg p-8 text-center w-full">
             <div class="flex items-center mb-1 space-x-1 rtl:space-x-reverse">

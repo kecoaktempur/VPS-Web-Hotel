@@ -2,16 +2,16 @@
 @section('content')
 <div class="bg-white mt-40">
     <div class="container flex mx-auto w-4/5 justify-center lg:col-2">
-        <div class="grid grid-cols-[2fr,1fr] grid-flow-col gap-2">
+        <div class="grid grid-cols-[2fr,1fr] max-sm:grid-cols-2 max-sm:grid-rows-2 grid-flow-col gap-2">
             @php
             $firstPhoto = $type->photos->slice(0, 1)->first()->name;
             $secondPhoto = $type->photos->slice(1, 2)->first()->name;
             $thirdPhoto = $type->photos->slice(2, 3)->first()->name;
             @endphp
-            <div class="w-full row-span-2 cursor-pointer" onclick="toggleModal('modal-id')">
+            <div class="w-full row-span-2 max-sm:row-span-1 max-sm:col-span-2 cursor-pointer" onclick="toggleModal('modal-id')">
                 <img src="{{ asset('img/'.$firstPhoto) }}" alt="Photo by Claudio Schwarz on Unsplash" class="inset-0 h-full w-full object-cover object-center rounded-xl opacity-75 hover:opacity-100">
             </div>
-            <div class="w-full cursor-pointer" onclick="toggleModal('modal-id')">
+            <div class="w-full cursor-pointer max-sm:col-span-1" onclick="toggleModal('modal-id')">
                 <img src="{{ asset('img/'.$secondPhoto) }}" alt="Photo by Claudio Schwarz on Unsplash" class="inset-0 h-full w-full object-cover object-center rounded-xl opacity-75 hover:opacity-100 ">
             </div>
             <div class="w-full cursor-pointer" onclick="toggleModal('modal-id')">
@@ -74,14 +74,14 @@
     </div>
     <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
     <div class="container flex mx-auto md:grid md:grid-cols-[3fr,1fr] w-4/5 mt-10 border-b-2 border-gray-300">
-        <div class="mr-5">
+        <div class="sm:mr-5">
             <div class="container flex mx-auto max-md:grid max-md:grid-cols-[2fr,1fr]">
-                <h1 class="text-[#12182E] text-4xl md:text-5xl font-bold font-[Aleo] max-md:my-auto">
+                <h1 class="text-[#12182E] text-4xl md:text-5xl font-bold font-[Aleo] max-md:my-auto max-sm:text-3xl">
                     {{ $type->name }}
                 </h1>
                 <div class="align-center my-auto md:hidden">
-                    <div class="rounded-xl p-4 lg:text-xl font-bold min-w-max border-2 border-[#12182E] text-[#12182E]">
-                        Rp {{ number_format($type->price, 0, ',', '.') }} / malam
+                    <div class="rounded-xl p-4 lg:text-xl max-sm:text-xl font-bold min-w-max border-2 border-[#12182E] text-[#12182E]">
+                        Rp {{ number_format($type->price, 0, ',', '.') }} <br class="sm:hidden"> / malam
                     </div>
                 </div>
             </div>
@@ -368,10 +368,10 @@
         </div>
     </div>
 
-    <div class="container flex mx-auto grid grid-cols-[0.5fr,2fr,3fr]  w-4/5">
+    <div class="container flex mx-auto grid grid-cols-[0.5fr,2fr,3fr] w-4/5 max-sm:w-full">
         <div class="border-b-2 border-[#3E9CC0] w-full rounded-full h-0 my-auto"></div>
         <div class="flex items-center justify-center"> <!-- Added mx-4 class for horizontal margin -->
-            <h1 class="text-[#12182E] text-2xl lg:text-4xl font-bold pt-2 lg:pt-4 font-[Aleo]">
+            <h1 class="text-[#12182E] text-2xl lg:text-4xl font-bold pt-2 lg:pt-4 font-[Aleo] max-sm:text-center">
                 Tipe Ruangan Lainnya
             </h1>
         </div>

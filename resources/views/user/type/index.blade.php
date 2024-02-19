@@ -43,13 +43,13 @@
                 @php
                 $i = 0;
                 @endphp
-                <div class="absolute flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+                <div class="absolute flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2 z-20">
                     @foreach ($photos as $photo)
                     <button type="button" class="w-3 h-3 rounded-full" aria-current="{{ $i == 0 ? 'true' : 'false' }}" aria-label="Slide {{ $i+1 }}" data-carousel-slide-to="{{ $i++ }}"></button>
                     @endforeach
                 </div>
 
-                <button type="button" class="absolute top-0 start-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <button type="button" class="z-20 absolute top-0 start-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
                     <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
                         <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
@@ -57,7 +57,7 @@
                         <span class="sr-only">Previous</span>
                     </span>
                 </button>
-                <button type="button" class="absolute top-0 end-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <button type="button" class="z-20 absolute top-0 end-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
                     <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
                         <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
@@ -69,19 +69,19 @@
 
             <div class="px-5 py-2 bg-[#24305A] grid grid-cols-2">
                 <div class="flex flex-col w-full">
-                    <h5 class="mb-2 text-4xl max-md:text-3xl font-bold tracking-tight text-white" id="namakamar{{ $type->id }}">
+                    <h5 class="mb-2 text-4xl max-md:text-3xl max-sm:text-xl font-bold tracking-tight text-white" id="namakamar{{ $type->id }}">
                         {{ $type->name }}
                     </h5>
                 </div>
-                <div class="flex flex-col items-end w-full">
-                    <div class="rounded-xl px-10 py-2 text-2xl max-md:text-lg font-semibold leading-6 text-white border border-white" id="hargakamar{{ $type->id }}">
+                <div class="flex flex-col items-end w-full justify-center">
+                    <div class="rounded-xl px-10 py-2 text-2xl max-md:text-lg max-sm:px-5 max-sm:text-sm max-sm:py-auto font-semibold leading-6 text-white border border-white" id="hargakamar{{ $type->id }}">
                         Rp {{ number_format($type->price, 0, ',', '.') }}
                     </div>
                 </div>
             </div>
 
-            <div class="px-5 py-2 mx-auto bg-white grid grid-cols-[2fr,.75fr] rounded-b-xl">
-                <div class="flex flex-col items-end justify-center grid grid-cols-[2fr,2fr,.75fr]">
+            <div class="px-5 py-2 mx-auto bg-white grid grid-cols-[2fr,.75fr] max-sm:grid-cols-[1fr,2fr] rounded-b-xl">
+                <div class="flex flex-col items-end justify-center grid grid-cols-[2fr,2fr,.75fr] max-sm:grid-cols-1">
                     <div class="grid grid-cols-[.5fr,2fr] items-center">
                         <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56">
                             <path fill="currentColor" d="M38.723 28.549c4.417 0 8.217-3.944 8.217-9.08c0-5.074-3.82-8.833-8.217-8.833c-4.396 0-8.217 3.841-8.217 8.874c0 5.095 3.8 9.039 8.217 9.039m-23.645.473c3.821 0 7.15-3.452 7.15-7.91c0-4.416-3.35-7.683-7.15-7.683c-3.82 0-7.19 3.349-7.169 7.725c0 4.416 3.328 7.868 7.17 7.868M3.616 47.572h15.612c-2.136-3.102.473-9.347 4.89-12.757c-2.28-1.52-5.219-2.65-9.06-2.65C5.793 32.164 0 39.004 0 44.695c0 1.85 1.027 2.877 3.616 2.877m22.186 0h25.822c3.225 0 4.376-.925 4.376-2.733c0-5.3-6.636-12.613-17.297-12.613c-10.641 0-17.277 7.313-17.277 12.614c0 1.807 1.15 2.732 4.376 2.732" />
@@ -94,7 +94,7 @@
                     <select id="jumlah{{ $type->id }}" name="jumlah{{ $type->id }}" autocomplete="jumlah{{ $type->id }}" required class="rounded-xl px-3 py-1.5 mx-2 max-md:mx-1 font-semibold leading-6 border-2 border-[#24305A] placeholder:text-gray-400 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-800">
                         <option value="1" selected>1</option>
                     </select>
-                    <button onclick="addItem(<?php echo $type->id; ?>)" type="button" class="rounded-xl px-3 py-2 mx-2 text-xl max-md:text-sm max-md:mx-0 bg-[#3E9CC0] font-semibold leading-6 text-white" id="ambil{{ $type->id }}">
+                    <button onclick="addItem(<?php echo $type->id; ?>)" type="button" class="rounded-xl px-3 py-2 mx-2 text-xl max-md:text-sm max-md:mx-0 bg-[#3E9CC0] font-semibold leading-6 text-white" id="ambil{{ $type->id }}" disabled>
                         Ambil
                     </button>
                 </form>
@@ -142,15 +142,15 @@
 </div>
 
 <nav class='fixed inset-x-0 bottom-0 mx-auto w-full max-w-screen-md border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-xl lg:max-w-screen-lg 2xl:max-w-screen-2xl xl:max-w-screen-xl font-[Montserrat] z-50 md:hidden'>
-    <div class='flex flex-wrap justify-between px-10 py-3'>
+    <div class='flex flex-wrap justify-between px-10 py-3 max-sm:px-1'>
         <div id="toggleup" class="flex-shrink-0">
             <button class=''>
-                <svg class='w-8 h-8' xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <svg class='w-8 h-8 max-sm:w-6 max-sm:h-6' xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                     <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="m6 15l6-6l6 6" />
                 </svg>
             </button>
         </div>
-        <div class='grid grid-cols-[2fr,1.5fr] w-11/12'>
+        <div class='grid grid-cols-[2fr,1fr] w-11/12'>
             <div class=w-full">
                 <div class="flex flex-col items-end">
                     <h1 class="font-bold text-sm">Total</h1>
@@ -161,7 +161,7 @@
             </div>
 
             <div class="w-full flex justify-center">
-                <button type="button" onclick="pesanSekarang()" id="pesanButton" class="flex items-center w-3/4 text-lg justify-center rounded-xl bg-[#24305A] px-1 py-1 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#0B163E] mx-auto">Pesan
+                <button type="button" onclick="pesanSekarang()" id="pesanButton" class="flex items-center w-3/4 text-lg justify-center rounded-xl bg-[#24305A] py-1 text-sm font-semibold text-white shadow-sm hover:bg-[#0B163E]">Pesan
                     Sekarang</button>
             </div>
         </div>
@@ -169,7 +169,7 @@
         <ul id="collapseTransac" class='lg:!flex lg:space-x-10 max-lg:space-y-3 max-lg:hidden max-lg:w-full max-lg:my-4 my-auto'>
             <div class="relative mb-2">
                 <input type="text" id="namakepala" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-xl border-1 border-2 border-black appearance-none focus:outline-none focus:ring-0 focus:border-black peer bg-white" placeholder=" " />
-                <label for="namakepala" class="absolute text-sm text-black duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-black font-bold peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Nama
+                <label for="namakepala" class="absolute text-sm text-black duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-black font-bold peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1 rounded-xl">Nama
                     Lengkap</label>
             </div>
 

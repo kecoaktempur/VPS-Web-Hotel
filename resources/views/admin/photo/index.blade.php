@@ -19,12 +19,12 @@
     <!-- Mobile Header & Nav -->
     @include('layouts.navbar-admin-mobile')
 
-    <div class="w-full overflow-x-hidden border-t flex flex-col">
+    <div class="w-full overflow-x-hidden border-t flex flex-col max-sm:pt-20">
         <main class="w-full flex-grow p-6">
             <div class="flex items-center justify-between mb-5">
-                <h1 class="text-3xl text-[#24305A] font-bold pb-6">Foto</h1>
+                <h1 class="text-3xl text-[#24305A] font-bold pb-6 max-sm:pb-0">Foto</h1>
                 <div class="flex space-x-2">
-                    <a href="{{ route('photo.create')}}" class="rounded-md bg-[#24305A] px-3 py-2.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800 text-xl">
+                    <a href="{{ route('photo.create')}}" class="rounded-md bg-[#24305A] px-3 py-2.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800 text-xl max-sm:text-center">
                         Tambah Foto
                     </a>
                 </div>

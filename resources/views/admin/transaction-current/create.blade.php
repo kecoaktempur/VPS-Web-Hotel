@@ -4,7 +4,7 @@
     <!-- Mobile Header & Nav -->
     @include('layouts.navbar-admin-mobile')
 
-    <div class="w-full overflow-x-hidden border-t flex flex-col">
+    <div class="w-full overflow-x-hidden border-t flex flex-col max-sm:pt-20">
         <main class="w-full flex-grow p-6">
             <div class="w-full mt-12 bg-white rounded-2xl p-5">
                 <div class="bg-white overflow-auto mt-5">
