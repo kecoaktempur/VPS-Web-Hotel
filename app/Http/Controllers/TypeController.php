@@ -57,7 +57,7 @@ class TypeController extends Controller
                                 });
                             });
                         });
-                })->get();                
+                })->get();
 
                 $availableTypes = $availableRooms->pluck('type_id')->unique();
                 $roomPerTypes = $availableRooms->groupBy('type_id')->map->count();
@@ -81,7 +81,7 @@ class TypeController extends Controller
 
     public function index()
     {
-        $types = Type::all();
+        $types = Type::paginate(10);
         return view('admin.type.index', compact('types'));
     }
 

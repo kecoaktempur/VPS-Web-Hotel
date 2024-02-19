@@ -13,7 +13,7 @@ class TransactionController extends Controller
 {
     public function indexCurrent()
     {
-        $currentTransactions = CurrentTransaction::all();
+        $currentTransactions = CurrentTransaction::paginate(10);
         $rooms = Room::all();
         $types = Type::all();
         return view('admin.transaction-current.index', compact('currentTransactions', 'rooms', 'types'));
@@ -21,7 +21,7 @@ class TransactionController extends Controller
 
     public function indexPast()
     {
-        $pastTransactions = PastTransaction::all();
+        $pastTransactions = PastTransaction::paginate(10);
         $rooms = Room::all();
         $types = Type::all();
         return view('admin.transaction-past.index', compact('pastTransactions', 'rooms', 'types'));
@@ -121,41 +121,41 @@ class TransactionController extends Controller
         $end_date = $request->end_date;
 
         $crashingTransactions = CurrentTransaction::where('room_id', $request->room_id)->where('id', '!=', $id)
-        ->where(function ($q) use ($start_date, $end_date) {
-            $q->where(function ($inner) use ($start_date) {
-                $inner->where(function ($subInner) use ($start_date) {
-                    $subInner->where('check_out_date', '!=', null)
-                        ->where('start_date', '<=', $start_date)
-                        ->where('check_out_date', '>', $start_date);
-                })->orWhere(function ($subInner) use ($start_date) {
-                    $subInner->where('check_out_date', '=', null)
-                        ->where('start_date', '<=', $start_date)
-                        ->where('end_date', '>', $start_date);
+            ->where(function ($q) use ($start_date, $end_date) {
+                $q->where(function ($inner) use ($start_date) {
+                    $inner->where(function ($subInner) use ($start_date) {
+                        $subInner->where('check_out_date', '!=', null)
+                            ->where('start_date', '<=', $start_date)
+                            ->where('check_out_date', '>', $start_date);
+                    })->orWhere(function ($subInner) use ($start_date) {
+                        $subInner->where('check_out_date', '=', null)
+                            ->where('start_date', '<=', $start_date)
+                            ->where('end_date', '>', $start_date);
+                    });
+                })->orWhere(function ($inner) use ($end_date) {
+                    $inner->where(function ($subInner) use ($end_date) {
+                        $subInner->where('check_out_date', '!=', null)
+                            ->where('start_date', '<', $end_date)
+                            ->where('check_out_date', '>=', $end_date);
+                    })->orWhere(function ($subInner) use ($end_date) {
+                        $subInner->where('check_out_date', '=', null)
+                            ->where('start_date', '<', $end_date)
+                            ->where('end_date', '>=', $end_date);
+                    });
+                })->orWhere(function ($inner) use ($start_date, $end_date) {
+                    $inner->where(function ($subInner) use ($start_date, $end_date) {
+                        $subInner->where('check_out_date', '!=', null)
+                            ->where('start_date', '>=', $start_date)
+                            ->where('check_out_date', '<=', $end_date);
+                    })->orWhere(function ($subInner) use ($start_date, $end_date) {
+                        $subInner->where('check_out_date', '=', null)
+                            ->where('start_date', '>=', $start_date)
+                            ->where('end_date', '<=', $end_date);
+                    });
                 });
-            })->orWhere(function ($inner) use ($end_date) {
-                $inner->where(function ($subInner) use ($end_date) {
-                    $subInner->where('check_out_date', '!=', null)
-                        ->where('start_date', '<', $end_date)
-                        ->where('check_out_date', '>=', $end_date);
-                })->orWhere(function ($subInner) use ($end_date) {
-                    $subInner->where('check_out_date', '=', null)
-                        ->where('start_date', '<', $end_date)
-                        ->where('end_date', '>=', $end_date);
-                });
-            })->orWhere(function ($inner) use ($start_date, $end_date) {
-                $inner->where(function ($subInner) use ($start_date, $end_date) {
-                    $subInner->where('check_out_date', '!=', null)
-                        ->where('start_date', '>=', $start_date)
-                        ->where('check_out_date', '<=', $end_date);
-                })->orWhere(function ($subInner) use ($start_date, $end_date) {
-                    $subInner->where('check_out_date', '=', null)
-                        ->where('start_date', '>=', $start_date)
-                        ->where('end_date', '<=', $end_date);
-                });
-            });          
-        })->get();
+            })->get();
 
-        if ($crashingTransactions->count() > 0){
+        if ($crashingTransactions->count() > 0) {
             return back()->withErrors([
                 'start_date' => 'The room is served on this date!',
                 'end_date' => 'The room is served on this date!',
@@ -190,7 +190,7 @@ class TransactionController extends Controller
     public function checkout($id)
     {
         $transaction = CurrentTransaction::findOrFail($id);
-        if (Carbon::now()->toDateString() >= $transaction->start_date && Carbon::now()->toDateString() <= $transaction->end_date){
+        if (Carbon::now()->toDateString() >= $transaction->start_date && Carbon::now()->toDateString() <= $transaction->end_date) {
             $transaction->update([
                 'check_out_date' => Carbon::now()->toDateString()
             ]);

@@ -28,28 +28,28 @@ class PhotoController extends Controller
         $request->validate(
             [
                 'photo' => 'required|mimes:jpg,jpeg,png',
-            ], 
+            ],
             [
                 'photo.required' => 'Photo can\'t be empty!',
                 'photo.mimes' => 'Allowed extensions are .jpg, .jpeg, and .png!',
             ]
         );
-    
+
         $file = $request->file('photo');
         $fileName = time() . '_' . $file->getClientOriginalName();
         $file->move(public_path('img'), $fileName);
-    
+
         $photo = Photo::create([
             'name' => $fileName,
         ]);
-    
+
         if ($request->type_id > 0) {
             TypePhoto::create([
                 'type_id' => $request->type_id,
                 'photo_id' => $photo->id
             ]);
         }
-    
+
         return redirect('/admin/photo');
     }
 

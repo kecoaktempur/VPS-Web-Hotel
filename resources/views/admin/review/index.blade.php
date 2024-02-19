@@ -17,7 +17,7 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                             </svg>
                         </div>
-                        <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
+                        <input type="search" id="filter" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Search..." required />
                         <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-[#24305A] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">Search</button>
                     </div>
                 </form>
@@ -47,19 +47,18 @@
                         </thead>
 
                         @php
-                        $count = 1;
+                        $count = ($reviews->currentPage() - 1) * $reviews->perPage() + 1;
                         @endphp
 
-
-                        <tbody>
+                        <tbody id="table-body">
                             @foreach ($reviews as $review)
                             <tr>
-                                <th scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-normal">
+                                <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-normal">
                                     {{ $count++ }}
-                                </th>
-                                <th scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-normal">
+                                </td>
+                                <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-normal">
                                     {{ $review->name ? $review->name : 'Anonim' }}
-                                </th>
+                                </td>
                                 <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-normal">
                                     {{ $review->message }}
                                 </td>
@@ -89,7 +88,35 @@
                     </div>
                 </div>
             </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const searchInput = document.getElementById("filter");
+                    const tableBody = document.getElementById("table-body");
+
+                    searchInput.addEventListener("input", function() {
+                        const searchTerm = searchInput.value.toLowerCase();
+                        const rows = tableBody.querySelectorAll("tr");
+
+                        rows.forEach(function(row) {
+                            const columns = row.querySelectorAll("td");
+                            let found = false;
+
+                            columns.forEach(function(column) {
+                                if (column.textContent.toLowerCase().includes(searchTerm)) {
+                                    found = true;
+                                }
+                            });
+
+                            if (found) {
+                                row.style.display = ""; // Show the row
+                            } else {
+                                row.style.display = "none"; // Hide the row
+                            }
+                        });
+                    });
+                });
+            </script>
+        </main>
     </div>
-    </main>
 </div>
 @endsection

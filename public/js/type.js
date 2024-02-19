@@ -334,11 +334,15 @@ function checkAvailability() {
                 // console.log(response);
                 var availableTypes = Object.values(response.availabletypes);
 
+                availableTypes = availableTypes.map(function (element) {
+                    return parseInt(element, 10);
+                });
+
                 $('[id^="type"]').show();
 
                 $('[id^="type"]').each(function () {
                     var typeId = parseInt($(this).attr('id').replace('type', ''), 10);
-                    if (availableTypes.indexOf(typeId) === -1) {
+                    if (availableTypes.indexOf(typeId) == -1) {
                         $(this).hide();
                     }
                 });
