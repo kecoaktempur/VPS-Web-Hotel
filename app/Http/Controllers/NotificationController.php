@@ -10,7 +10,7 @@ class NotificationController extends Controller
 {
     public function index()
     {
-        $notifs = Expiring::paginate(10);
+        $notifs = Expiring::all();
         $transactions = CurrentTransaction::all();
         return view('admin.notif.index', compact('notifs', 'transactions'));
     }

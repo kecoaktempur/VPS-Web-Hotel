@@ -9,7 +9,7 @@ class ReviewController extends Controller
 {
     public function index()
     {
-        $reviews = Review::paginate(10);
+        $reviews = Review::all();
         return view('admin.review.index', compact('reviews'));
     }
 

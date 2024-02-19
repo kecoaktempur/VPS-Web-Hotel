@@ -53,7 +53,7 @@
                         </thead>
 
                         @php
-                        $count = ($pastTransactions->currentPage() - 1) * $pastTransactions->perPage() + 1;
+                        $count = 1;
                         @endphp
 
                         <tbody id="table-body">
@@ -93,11 +93,6 @@
                             @endforeach
                         </tbody>
                     </table>
-                </div>
-                <div class="flex flex-col-reverse justify-end items-end bottom-0 right-0 mt-4 mb-4 mr-4">
-                    <div class="inline-flex rounded-md">
-                        {{ $pastTransactions->links() }}
-                    </div>
                 </div>
             </div>
             <script>
