@@ -24,7 +24,7 @@
                 <a href='{{ route('gallery')}}' class='{{ Str::contains(Route::currentRouteName(), 'gallery') ? 'hover:text-[#3E9CC0] font-semibold block text-[15px] lg:border-b-2 lg:border-[#000000]' : 'hover:text-[#3E9CC0] text-gray-600 font-reguler text-[15px]' }}'>Gallery</a>
             </li>
             <li class='max-lg:border-b max-lg:py-2'>
-                <a href='#' class='hover:bg-transparent hover:border-2 hover:border-[#24305A] hover:text-gray-600 text-white font-semibold text-[15px] bg-[#24305A] rounded-xl p-3'>Contact Us</a>
+                <a href='https://wa.me/+6281359994322' class='hover:bg-transparent hover:border-2 hover:border-[#24305A] hover:text-gray-600 text-white font-semibold text-[15px] bg-[#24305A] rounded-xl p-3'>Contact Us</a>
             </li>
         </ul>
     </div>

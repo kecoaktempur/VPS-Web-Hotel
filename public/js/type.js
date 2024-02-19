@@ -304,7 +304,7 @@ function pesanSekarang() {
     } else if (namaKepala.trim() === '') {
         alert("Please enter Nama Kepala.");
     } else {
-        const url = `https://wa.me/+6285655567005?text=Nama%20Kepala:%20${namaKepala}%0D%0ARuangan:%20${pesanan}%0D%0ACheck%20In:%20${checkIn}%0D%0ACheck%20Out:%20${checkOut}%0D%0ATotal:%20Rp%20${total}%0D%0ANote:%20${noteTambahan}`;
+        const url = `https://wa.me/+6281359994322?text=Nama%20Kepala:%20${namaKepala}%0D%0ARuangan:%20${pesanan}%0D%0ACheck%20In:%20${checkIn}%0D%0ACheck%20Out:%20${checkOut}%0D%0ATotal:%20Rp%20${total}%0D%0ANote:%20${noteTambahan}`;
         window.open(url, '_blank');
     }
 }
