@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\RoomAvailablePerTypeChart;
+use App\Charts\RoomAvailableTodayChart;
+use App\Charts\TransactionCountPerMonthChart;
 use App\Models\Photo;
 use App\Models\Review;
 use App\Models\Type;
@@ -24,8 +27,14 @@ class PageController extends Controller
     }
 
     // admin
-    public function dashboard()
+    public function dashboard(RoomAvailableTodayChart $roomAvailableTodayChart, RoomAvailablePerTypeChart $roomAvailablePerTypeChart, TransactionCountPerMonthChart $transactionCountPerMonthChart)
     {
-        return view('admin.dashboard');
+        return view('admin.dashboard', 
+            [
+                'roomAvailableTodayChart' => $roomAvailableTodayChart->build(),
+                'roomAvailablePerTypeChart' => $roomAvailablePerTypeChart->build(),
+                'transactionCountPerMonthChart' => $transactionCountPerMonthChart->build()
+            ]
+        );
     }
 }
