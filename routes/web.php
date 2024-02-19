@@ -51,10 +51,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/room', [RoomController::class, 'index'])->name('room');
     Route::get('/admin/room/create', [RoomController::class, 'create'])->name('room.create');
     Route::post('/admin/room/store', [RoomController::class, 'store'])->name('room.store');
+    Route::get('/admin/room/{id}', [RoomController::class, 'show'])->name('room.show');
     Route::get('/admin/room/edit/{id}', [RoomController::class, 'edit'])->name('room.edit');
     Route::put('/admin/room/update/{id}', [RoomController::class, 'update'])->name('room.update');
     Route::delete('/admin/room/delete/{id}', [RoomController::class, 'destroy'])->name('room.destroy');
-    Route::get('/admin/room/{id}', [RoomController::class, 'show'])->name('room.show.admin');
 
     Route::get('/admin/transaction/current', [TransactionController::class, 'indexCurrent'])->name('transaction.index.current');
     Route::get('/admin/transaction/create', [TransactionController::class, 'create'])->name('transaction.create');

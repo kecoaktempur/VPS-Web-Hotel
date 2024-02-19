@@ -168,7 +168,7 @@
                                 </td>
                                 <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-nowrap">
                                     <div class="flex">
-                                        <a href="{{ route('room.edit', ['id' => $room->id]) }}">
+                                        <a href="{{ route('room.show', ['id' => $room->id]) }}">
                                             <button class="rounded-md bg-green-800 hover:bg-green-950 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800">
                                                 Detail
                                             </button>

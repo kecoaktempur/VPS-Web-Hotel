@@ -21,7 +21,7 @@ class TransactionController extends Controller
 
     public function indexPast()
     {
-        $pastTransactions = PastTransaction::orderBy('check_out_date')->get();
+        $pastTransactions = PastTransaction::orderByDesc('check_out_date')->get();
         $rooms = Room::all();
         $types = Type::all();
         return view('admin.transaction-past.index', compact('pastTransactions', 'rooms', 'types'));

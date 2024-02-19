@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CurrentTransaction;
+use App\Models\PastTransaction;
 use App\Models\Room;
 use App\Models\Type;
 use Illuminate\Http\Request;
@@ -61,6 +63,17 @@ class RoomController extends Controller
         ]);
 
         return redirect('/admin/room');
+    }
+
+    public function show($id)
+    {
+        $room = Room::findOrFail($id);
+        $types = Type::all();
+        $currentTransactions = CurrentTransaction::where('room_id', $id)->get();
+        $pastTransactions = PastTransaction::where('room_id', $id)->get();
+        $allTransactions = $currentTransactions->merge($pastTransactions)->sortByDesc('end_date');
+
+        return view('admin.room.show', compact('room', 'types', 'allTransactions'));
     }
 
     public function edit($id)
