@@ -13,7 +13,7 @@ class TransactionController extends Controller
 {
     public function indexCurrent()
     {
-        $currentTransactions = CurrentTransaction::all();
+        $currentTransactions = CurrentTransaction::orderBy('end_date')->get();
         $rooms = Room::all();
         $types = Type::all();
         return view('admin.transaction-current.index', compact('currentTransactions', 'rooms', 'types'));
@@ -21,7 +21,7 @@ class TransactionController extends Controller
 
     public function indexPast()
     {
-        $pastTransactions = PastTransaction::all();
+        $pastTransactions = PastTransaction::orderBy('check_out_date')->get();
         $rooms = Room::all();
         $types = Type::all();
         return view('admin.transaction-past.index', compact('pastTransactions', 'rooms', 'types'));
