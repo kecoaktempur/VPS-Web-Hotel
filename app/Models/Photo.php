@@ -16,4 +16,9 @@ class Photo extends Model
     {
         return $this->belongsTo(Type::class, 'type_photo');
     }
+
+    public function review()
+    {
+        return $this->belongsTo(Review::class, 'review_photo');
+    }
 }

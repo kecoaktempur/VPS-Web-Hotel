@@ -103,30 +103,41 @@ allStar.forEach((item, idx) => {
     })
 });
 
-document.querySelector('form').addEventListener('submit', function (event) {
+document.querySelector('form').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const name = document.querySelector('#review-name').value;
     const message = document.querySelector('#review-message').value;
     const rating = ratingValue.value;
 
-    console.log(name + message + rating);
+    // Get the selected files
+    const files = document.querySelector('#photo').files;
 
-    var formData = {
-        _token: $('meta[name="csrf-token"]').attr('content'),
-        name: name,
-        message: message,
-        rating:rating
-    };
+    // Create a new FormData object
+    const formData = new FormData();
 
+    // Append each file to the FormData object
+    for (let i = 0; i < files.length; i++) {
+        formData.append('photos[]', files[i]);
+    }
+
+    // Append other form data
+    formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
+    formData.append('name', name);
+    formData.append('message', message);
+    formData.append('rating', rating);
+
+    // Make the AJAX request
     $.ajax({
         type: 'POST',
         url: reviewUrl,
         data: formData,
-        success: function (response) {
-            window.location.reload()
+        processData: false,  // Prevent jQuery from automatically processing the data
+        contentType: false,  // Prevent jQuery from automatically setting content type
+        success: function(response) {
+            window.location.reload();
         },
-        error: function (error) {
+        error: function(error) {
             console.log(error);
         }
     });

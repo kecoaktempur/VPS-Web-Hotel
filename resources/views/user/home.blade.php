@@ -299,12 +299,14 @@
             <h1 class="font-bold text-xl text-start">{{ $review->name ? $review->name : 'Anonim' }}</h1>
             <h1 class="text-start">{{ \Carbon\Carbon::parse($review->created_at)->locale('id')->isoFormat('D MMMM YYYY') }}</h1>
             <p class="mb-2 text-gray-500 text-justify">{{ $review->message }}</p>
-            <div class="grid grid-cols-2">
-                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" onclick="toggleModal('modal-id', '')" />
-                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" onclick="toggleModal('modal-id', '')" />
-                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" onclick="toggleModal('modal-id', '')" />
-                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" onclick="toggleModal('modal-id', '')" />
+
+            @if ($review->photos != null)
+            <div class="grid grid-cols-2 gap-1">
+                @foreach($review->photos as $photo)
+                <img src="{{ asset('img/'.$photo->name) }}" alt="foto comment" class="w-full h-20 object-cover object-center rounded-xl p-1" onclick="toggleModal('modal-id', '{{$photo->name}}')" />
+                @endforeach
             </div>
+            @endif
         </div>
         @endforeach
     </div>
@@ -315,11 +317,7 @@
         <div class="grid grid-cols-2 max-sm:grid-cols-1">
             <div class="relative mb-2">
                 <h1 class="mb-2 font-bold">Foto</h1>
-                <input type="file" class="block w-full text-sm text-slate-500
-                                        file:mr-4 file:py-2 file:px-4 file:rounded-md
-                                        file:border-0 file:text-sm file:font-semibold
-                                        file:bg-blue-100 file:text-[#24305A]
-                                        hover:file:bg-pink-100" id="photo" name="photo" multiple />
+                <input type="file" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-[#24305A] hover:file:bg-pink-100" id="photo" name="photo" multiple onchange="checkFileCount(this)" />
             </div>
             <div class="relative mb-2">
                 <h1 class="mb-2 font-bold">Bintang</h1>
@@ -365,5 +363,14 @@
 </script>
 <script src="{{ asset('js/home.js') }}"></script>
 <script src="{{ asset('js/admin_foto.js') }}"></script>
+<script>
+    function checkFileCount(input) {
+        var files = input.files;
+        if (files.length > 4) {
+            alert("You can only upload a maximum of 4 files.");
+            input.value = '';
+        }
+    }
+</script>
 @include('layouts.footer')
 @endsection

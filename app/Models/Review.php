@@ -11,4 +11,9 @@ class Review extends Model
 
     protected $table = 'reviews';
     protected $fillable = ['name', 'message', 'rating'];
+
+    public function photos()
+    {
+        return $this->belongsToMany(Photo::class, 'review_photo');
+    }
 }
