@@ -35,10 +35,10 @@
                 </svg>
             </a>
         </div>
-        <div class="w-full h-full ml-20 rounded-xl overflow-hidden max-md:hidden">
+        <div class="w-full h-full ml-20 rounded-xl max-md:hidden">
             <!-- Apply overflow-hidden here -->
-            <div class="rounded-xl">
-                <img src="{{ asset('img/facility (4).jpg') }}" class="object-cover h-full w-full" alt="">
+            <div class="rounded-xl overflow-hidden">
+                <img src="{{ asset('img/facility (5).jpg') }}" class="object-cover h-full w-full" alt="">
             </div>
         </div>
     </div>
