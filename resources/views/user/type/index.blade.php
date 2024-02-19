@@ -42,13 +42,13 @@
                 @php
                 $i = 0;
                 @endphp
-                <div class="absolute flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2 z-20">
+                <div class="absolute flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2 z-30">
                     @foreach ($photos as $photo)
                     <button type="button" class="w-3 h-3 rounded-full" aria-current="{{ $i == 0 ? 'true' : 'false' }}" aria-label="Slide {{ $i+1 }}" data-carousel-slide-to="{{ $i++ }}"></button>
                     @endforeach
                 </div>
 
-                <button type="button" class="z-20 absolute top-0 start-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <button id="data-carousel-prev" type="button" class="z-30 absolute top-0 start-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
                     <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
                         <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
@@ -56,7 +56,7 @@
                         <span class="sr-only">Previous</span>
                     </span>
                 </button>
-                <button type="button" class="z-20 absolute top-0 end-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <button id="data-carousel-next" type="button" class="z-30 absolute top-0 end-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
                     <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
                         <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
@@ -197,4 +197,16 @@
     var availabilityUrl = "{{ route('type.available') }}";
 </script>
 <script src="{{ asset('js/type.js') }}"></script>
+<script>
+    const $prevButton = document.getElementById('data-carousel-prev');
+    const $nextButton = document.getElementById('data-carousel-next');
+
+    $prevButton.addEventListener('click', () => {
+        carousel.prev();
+    });
+
+    $nextButton.addEventListener('click', () => {
+        carousel.next();
+    });
+</script>
 @endsection

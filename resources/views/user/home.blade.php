@@ -264,68 +264,20 @@
     <div class="border-b-2 border-[#3E9CC0] w-full rounded-full h-0 my-auto"></div>
 </div>
 
-<div class="container flex flex-col mx-auto md:w-3/4 p-10">
-    <div class="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 gap-4">
-        @foreach($reviews as $review)
-        <div class="bg-white border-2 border-[#24305A] rounded-xl p-8 text-center w-full">
-            <div class="flex items-center mb-1 space-x-1 rtl:space-x-reverse">
-                @for ($i = 1; $i <= $review->rating; $i++)
-                    <svg class="w-6 h-8 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    @endfor
-                    @for ($i = 5 - $review->rating; $i > 0; $i--)
-                    <svg class="w-6 h-8 text-gray-300 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    @endfor
-                    <h1 class="ml-5">{{ $review->rating }} dari 5 Bintang</h1>
-            </div>
-            <h1 class="font-bold text-xl text-start">{{ $review->name ? $review->name : 'Anonim' }}</h1>
-            <h1 class="text-start">{{ \Carbon\Carbon::parse($review->created_at)->locale('id')->isoFormat('D MMMM YYYY') }}</h1>
-            <p class="mb-2 text-gray-500 text-justify">{{ $review->message }}</p>
-        </div>
-        @endforeach
+<div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
+    <!-- Move the "x" button inside the modal container and position it at the top right corner -->
+    <div class="absolute top-0 right-0 p-4">
+        <button class="text-black text-4xl leading-none font-semibold outline-none focus:outline-none cursor-pointer" onclick="toggleModal('modal-id', '')"> × </button>
     </div>
-    <div class="flex justify-between items-center mb-6 mt-6">
-        <h2 class="text-lg lg:text-2xl font-bold text-gray-900">Apa kata Anda?</h2>
+    <div class="relative w-full max-w-screen-lg max-h-[700px]">
+        <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+            <div class="flex items-start justify-between p-5 rounded-t relative h-56 md:h-screen overflow-hidden rounded-lg">
+                <img id="modal-image" src="/img/1708163798_IPK-IPS-FRS.png" class="w-full h-full object-cover" alt="...">
+            </div>
+        </div>
     </div>
-    <form>
-        <div class="grid grid-cols-2 max-sm:grid-cols-1">
-            <div class="relative mb-2">
-                <h1 class="mb-2 font-bold">Foto</h1>
-                <input type="file" class="block w-full text-sm text-slate-500
-                                        file:mr-4 file:py-2 file:px-4 file:rounded-md
-                                        file:border-0 file:text-sm file:font-semibold
-                                        file:bg-blue-100 file:text-[#24305A]
-                                        hover:file:bg-pink-100" id="photo" name="photo" multiple />
-            </div>
-            <div class="relative mb-2">
-                <h1 class="mb-2 font-bold">Bintang</h1>
-                <div class="rating flex justify-start items-center gap-2 text-yellow-500 text-2xl mb-8 py-auto">
-                    <input type="number" name="rating" hidden>
-                    <i class='bx bx-star star' style="color: #fde047;"></i>
-                    <i class='bx bx-star star' style="color: #fde047;"></i>
-                    <i class='bx bx-star star' style="color: #fde047;"></i>
-                    <i class='bx bx-star star' style="color: #fde047;"></i>
-                    <i class='bx bx-star star' style="color: #fde047;"></i>
-                </div>
-            </div>
-        </div>
-        <div>
-            <label for="Nama Kepala" class="block mb-2 text-lg font-medium text-gray-900">Nama
-                Lengkap</label>
-            <input type="text" id="review-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#3E9CC0] focus:border-[#3E9CC0] block w-full p-2.5 mb-5" placeholder="Nama">
-        </div>
-        <div class="py-2 px-4 mb-4 bg-gray-50 rounded-lg rounded-t-lg border border-gray-200">
-            <label for="review-message" class="sr-only">Pesan anda</label>
-            <textarea id="review-message" rows="6" class="bg-gray-50 px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Tulis pesan anda..." required></textarea>
-        </div>
-        <div class="btn-group flex items-center gap-2">
-            <button type="submit" class="btn submit py-3 px-4 rounded-xl border-none outline-none cursor-pointer text-white bg-[#3E9CC0] font-medium">Kirim</button>
-        </div>
-    </form>
 </div>
+<div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
 
 <div class="container flex flex-col mx-auto md:w-3/4 p-10">
     <div class="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 gap-4">
@@ -347,11 +299,11 @@
             <h1 class="font-bold text-xl text-start">{{ $review->name ? $review->name : 'Anonim' }}</h1>
             <h1 class="text-start">{{ \Carbon\Carbon::parse($review->created_at)->locale('id')->isoFormat('D MMMM YYYY') }}</h1>
             <p class="mb-2 text-gray-500 text-justify">{{ $review->message }}</p>
-            <div class="grid grid-cols-2 max-sm:grid-cols-1">
-                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" />
-                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" />
-                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" />
-                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" />
+            <div class="grid grid-cols-2">
+                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" onclick="toggleModal('modal-id', '')" />
+                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" onclick="toggleModal('modal-id', '')" />
+                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" onclick="toggleModal('modal-id', '')" />
+                <img src="{{ asset('img/facility (4).jpg') }}" alt="foto comment" class="w-full object-cover object-center rounded-xl h-50 p-1" onclick="toggleModal('modal-id', '')" />
             </div>
         </div>
         @endforeach
@@ -412,5 +364,6 @@
     var reviewUrl = "{{ route('review.store') }}";
 </script>
 <script src="{{ asset('js/home.js') }}"></script>
+<script src="{{ asset('js/admin_foto.js') }}"></script>
 @include('layouts.footer')
 @endsection
