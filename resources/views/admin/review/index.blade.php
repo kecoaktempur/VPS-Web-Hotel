@@ -69,13 +69,20 @@
                                     {{ \Carbon\Carbon::parse($review->created_at)->locale('id')->isoFormat('D MMMM YYYY') }}
                                 </td>
                                 <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-normal">
-                                    <form action="{{ route('review.destroy', ['id' => $review->id]) }} " method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="ml-2 rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
-                                            Delete
-                                        </button>
-                                    </form>
+                                    <div class="flex">
+                                        <a href="">
+                                            <button class="rounded-md bg-green-800 hover:bg-green-950 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800">
+                                                Detail
+                                            </button>
+                                        </a>
+                                        <form action="{{ route('review.destroy', ['id' => $review->id]) }} " method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="ml-2 rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach

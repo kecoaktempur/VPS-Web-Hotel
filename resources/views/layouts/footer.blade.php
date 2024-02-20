@@ -17,8 +17,8 @@
             </div>
             <div class="text-center md:text-right pt-4">
                 <div>
-                    <h2 class="mb-6 text-sm md:text-xl font-semibold text-gray-900 uppercase dark:text-white">Hubungi Kami</h2>
-                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                    <h2 class="mb-6 text-sm md:text-xl font-semibold text-white uppercase">Hubungi Kami</h2>
+                    <ul class="text-white font-medium">
                         <li class="mb-4">
                             <a href="https://wa.me/+6281359994322" class="hover:underline">(081) 517-060899
                         </li>

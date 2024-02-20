@@ -270,23 +270,29 @@ function calculateTotal(items, checkin, checkout) {
 }
 
 function pesanSekarang() {
-    const namaKepala = document.getElementById('namakepala').value;
+    const namaKepala1 = document.getElementById('namakepala1').value;
+    const namaKepala2 = document.getElementById('namakepala2').value;
     const total = document.getElementById('total').innerText.replace(/[^\d]/g, '');
     const checkIn = document.getElementById('haricheckin').innerText;
     const checkOut = document.getElementById('haricheckout').innerText;
     const noteTambahan = document.getElementById('notetambahan').innerText;
     const itemsMap = new Map(); // Changed from Set to Map to store counts
 
-    document.querySelectorAll('#namapesamkamar').forEach(item => {
+    document.querySelectorAll('#side1 #namapesamkamar').forEach(item => {
         const itemName = item.innerText.trim();
         if (itemsMap.has(itemName)) {
             // If item exists in map, increment count
             itemsMap.set(itemName, itemsMap.get(itemName) + 1);
+            console.log(itemsMap);
+            console.log("1" + itemName);
         } else {
             // If item doesn't exist in map, set count to 1
             itemsMap.set(itemName, 1);
+            console.log(itemsMap);
+            console.log("2" + itemName);
         }
     });
+
 
     const pesanan = []; // Array to store item names with counts
     itemsMap.forEach((count, itemName) => {
@@ -294,6 +300,7 @@ function pesanSekarang() {
             pesanan.push(`${itemName} (${count})`); // Add count after item name
         } else {
             pesanan.push(itemName);
+            console.log(count);
         }
     });
 
@@ -301,11 +308,17 @@ function pesanSekarang() {
         alert("Please select Check In and Check Out dates.");
     } else if (parseInt(total) === 0) {
         alert("Please select a room.");
-    } else if (namaKepala.trim() === '') {
-        alert("Please enter Nama Kepala.");
+    } if (namaKepala1.trim() === '' && namaKepala2.trim() === '') {
+        alert("Please enter Nama Lengkap.");
     } else {
-        const url = `https://wa.me/+6281359994322?text=Nama%20Kepala:%20${namaKepala}%0D%0ARuangan:%20${pesanan}%0D%0ACheck%20In:%20${checkIn}%0D%0ACheck%20Out:%20${checkOut}%0D%0ATotal:%20Rp%20${total}%0D%0ANote:%20${noteTambahan}`;
-        window.open(url, '_blank');
+        if (namaKepala1.trim() !== '') {
+            const url = `https://wa.me/+6281359994322?text=Nama%20Kepala:%20${namaKepala1}%0D%0ARuangan:%20${pesanan}%0D%0ACheck%20In:%20${checkIn}%0D%0ACheck%20Out:%20${checkOut}%0D%0ATotal:%20Rp%20${total}%0D%0ANote:%20${noteTambahan}`;
+            window.open(url, '_blank');
+        }
+        if (namaKepala2.trim() !== '') {
+            const url = `https://wa.me/+6281359994322?text=Nama%20Kepala:%20${namaKepala2}%0D%0ARuangan:%20${pesanan}%0D%0ACheck%20In:%20${checkIn}%0D%0ACheck%20Out:%20${checkOut}%0D%0ATotal:%20Rp%20${total}%0D%0ANote:%20${noteTambahan}`;
+            window.open(url, '_blank');
+        }
     }
 }
 

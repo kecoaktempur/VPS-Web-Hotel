@@ -317,7 +317,7 @@
         <div class="grid grid-cols-2 max-sm:grid-cols-1">
             <div class="relative mb-2">
                 <h1 class="mb-2 font-bold">Foto</h1>
-                <input type="file" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-[#24305A] hover:file:bg-pink-100" id="photo" name="photo" multiple onchange="checkFileCount(this)" />
+                <input type="file" class="block w-full text-sm text-slate-500 file:py-2 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-[#24305A] hover:file:bg-blue-100" id="photo" name="photo" multiple onchange="checkFileCount(this)" />
             </div>
             <div class="relative mb-2">
                 <h1 class="mb-2 font-bold">Bintang</h1>

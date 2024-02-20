@@ -1,4 +1,4 @@
-<aside class="relative bg-white h-screen w-64 hidden sm:block shadow-xl transition-all duration-300" id="asideNavbar">
+<aside class="relative bg-white h-screen w-64 hidden sm:block shadow-xl transition-all duration-300 " id="asideNavbar">
     <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="flex justify-center px-6 py-4 text-white max-sm:hidden" id="openSidebarMini">
         <span class="sr-only">Open sidebar</span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-black hover:text-[#24305A]">
@@ -6,7 +6,7 @@
         </svg>
     </button>
     <div class="p-6">
-        <a aria-current="page" class="flex items-center" href="/">
+        <a aria-current="page" class="flex items-center" href="{{ route('home') }}" id="textSidebarMini">
             <img class="h-10 w-auto" src="{{ asset('img/VPS_Logo_Dark.png') }}" alt="">
             <p class="sr-only">Website Title</p>
         </a>
@@ -77,14 +77,14 @@
             <span class="flex-1 ms-3 whitespace-nowrap group-hover:text-white {{ Str::contains(Route::currentRouteName(), 'review') ? 'text-white' : '' }}" id="textSidebarMini">Review</span>
         </a>
     </nav>
-    <form action="{{ route('logout') }}" class="absolute w-full bottom-0 flex items-center justify-center py-4 pl-6 hover:bg-[#24305A] group" method="POST">
+    <form action="{{ route('logout') }}" class="absolute w-full bottom-0 flex items-center justify-center py-4 pl-6 hover:bg-[#24305A] group" method="POST" id="navLink">
         @csrf
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-5 h-5 text-black font-bold transition duration-75 group-hover:text-white">
-            <path fill-rule="evenodd" d="M17 4.25A2.25 2.25 0 0 0 14.75 2h-5.5A2.25 2.25 0 0 0 7 4.25v2a.75.75 0 0 0 1.5 0v-2a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v11.5a.75.75 0 0 1-.75.75h-5.5a.75.75 0 0 1-.75-.75v-2a.75.75 0 0 0-1.5 0v2A2.25 2.25 0 0 0 9.25 18h5.5A2.25 2.25 0 0 0 17 15.75V4.25Z" clip-rule="evenodd" />
-            <path fill-rule="evenodd" d="M14 10a.75.75 0 0 0-.75-.75H3.704l1.048-.943a.75.75 0 1 0-1.004-1.114l-2.5 2.25a.75.75 0 0 0 0 1.114l2.5 2.25a.75.75 0 1 0 1.004-1.114l-1.048-.943h9.546A.75.75 0 0 0 14 10Z" clip-rule="evenodd" />
-        </svg>
-        <button type="submit">
-            <span class="flex-1 ms-3 whitespace-nowrap group-hover:text-white" id="textSidebarMini">Log Out</span>
+        <button type="submit" class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-5 h-5 text-black font-bold transition duration-75 group-hover:text-white">
+                <path fill-rule="evenodd" d="M17 4.25A2.25 2.25 0 0 0 14.75 2h-5.5A2.25 2.25 0 0 0 7 4.25v2a.75.75 0 0 0 1.5 0v-2a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v11.5a.75.75 0 0 1-.75.75h-5.5a.75.75 0 0 1-.75-.75v-2a.75.75 0 0 0-1.5 0v2A2.25 2.25 0 0 0 9.25 18h5.5A2.25 2.25 0 0 0 17 15.75V4.25Z" clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M14 10a.75.75 0 0 0-.75-.75H3.704l1.048-.943a.75.75 0 1 0-1.004-1.114l-2.5 2.25a.75.75 0 0 0 0 1.114l2.5 2.25a.75.75 0 1 0 1.004-1.114l-1.048-.943h9.546A.75.75 0 0 0 14 10Z" clip-rule="evenodd" />
+            </svg>
+            <span class="ml-2 whitespace-nowrap group-hover:text-white" id="textSidebarMini">Log Out</span>
         </button>
     </form>
 </aside>
