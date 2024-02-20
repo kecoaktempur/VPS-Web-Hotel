@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('auto-checkout')->dailyAt('00:00');
         $schedule->command('check-expiring-transactions')->dailyAt('00:00');
-        $schedule->command('move-past-transactions')->weekly()->mondays()->at('00:10');
+        $schedule->command('move-past-transactions')->weekly()->mondays()->at('00:01');
     }
 
     /**
