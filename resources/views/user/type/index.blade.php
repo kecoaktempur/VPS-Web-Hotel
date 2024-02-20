@@ -132,7 +132,7 @@
             <h1 class="font-bold">Catatan</h1>
             <div class="py-2 px-4 mb-4 rounded-lg rounded-t-lg border border-gray-200">
                 <label for="comment" class="sr-only">Your comment</label>
-                <textarea id="notetambahan" rows="6" class="bg-transparent px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Tambah Kasur (1), Tambah Bantal (1)....."></textarea>
+                <textarea id="notetambahan1" rows="6" class="bg-transparent px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Tambah Kasur (1), Tambah Bantal (1)....."></textarea>
             </div>
             <button type="button" onclick="pesanSekarang()" id="pesanButton" class="flex w-full text-xl justify-center rounded-xl bg-[#24305A] px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#0B163E]">Pesan
                 Sekarang</button>
@@ -184,7 +184,7 @@
             <h1 class="font-bold">Catatan</h1>
             <div class="py-2 px-4 mb-4 rounded-lg rounded-t-lg border border-gray-200">
                 <label for="comment" class="sr-only">Your comment</label>
-                <textarea id="notetambahan" rows="6" class="bg-transparent px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Tambah Kasur (1), Tambah Bantal (1)....."></textarea>
+                <textarea id="notetambahan2" rows="6" class="bg-transparent px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="Tambah Kasur (1), Tambah Bantal (1)....."></textarea>
             </div>
         </ul>
     </div>

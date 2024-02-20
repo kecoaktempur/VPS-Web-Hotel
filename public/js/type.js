@@ -275,8 +275,13 @@ function pesanSekarang() {
     const total = document.getElementById('total').innerText.replace(/[^\d]/g, '');
     const checkIn = document.getElementById('haricheckin').innerText;
     const checkOut = document.getElementById('haricheckout').innerText;
-    const noteTambahan = document.getElementById('notetambahan').innerText;
+    const noteTambahan1 = document.getElementById('notetambahan1').value;
+    const noteTambahan2 = document.getElementById('notetambahan2').value;
     const itemsMap = new Map(); // Changed from Set to Map to store counts
+
+    console.log("note1" + noteTambahan1);
+    console.log("kepala2" + namaKepala2);
+    console.log("note2" + noteTambahan2);
 
     document.querySelectorAll('#side1 #namapesamkamar').forEach(item => {
         const itemName = item.innerText.trim();
@@ -304,6 +309,8 @@ function pesanSekarang() {
         }
     });
 
+
+
     if (checkIn.trim() === 'none' && checkOut.trim() === 'none') {
         alert("Please select Check In and Check Out dates.");
     } else if (parseInt(total) === 0) {
@@ -312,11 +319,11 @@ function pesanSekarang() {
         alert("Please enter Nama Lengkap.");
     } else {
         if (namaKepala1.trim() !== '') {
-            const url = `https://wa.me/+6281359994322?text=Nama%20Kepala:%20${namaKepala1}%0D%0ARuangan:%20${pesanan}%0D%0ACheck%20In:%20${checkIn}%0D%0ACheck%20Out:%20${checkOut}%0D%0ATotal:%20Rp%20${total}%0D%0ANote:%20${noteTambahan}`;
+            const url = `https://wa.me/+6281359994322?text=Nama%20Kepala:%20${namaKepala1}%0D%0ARuangan:%20${pesanan}%0D%0ACheck%20In:%20${checkIn}%0D%0ACheck%20Out:%20${checkOut}%0D%0ATotal:%20Rp%20${total}%0D%0ANote:%20${noteTambahan1}`;
             window.open(url, '_blank');
         }
         if (namaKepala2.trim() !== '') {
-            const url = `https://wa.me/+6281359994322?text=Nama%20Kepala:%20${namaKepala2}%0D%0ARuangan:%20${pesanan}%0D%0ACheck%20In:%20${checkIn}%0D%0ACheck%20Out:%20${checkOut}%0D%0ATotal:%20Rp%20${total}%0D%0ANote:%20${noteTambahan}`;
+            const url = `https://wa.me/+6281359994322?text=Nama%20Kepala:%20${namaKepala2}%0D%0ARuangan:%20${pesanan}%0D%0ACheck%20In:%20${checkIn}%0D%0ACheck%20Out:%20${checkOut}%0D%0ATotal:%20Rp%20${total}%0D%0ANote:%20${noteTambahan2}`;
             window.open(url, '_blank');
         }
     }

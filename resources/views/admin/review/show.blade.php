@@ -16,6 +16,12 @@
 
             <div class="w-full mt-5">
                 @if ($photos->count() > 0)
+                @foreach($photos as $photo)
+                <div class="relative w-3/4 mx-auto">
+                    <img src="{{ asset('img/'.$photo->name) }}" class="w-full h-96 object-cover" alt="...">
+                </div>
+                @endforeach
+                @elseif ($photos->count() > 1)
                 <div id="indicators-carousel" class="relative w-3/4 mx-auto" data-carousel=" static">
                     <div class="relative overflow-hidden rounded-t-lg h-96">
                         @foreach($photos as $photo)
