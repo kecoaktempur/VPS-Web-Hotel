@@ -272,7 +272,7 @@
     <div class="relative w-full max-w-screen-lg max-h-[700px]">
         <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
             <div class="flex items-start justify-between p-5 rounded-t relative h-56 md:h-screen overflow-hidden rounded-lg">
-                <img id="modal-image" src="/img/1708163798_IPK-IPS-FRS.png" class="w-full h-full object-cover" alt="...">
+                <img id="modal-image" src="" class="w-full h-full object-cover" alt="...">
             </div>
         </div>
     </div>
@@ -317,7 +317,7 @@
         <div class="grid grid-cols-2 max-sm:grid-cols-1">
             <div class="relative mb-2">
                 <h1 class="mb-2 font-bold">Foto</h1>
-                <input type="file" class="block w-full text-sm text-slate-500 file:py-2 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-[#24305A] hover:file:bg-blue-100" id="photo" name="photo" multiple onchange="checkFileCount(this)" />
+                <input type="file" class="block w-full text-sm text-slate-500 file:py-2 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-[#24305A] hover:file:bg-blue-100" id="photo" name="photo" multiple accept=".jpg, .jpeg, .png" onchange="checkFileCountAndSize(this)" />
             </div>
             <div class="relative mb-2">
                 <h1 class="mb-2 font-bold">Bintang</h1>
@@ -364,11 +364,22 @@
 <script src="{{ asset('js/home.js') }}"></script>
 <script src="{{ asset('js/admin_foto.js') }}"></script>
 <script>
-    function checkFileCount(input) {
-        var files = input.files;
+    function checkFileCountAndSize(input) {
+        const files = input.files;
+        const maxFileSizeInBytes = 2 * 1024 * 1024;
+
         if (files.length > 4) {
             alert("You can only upload a maximum of 4 files.");
             input.value = '';
+            return;
+        }
+
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            if (file.size > maxFileSizeInBytes) {
+                alert('File size exceeds the limit. Maximum file size allowed is 2MB.');
+                input.value = '';
+            }
         }
     }
 </script>

@@ -24,7 +24,7 @@ class ReviewController extends Controller
                 'message' => $request->message,
                 'rating' => $request->rating
             ]);
-    
+
             if ($request->hasFile('photos')) {
                 foreach ($request->file('photos') as $photo) {
                     $fileName = $photo->getClientOriginalName();
@@ -36,9 +36,18 @@ class ReviewController extends Controller
                     ]);
                 }
             }
-    
+
             return response()->json(['status' => 'OK']);
         }
+    }
+
+    public function show($id)
+    {
+        $review = Review::findOrFail($id);
+        $photos = Photo::join('review_photo', 'photos.id', '=', 'review_photo.photo_id')
+                ->where('review_photo.review_id', $id)
+                ->get();
+        return view('admin.review.show', compact('review', 'photos'));
     }
 
     public function destroy($id)

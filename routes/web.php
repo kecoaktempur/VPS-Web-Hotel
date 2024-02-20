@@ -76,8 +76,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/admin/photo/delete/{id}', [PhotoController::class, 'destroy'])->name('photo.destroy');
 
     Route::get('/admin/review', [ReviewController::class, 'index'])->name('review');
-    Route::get('/admin/review/coba', function () {
-        return view('admin.review.show');
-    })->name('review');
+    Route::get('/admin/review/{id}', [ReviewController::class, 'show'])->name('review.show');
     Route::delete('/admin/review/delete/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
 });

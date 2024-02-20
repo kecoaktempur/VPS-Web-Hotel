@@ -35,10 +35,13 @@
                                     Komentar
                                 </th>
                                 <th scope="col" class="px-6 py-3 font-extrabold">
-                                    Rating
+                                    Bintang
                                 </th>
                                 <th scope="col" class="px-6 py-3 font-extrabold">
                                     Tanggal Review
+                                </th>
+                                <th scope="col" class="px-6 py-3 font-extrabold">
+                                    Foto
                                 </th>
                                 <th scope="col" class="px-6 py-3 font-extrabold">
                                     Action
@@ -68,9 +71,12 @@
                                 <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-normal">
                                     {{ \Carbon\Carbon::parse($review->created_at)->locale('id')->isoFormat('D MMMM YYYY') }}
                                 </td>
+                                <td scope="row" class="px-5 py-4 font-medium whitespace-nowrap" style="color: {{ $review->photos->count() > 0 ? 'green' : 'red' }}">
+                                    {{ $review->photos->count() > 0 ? 'Ada' : 'Tidak Ada' }}
+                                </td>
                                 <td scope="row" class="px-5 py-4 font-medium text-gray-700 whitespace-normal">
                                     <div class="flex">
-                                        <a href="">
+                                        <a href="{{ route('review.show', ['id' => $review->id]) }}">
                                             <button class="rounded-md bg-green-800 hover:bg-green-950 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800">
                                                 Detail
                                             </button>
