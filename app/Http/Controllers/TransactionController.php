@@ -104,7 +104,6 @@ class TransactionController extends Controller
                 'name' => 'required',
                 'start_date' => 'required|before:end_date',
                 'end_date' => 'required|after:start_date',
-                'check_out_date' => 'after_or_equal:start_date|before_or_equal:end_date'
             ],
             [
                 'name.required' => 'Name can\'t be empty!',
@@ -112,10 +111,20 @@ class TransactionController extends Controller
                 'start_date.before' => 'Date is invalid!',
                 'end_date.required' => 'End date can\'t be empty!',
                 'end_date.after' => 'Date is invalid!',
-                'check_out_date.after_or_equal' => 'Date is invalid!',
-                'check_out_date.before_or_equal' => 'Date is invalid!'
             ]
         );
+
+        if ($request->check_out_date != null){
+            $request->validate(
+                [
+                    'check_out_date' => 'after_or_equal:start_date|before_or_equal:end_date'
+                ],
+                [
+                    'check_out_date.after_or_equal' => 'Date is invalid!',
+                    'check_out_date.before_or_equal' => 'Date is invalid!'
+                ]
+            );
+        }
 
         $start_date = $request->start_date;
         $end_date = $request->end_date;
